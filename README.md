@@ -1,1 +1,1 @@
-# Spontaneous-Weekend-3.0
+# spontaneous-weekend-v3
