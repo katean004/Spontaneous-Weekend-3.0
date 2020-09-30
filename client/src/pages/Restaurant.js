@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar/Navbar";
 
 function Restaurant() {
   return (
     <div>
+      <Navbar />
       <h1>Restaurant</h1>
       <p>
         Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
