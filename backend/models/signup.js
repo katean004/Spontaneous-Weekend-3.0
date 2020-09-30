@@ -8,15 +8,9 @@ const signupSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  movie: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "Movie"
-  },
-  resaurant: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "Restaurant"
+  favorites: {
+    type: Array
+    // error message
   }
 });
 module.exports = mongoose.model("Signup", signupSchema);
