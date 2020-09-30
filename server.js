@@ -29,6 +29,9 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Need data persistance for favorites
+
 // Melinda End ============
 
 mongoose.connect(process.env.DATABASE_URL, {
