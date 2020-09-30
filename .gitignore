@@ -5,7 +5,6 @@
 /.pnp
 .pnp.js
 /.env
-/routes/routes.rest
 
 # testing
 /coverage
