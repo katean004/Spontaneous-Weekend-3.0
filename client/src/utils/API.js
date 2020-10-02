@@ -8,7 +8,7 @@ export default {
   },
   getMoreInfo: function (randomMovie){
 `https://api.themoviedb.org/3/movie/${randomMovie}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&append_to_response=release_dates`
-  }
+  },
   getRestaurant: function () {
     return axios.get(`${process.env.REACT_APP_RESTAURANT_API_KEY}`);
   }
