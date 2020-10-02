@@ -5,7 +5,6 @@ import "./navbar.css"
 function Navbar() {
   const location = useLocation();
   return (
-    <div className="nav-container">
     <nav className="navbar navbar-expand-lg navbar-light">
       <button
         className="navbar-toggler collapsed"
@@ -19,7 +18,7 @@ function Navbar() {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
-    <ul className="nav ml-auto">
+    <ul className="navbar-nav ml-auto">
       <li className="nav-item">
         <Link
           to="/"
@@ -61,7 +60,6 @@ function Navbar() {
     </ul>
     </div>
     </nav>
-    </div>
   );
 }
 
