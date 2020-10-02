@@ -18,7 +18,7 @@ export default {
       "headers":{
       "content-type":"application/octet-stream",
       "x-rapidapi-host":"tripadvisor1.p.rapidapi.com",
-      "x-rapidapi-key": REACT_APP_RESTAURANT_API_KEY,
+      "x-rapidapi-key": "secret",
       "useQueryString":true
       },"params":{
       "limit":"3",
