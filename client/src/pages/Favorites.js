@@ -1,10 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
 
 function Favorites() {
   return (
     <div>
-      <Navbar />
       <h1>Favorites</h1>
       <p>
         Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
