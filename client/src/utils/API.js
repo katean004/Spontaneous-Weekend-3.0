@@ -35,5 +35,3 @@ export default {
       });
   }
 };
-
-// REACT_APP_RESTAURANT_API_KEY
