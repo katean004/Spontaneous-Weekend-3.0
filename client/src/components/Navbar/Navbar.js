@@ -5,6 +5,7 @@ import "./navbar.css"
 function Navbar() {
   const location = useLocation();
   return (
+    <div className="nav-container">
     <nav className="navbar navbar-expand-lg navbar-light">
       <button
         className="navbar-toggler collapsed"
@@ -60,6 +61,7 @@ function Navbar() {
     </ul>
     </div>
     </nav>
+    </div>
   );
 }
 
