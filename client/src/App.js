@@ -10,14 +10,14 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 // import logo from "./logo.svg";
 import "./App.css";
-import API from "./utils/API"
+import API from "./utils/API";
 
 function App() {
   API.getRestaurant();
 
   return (
     <Router>
-      <div className = "container-fluid p-0">
+      <div className="container-fluid p-0">
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/favorites" component={Favorites} />
