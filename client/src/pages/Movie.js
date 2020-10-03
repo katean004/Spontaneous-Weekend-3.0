@@ -148,6 +148,9 @@ const MovieBox = props => {
           <p className="description">{props.movie.overview}</p>
           <h6>Release Date</h6>
           <p className="movie_releaseDate">{props.movie.release_date}</p>
+          <a target=" _blank" href={`${tmdb_url}/${props.movie.id}`}>
+            Movie Homepage
+          </a>
         </div>
       </Fade>
     </div>
