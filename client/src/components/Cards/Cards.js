@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './Cards.css';
 import API from '../../utils/API';
 
+
 const Card = props => {
     const lat = "33.684566";
     const long = "-117.826508";

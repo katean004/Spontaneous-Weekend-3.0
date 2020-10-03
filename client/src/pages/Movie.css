@@ -8,8 +8,86 @@
   display: flex;
 }
 
+.movie_main {
+  margin: 40px;
+  padding: 50px;
+}
 
-.movie_main{
-    margin: 40px;
-    padding: 50px;
+.genres {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.description {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.movieInfo {
+  border: 0px solid black;
+  border-radius: 45px;
+  box-shadow: 0 0 45px 10px black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 22%;
+}
+
+.movie_poster{
+  border-radius: 50px;
+}
+
+.fade-in2 {
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
