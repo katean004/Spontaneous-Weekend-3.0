@@ -11,7 +11,6 @@ import Footer from "./components/Footer/Footer";
 // import Card from "./components/Cards/Cards";
 // import logo from "./logo.svg";
 import "./App.css";
-// import API from "./utils/API";
 
 function App() {
 

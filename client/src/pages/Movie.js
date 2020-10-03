@@ -1,6 +1,7 @@
 import React from "react";
 // import API from "../utils/API";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Fade from "../components/Fade/Fade";
 import "./Movie.css";
 const tmdb_url = "https://www.themoviedb.org/movie";
 const api_url = "https://api.themoviedb.org";
@@ -46,7 +47,6 @@ class Movie extends React.Component {
       .then(data => {
         const movieList = [];
         const results = data.results;
-        // Use the math.random
 
         const random = Math.floor(Math.random() * results.length);
         const movie = results[random];
@@ -104,9 +104,12 @@ class Movie extends React.Component {
       <div className="App">
         {this.state.movieData ? (
           <div>
-            <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
-
-            <MovieMain movies={this.state.movieData} />
+            <div className="genres">
+              <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
+            </div>
+            <div className="movieDataInfo">
+              <MovieMain movies={this.state.movieData} />
+            </div>
           </div>
         ) : null}
       </div>
@@ -124,21 +127,29 @@ const MovieBox = props => {
       <p className="movie_title">
         {props.movie.title ? props.movie.title : props.movie.name}
       </p>
-      <img
-        className="movie_poster"
-        src={props.movie.poster_link}
-        alt="movie poster"
-        onClick={() => moveToFeatured(props)}
-      />
-
-      <p className="movie_vote_average">
-        <i className="star_icon fas fa-star"></i>
-        {props.movie.vote_average}
-      </p>
-      <p className="movie_overview">{props.movie.overview}</p>
-      <p className="movie_releaseDate">{props.movie.release_date}</p>
-      <p className="movie_url">{props.movie.url}</p>
-      {console.log(props.movie)}
+      <Fade>
+        <div className="poster fade-in2">
+          <img
+            className="movie_poster"
+            src={props.movie.poster_link}
+            alt="movie poster"
+            onClick={() => moveToFeatured(props)}
+          />
+        </div>
+      </Fade>
+      <Fade>
+        <div className="movieInfo">
+          <h6>Rating</h6>
+          <p className="movie_vote_average">
+            <i className="star_icon fas fa-star"></i>
+            {props.movie.vote_average}
+          </p>
+          <h6>Description</h6>
+          <p className="description">{props.movie.overview}</p>
+          <h6>Release Date</h6>
+          <p className="movie_releaseDate">{props.movie.release_date}</p>
+        </div>
+      </Fade>
     </div>
   );
 };
