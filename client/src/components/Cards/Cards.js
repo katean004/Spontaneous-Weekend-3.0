@@ -13,10 +13,10 @@ const Card = props => {
                     <div className="card-body text-dark">
                         <h4 className="card-title">Restaurant Name</h4>
 
-                        <ul class="list-group list-group-flush">
-                            <li class="card-text text-secondary list-group-item cuisine">Cuisine: Seafood</li>
-                            <li class="card-text text-secondary list-group-item price">Price Range: $$-$$$</li>
-                            <li class="card-text text-secondary list-group-item address">Address: 6525 somewhere st, CA</li>
+                        <ul className="list-group list-group-flush">
+                            <li className="card-text text-secondary list-group-item cuisine">Cuisine: Seafood</li>
+                            <li className="card-text text-secondary list-group-item price">Price Range: $$-$$$</li>
+                            <li className="card-text text-secondary list-group-item address">Address: 6525 somewhere st, CA</li>
                         </ul>
 
                         <a href="#" className="btn btn-outline-success website">Website</a>
