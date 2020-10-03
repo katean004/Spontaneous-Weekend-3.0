@@ -100,10 +100,12 @@ class Movie extends React.Component {
       <div className="App">
         {this.state.movieData ? (
           <div>
-           
-            <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
-
-            <MovieMain movies={this.state.movieData} />
+            <div className="genres">
+              <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
+            </div>
+            <div className="movieDataInfo">
+              <MovieMain movies={this.state.movieData} />
+            </div>
           </div>
         ) : null}
       </div>
@@ -127,18 +129,20 @@ const MovieBox = props => {
         alt="movie poster"
         onClick={() => moveToFeatured(props)}
       />
-
+      <div className="movieInfo">
       <p className="movie_vote_average">
         <i className="star_icon fas fa-star"></i>
         {props.movie.vote_average}
       </p>
-      <p className="movie_overview">{props.movie.overview}</p>
+        <h6>Description</h6>
+        <p className="description">{props.movie.overview}</p>
+        <h6>Release Date</h6>
       <p className="movie_releaseDate">{props.movie.release_date}</p>
       {console.log(props.movie)}
     </div>
+    </div>
   );
 };
-
 
 const MovieBoxContainer = props => (
   <div className="movie_box_container">{props.movies}</div>
