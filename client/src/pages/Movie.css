@@ -7,3 +7,9 @@
 .genres_bar {
   display: flex;
 }
+
+
+.movie_main{
+    margin: 40px;
+    padding: 50px;
+}
