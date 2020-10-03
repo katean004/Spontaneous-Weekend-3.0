@@ -8,7 +8,7 @@ const Card = props => {
             <h1>Restaurant Generator</h1>
                 <div className="card text-center results">
                     <div className="overflow">
-                        <img src="https://www.foodiecrush.com/wp-content/uploads/2016/11/The-Easiest-Dungeness-Crab-Recipe-foodiecrush.com-0011-1-480x270.jpg" className="cardImg" alt="crab"/>
+                        <img src="https://www.foodiecrush.com/wp-content/uploads/2016/11/The-Easiest-Dungeness-Crab-Recipe-foodiecrush.com-0011-1-480x270.jpg" className="img-fluid cardImg" alt="crab"/>
                     </div>
                     <div className="card-body text-dark">
                         <h4 className="card-title">Restaurant Name</h4>
