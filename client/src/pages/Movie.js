@@ -79,7 +79,7 @@ class Movie extends React.Component {
           if (movie.vote_average) {
             const movieBox = <MovieBox movie={movie} key={movie.id} />;
             movie.poster_link = `${image_url}${movie.poster_path}`;
-            movie.url = `${tmdb_url} / ${movie.id}`;
+            movie.url = `${tmdb_url}${movie.id}`;
             movieList.push(movieBox);
           }
         });
