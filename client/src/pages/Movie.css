@@ -1,0 +1,9 @@
+.genre_button {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.genres_bar {
+  display: flex;
+}
