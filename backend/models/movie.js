@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const movieSchema = new mongoose.Schema({
   title: {
     type: String,
-    requried: true
+    required: true
   },
   description: {
     type: String,
@@ -10,7 +10,7 @@ const movieSchema = new mongoose.Schema({
   },
   poster: {
     type: String,
-    requried: true
+    required: true
   },
   runTime: {
     type: Number,
