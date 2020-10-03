@@ -47,7 +47,6 @@ class Movie extends React.Component {
       .then(data => {
         const movieList = [];
         const results = data.results;
-        // Use the math.random
 
         const random = Math.floor(Math.random() * results.length);
         const movie = results[random];
@@ -126,16 +125,17 @@ const MovieBox = props => {
       </p>
       <Fade>
         <div className="poster fade-in2">
-      <img
-        className="movie_poster"
-        src={props.movie.poster_link}
-        alt="movie poster"
-        onClick={() => moveToFeatured(props)}
-      />
-      </div>
+          <img
+            className="movie_poster"
+            src={props.movie.poster_link}
+            alt="movie poster"
+            onClick={() => moveToFeatured(props)}
+          />
+        </div>
       </Fade>
       <Fade>
         <div className="movieInfo">
+          <h6>Rating</h6>
           <p className="movie_vote_average">
             <i className="star_icon fas fa-star"></i>
             {props.movie.vote_average}
@@ -144,7 +144,6 @@ const MovieBox = props => {
           <p className="description">{props.movie.overview}</p>
           <h6>Release Date</h6>
           <p className="movie_releaseDate">{props.movie.release_date}</p>
-          {console.log(props.movie)}
         </div>
       </Fade>
     </div>
