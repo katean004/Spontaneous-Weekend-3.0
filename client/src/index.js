@@ -5,6 +5,8 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "jquery/dist/jquery.min.js";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+// import Card from './components/Cards/Cards';
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(<App />, document.getElementById("root"));
