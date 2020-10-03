@@ -52,7 +52,11 @@ class Movie extends React.Component {
         const movie = results[random];
         const movieBox = <MovieBox movie={movie} key={movie.id} />;
         movie.poster_link = `${image_url}${movie.poster_path}`;
-        movie.url = `${tmdb_url}${movie.id}`;
+        movie.url = (
+          <a target=" _blank" href={`${tmdb_url}/${movie.id}`}>
+            Movie Homepage
+          </a>
+        );
         movieList.push(movieBox);
 
         fetch(
@@ -100,7 +104,6 @@ class Movie extends React.Component {
       <div className="App">
         {this.state.movieData ? (
           <div>
-           
             <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
 
             <MovieMain movies={this.state.movieData} />
@@ -134,11 +137,11 @@ const MovieBox = props => {
       </p>
       <p className="movie_overview">{props.movie.overview}</p>
       <p className="movie_releaseDate">{props.movie.release_date}</p>
+      <p className="movie_url">{props.movie.url}</p>
       {console.log(props.movie)}
     </div>
   );
 };
-
 
 const MovieBoxContainer = props => (
   <div className="movie_box_container">{props.movies}</div>
