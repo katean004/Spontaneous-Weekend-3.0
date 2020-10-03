@@ -1,6 +1,7 @@
 import React from "react";
 // import API from "../utils/API";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Fade from "../components/Fade/Fade";
 import "./Movie.css";
 const tmdb_url = "https://www.themoviedb.org/movie";
 const api_url = "https://api.themoviedb.org";
@@ -78,7 +79,7 @@ class Movie extends React.Component {
           if (movie.vote_average) {
             const movieBox = <MovieBox movie={movie} key={movie.id} />;
             movie.poster_link = `${image_url}${movie.poster_path}`;
-            movie.url = `${tmdb_url}${movie.id}`;
+            movie.url = `${tmdb_url} / ${movie.id}`;
             movieList.push(movieBox);
           }
         });
@@ -123,23 +124,29 @@ const MovieBox = props => {
       <p className="movie_title">
         {props.movie.title ? props.movie.title : props.movie.name}
       </p>
+      <Fade>
+        <div className="poster fade-in2">
       <img
         className="movie_poster"
         src={props.movie.poster_link}
         alt="movie poster"
         onClick={() => moveToFeatured(props)}
       />
-      <div className="movieInfo">
-      <p className="movie_vote_average">
-        <i className="star_icon fas fa-star"></i>
-        {props.movie.vote_average}
-      </p>
-        <h6>Description</h6>
-        <p className="description">{props.movie.overview}</p>
-        <h6>Release Date</h6>
-      <p className="movie_releaseDate">{props.movie.release_date}</p>
-      {console.log(props.movie)}
-    </div>
+      </div>
+      </Fade>
+      <Fade>
+        <div className="movieInfo">
+          <p className="movie_vote_average">
+            <i className="star_icon fas fa-star"></i>
+            {props.movie.vote_average}
+          </p>
+          <h6>Description</h6>
+          <p className="description">{props.movie.overview}</p>
+          <h6>Release Date</h6>
+          <p className="movie_releaseDate">{props.movie.release_date}</p>
+          {console.log(props.movie)}
+        </div>
+      </Fade>
     </div>
   );
 };
