@@ -119,8 +119,8 @@ const MovieBox = props => {
   };
 
   return (
-    <div className="movie_box">
-      <p className="movie_title">
+    <div className="movie_box fade-in2">
+      <p className="movie_title fade-in2">
         {props.movie.title ? props.movie.title : props.movie.name}
       </p>
       <Fade>
