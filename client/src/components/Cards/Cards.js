@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Cards.css";
+import "./cards.css";
 import API from "../../utils/API";
 
 const Card = props => {
