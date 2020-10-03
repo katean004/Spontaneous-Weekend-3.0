@@ -11,7 +11,7 @@ const signupSchema = new mongoose.Schema({
   favorites: {
     type: Array
     // error message
-    // Needs further considertion.
+    // Needs further consideration.
   }
 });
-module.exports = mongoose.model("Signup", signupSchema);
+module.exports = mongoose.model("User", userSchema);
