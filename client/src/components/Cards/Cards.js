@@ -34,6 +34,20 @@ const Card = props => {
                             {featuredRestaurant.name}
                         </h4>
 
+                        <ul className="list-group list-group-flush">
+                            <li className="card-text text-secondary list-group-item cuisine">
+                            {/* {featuredRestaurant.cuisine[0].name} */}
+                            {/* conditional rendering, if cuisine exists then display it, if not dont display */}
+                            Res Cuisine
+                            </li>
+                            <li className="card-text text-secondary list-group-item price">
+                            Price Level: {featuredRestaurant.price_level}
+                            </li>
+                            <li className="card-text text-secondary list-group-item address">
+                            {featuredRestaurant.address}
+                            </li>
+                        </ul>
+
                     <a href={featuredRestaurant.website} target="_blank" className="btn btn-outline-success website">Website</a>
                     <a href="#" className="btn btn-outline-success call">Call</a>
                     </div>
