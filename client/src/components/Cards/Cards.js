@@ -23,10 +23,10 @@ const Card = props => {
     return(
         <>
             <h1>Restaurant Generator</h1>
-            <button onClick={handleClick} >Randomize</button>
+            <button onClick={handleClick} className="btn btn-outline-success random-btn">Randomize</button>
                 <div className="card text-center results">
                     <div className="overflow">
-                        <img src="https://www.foodiecrush.com/wp-content/uploads/2016/11/The-Easiest-Dungeness-Crab-Recipe-foodiecrush.com-0011-1-480x270.jpg" className="img-fluid cardImg" alt="randomized restaurant photo"/>
+                        <img src="https://tinyurl.com/yxcrpbr2" className="img-fluid cardImg" alt="randomized restaurant photo"/>
                     </div>
                     <div className="card-body text-dark">
                         <h4 className="card-title restaurant-name">
@@ -47,7 +47,7 @@ const Card = props => {
                             </li>
                         </ul>
 
-                        <a href="#" className="btn btn-outline-success website">Website</a>
+                        <a href={featuredRestaurant.website} target="_blank" className="btn btn-outline-success website">Website</a>
                         <a href="#" className="btn btn-outline-success call">Call</a>
                     </div>
                 </div>
