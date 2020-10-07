@@ -35,7 +35,8 @@ class Movie extends React.Component {
 
     this.state = {
       featuredMovieData: null,
-      movieData: this.discover()
+      // movieData: this.discover()
+      movieData: []
     };
   }
 
@@ -102,16 +103,22 @@ class Movie extends React.Component {
   render() {
     return (
       <div className="App">
-        {this.state.movieData ? (
-          <div>
-            <div className="genres">
-              <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
-            </div>
-            <div className="movieDataInfo">
-              <MovieMain movies={this.state.movieData} />
-            </div>
+        <div className="genres">
+          <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
+        </div>
+        {this.state.movieData.length ? (
+          <div className="movieDataInfo">
+            <MovieMain movies={this.state.movieData} />
           </div>
-        ) : null}
+        ) : (
+          // ==========Make this into a card.==========
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+            doloremque ad mollitia, et consectetur cum ratione tenetur
+            dignissimos. Hic nihil dicta minima quisquam! Harum soluta quibusdam
+            obcaecati, amet tempore error.
+          </div>
+        )}
       </div>
     );
   }
@@ -139,6 +146,8 @@ const MovieBox = props => {
       </Fade>
       <Fade>
         <div className="movieInfo">
+          {/* Take the movie and save it into the back end. consider Redux or context  */}
+          <button onClick={()=> console.log("Favorite", props.movie)}>Favorite</button>
           <h6>Rating</h6>
           <p className="movie_vote_average">
             <i className="star_icon fas fa-star"></i>
