@@ -1,19 +1,50 @@
-import React from "react";
+import React, { Component } from "react";
 
-function Signup() {
-  return (
-    <div>
-      <h1>Signup</h1>
-      <p>
-        Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
-        Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
-        mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
-        lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-        imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
-        in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
-      </p>
-    </div>
-  );
+export default class SignUp extends Component {
+  render() {
+    return (
+      <form>
+        <h3>Sign Up</h3>
+
+        <div className="form-group">
+          <label>First name</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="First name"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Last name</label>
+          <input type="text" className="form-control" placeholder="Last name" />
+        </div>
+
+        <div className="form-group">
+          <label>Email address</label>
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Enter email"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Enter password"
+          />
+        </div>
+
+        <button type="submit" className="btn btn-primary btn-block">
+          Sign Up
+        </button>
+        <p className="forgot-password text-right">
+          Already registered? <a href="#">log in</a>
+        </p>
+      </form>
+    );
+  }
 }
-
-export default Signup;
