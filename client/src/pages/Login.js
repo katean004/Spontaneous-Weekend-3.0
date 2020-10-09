@@ -18,7 +18,6 @@ import { buttonClicked, isLoading } from "../actions/uiActions";
 import { login } from "../actions/authActions";
 
 import { Link } from "react-router-dom";
-import "./style.css";
 
 class Login extends Component {
   state = {
