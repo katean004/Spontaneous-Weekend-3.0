@@ -5,16 +5,17 @@ import API from "../../utils/API";
 const Card = props => {
   const lat = "33.684566";
   const long = "-117.826508";
-  const favrestaurant = [];
+  // const favrestaurant = [];
 
   const [featuredRestaurant, getfeaturedRestaurant] = useState({});
 
-  function handleClick() {
+  function handleClick(event) {
     //on button click, ask for user location, then do API call
+    event.preventDefault();
     API.getRestaurant(lat, long)
       .then(response => {
-        console.log(response.data.data);
-        getfeaturedRestaurant(response.data.data);
+        console.log(response.data.data[0]);
+        getfeaturedRestaurant(response.data.data[0]);
       })
       .catch(error => {
         console.log(error);
@@ -40,7 +41,8 @@ const Card = props => {
 
           <ul className="list-group list-group-flush">
             <li className="card-text text-secondary list-group-item cuisine">
-              {/* {featuredRestaurant.cuisine[0].name} */}
+              {console.log(featuredRestaurant.cuisine)}
+              {/* {featuredRestaurant.cuisine.name} */}
               {/* conditional rendering, if cuisine exists then display it, if not dont display */}
               Res Cuisine
             </li>
