@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
-const signupSchema = new mongoose.Schema({
+
+const UserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
   email: {
     type: String,
     required: true
@@ -8,10 +13,12 @@ const signupSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  favorites: {
-    type: Array
-    // error message
-    // Needs further consideration.
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
-module.exports = mongoose.model("User", userSchema);
+
+const User = mongoose.model("User", UserSchema);
+
+module.exports = User;
