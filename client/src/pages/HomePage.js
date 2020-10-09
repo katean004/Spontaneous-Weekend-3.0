@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Route, Switch, Link } from "react-router-dom";
 import { Button } from "reactstrap";
 import PropTypes from "prop-types";
-import { buttonClicked } from "../actions/uiActions";
+// import { buttonClicked } from "../actions/uiActions";
 import "./style.css";
 import store from "../store";
 import { isAuth } from "../actions/authActions";
