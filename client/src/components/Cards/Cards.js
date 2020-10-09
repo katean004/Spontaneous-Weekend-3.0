@@ -18,21 +18,17 @@ const Card = props => {
     event.preventDefault();
     API.getRestaurant(lat, long)
       .then(response => {
-
-        const randomIndex = Math.floor(Math.random() * response.data.data.length);
-        getfeaturedRestaurant(response.data.data[randomIndex]);
-
         // console.log(response.data.data[0]);
-        getfeaturedRestaurant(response.data.data[0]);
 
-        console.log(response.data.data);
-        getfeaturedRestaurant(response.data.data);
         const randomIndex = Math.floor(
           Math.random() * response.data.data.length
         );
-        console.log(randomIndex);
-        getfeaturedRestaurant(response.data.data[2]);
+        getfeaturedRestaurant(response.data.data[randomIndex]);
 
+        // ============= Testing to see Data we can get =========
+        console.log(response.data.data[0]);
+        console.log(response.data.data);
+        console.log(response.data.data);
       })
       .catch(error => {
         console.log(error);
@@ -43,9 +39,9 @@ const Card = props => {
   const cuisineError =
     "Sorry! We don't know exactly what type of cuisine they serve, it might be a mix or a total mystery. Try it out anyway!";
   // const websiteError = "Looks like they haven't set a website yet?";
-  const addressError = "What address????"
+  const addressError = "What address????";
   // const phoneError = "Looks like something's wron with their phone number";
-  const nameError = "We don't know the name of this restaurant either lol."
+  const nameError = "We don't know the name of this restaurant either lol.";
   return (
     <div>
       <h1>Restaurant Generator</h1>
