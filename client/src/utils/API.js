@@ -1,16 +1,6 @@
 import axios from "axios";
 // API.getMovies(userGenreChoice)
 export default {
-  getMovies: function () {
-    return axios.get(
-      `https://api.themoviedb.org/3/discover/movie?with_genres=horror&api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US`
-    );
-  },
-  getMoreInfo: function (randomMovie) {
-    return axios.get(
-      `https://api.themoviedb.org/3/movie/${randomMovie}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&append_to_response=release_dates`
-    );
-  },
   //pass in 2 arguments: lat and long
   getRestaurant: function (lat, long) {
     return axios({
