@@ -1,7 +1,7 @@
 import axios from "axios";
 // API.getMovies(userGenreChoice)
 export default {
-
+  //pass in 2 arguments: lat and long
   getRestaurant: function (lat, long) {
     return axios({
       method: "GET",
@@ -22,11 +22,5 @@ export default {
         longitude: long
       }
     });
-    // .then(response => {
-    //   console.log(response);
-    // })
-    // .catch(error => {
-    //   console.log(error)
-    // });
   }
 };
