@@ -4,7 +4,8 @@ import { returnStatus } from "./statusActions";
 import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  REGISTER_SUCCESS,
+  // ============== Uncomment when you wanna use "REGISTER_SUCCESS" ==============
+  // REGISTER_SUCCESS,
   REGISTER_FAIL,
   AUTH_SUCCESS,
   AUTH_FAIL,

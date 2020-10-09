@@ -17,7 +17,6 @@ import PropTypes from "prop-types";
 import { buttonClicked, isLoading } from "../actions/uiActions";
 import { Link } from "react-router-dom";
 import { register } from "../actions/authActions";
-import "./style.css";
 
 class Signup extends Component {
   state = {
