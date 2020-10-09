@@ -26,8 +26,8 @@ const Card = props => {
         getfeaturedRestaurant(response.data.data[randomIndex]);
 
         // ============= Testing to see Data we can get =========
+        console.log(randomIndex)
         console.log(response.data.data[0]);
-        console.log(response.data.data);
         console.log(response.data.data);
       })
       .catch(error => {
