@@ -11,7 +11,8 @@ export default {
       `https://api.themoviedb.org/3/movie/${randomMovie}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&append_to_response=release_dates`
     );
   },
-  getRestaurant: function () {
+  //pass in 2 arguments: lat and long
+  getRestaurant: function (lat, long) {
     return axios({
       method: "GET",
       url: "https://tripadvisor1.p.rapidapi.com/restaurants/list-by-latlng",
@@ -22,13 +23,13 @@ export default {
         useQueryString: true
       },
       params: {
-        limit: "3",
+        limit: "8",
         currency: "USD",
-        distance: "2",
+        distance: "5",
         lunit: "km",
         lang: "en_US",
-        latitude: "33.684566",
-        longitude: "-117.826508"
+        latitude: lat,
+        longitude: long
       }
     })
       // .then(response => {
@@ -39,5 +40,3 @@ export default {
       // });
   }
 };
-
-// REACT_APP_RESTAURANT_API_KEY

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./cards.css";
 import API from "../../utils/API";
 
@@ -9,12 +9,13 @@ const Card = props => {
 
   const [featuredRestaurant, getfeaturedRestaurant] = useState({});
 
-  function handleClick() {
+  function handleClick(event) {
     //on button click, ask for user location, then do API call
+    event.preventDefault();
     API.getRestaurant(lat, long)
       .then(response => {
-        console.log(response.data.data[0]);
-        getfeaturedRestaurant(response.data.data[0]);
+        const randomIndex = Math.floor(Math.random() * response.data.data.length);
+        getfeaturedRestaurant(response.data.data[randomIndex]);
       })
       .catch(error => {
         console.log(error);
@@ -22,29 +23,31 @@ const Card = props => {
     }
 
     return(
-        <>
+        <div>
             <h1>Restaurant Generator</h1>
             <button onClick={handleClick} className="btn btn-outline-success random-btn">Randomize</button>
                 <div className="card text-center results">
                     <div className="overflow">
-                        <img src="https://tinyurl.com/yxcrpbr2" className="img-fluid cardImg" alt="randomized restaurant photo"/>
+                        <img src= {featuredRestaurant.photo ? featuredRestaurant.photo.images.small.url: "https://i.pinimg.com/originals/09/a7/85/09a785fd6f8f926d218c2ef0b18a889c.jpg"} className="img-fluid cardImg" alt="randomized restaurant photo"/>
                     </div>
                     <div className="card-body text-dark">
                         <h4 className="card-title restaurant-name">
-                            {featuredRestaurant.name}
+                            {featuredRestaurant.name ? featuredRestaurant.name: ""}
                         </h4>
 
                         <ul className="list-group list-group-flush">
                             <li className="card-text text-secondary list-group-item cuisine">
-                            {/* {featuredRestaurant.cuisine[0].name} */}
+                            {featuredRestaurant.cuisine && featuredRestaurant.cuisine[0]  ? `Cuisine: ${featuredRestaurant.cuisine[0].name}`: "" }
                             {/* conditional rendering, if cuisine exists then display it, if not dont display */}
-                            Res Cuisine
+                            {/* Res Cuisine */}
                             </li>
                             <li className="card-text text-secondary list-group-item price">
-                            Price Level: {featuredRestaurant.price_level}
+                            {/* Price Level: {featuredRestaurant.price_level} */}
+                            {featuredRestaurant.price_level ? `Price Level: ${featuredRestaurant.price_level}`: ""}
                             </li>
                             <li className="card-text text-secondary list-group-item address">
-                            {featuredRestaurant.address}
+                            {featuredRestaurant.address ? `Address: ${featuredRestaurant.address}` : ""}
+                            {/* {featuredRestaurant.address} */}
                             </li>
                         </ul>
 
@@ -52,13 +55,9 @@ const Card = props => {
                     <a href="#" className="btn btn-outline-success call">Call</a>
                     </div>
             </div>
-        </>
+        </div>
     )
 }
-
-//lavacake: https://ls.imgix.net/recipes/thumbnails/Bosch---Molten-Lava-Cake-RESIZED.jpg?w=640&h=360&auto=compress,format&fit=crop
-//crab: https://www.foodiecrush.com/wp-content/uploads/2016/11/The-Easiest-Dungeness-Crab-Recipe-foodiecrush.com-0011-1-480x270.jpg
-//pizza: https://popmenucloud.com/cdn-cgi/image/width=1200,height=630,format=auto,fit=cover/whfsiyqa/13c30c24-4394-4822-83c6-1e677c36cbeb
 
 export default Card;
 
