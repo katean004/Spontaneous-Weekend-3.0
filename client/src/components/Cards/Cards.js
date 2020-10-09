@@ -1,4 +1,8 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState } from "react";
 import "./cards.css";
 import API from "../../utils/API";
 
@@ -14,21 +18,17 @@ const Card = props => {
     event.preventDefault();
     API.getRestaurant(lat, long)
       .then(response => {
-
-        const randomIndex = Math.floor(Math.random() * response.data.data.length);
-        getfeaturedRestaurant(response.data.data[randomIndex]);
-
         // console.log(response.data.data[0]);
-        getfeaturedRestaurant(response.data.data[0]);
 
-        console.log(response.data.data);
-        getfeaturedRestaurant(response.data.data);
         const randomIndex = Math.floor(
           Math.random() * response.data.data.length
         );
-        console.log(randomIndex);
-        getfeaturedRestaurant(response.data.data[2]);
+        getfeaturedRestaurant(response.data.data[randomIndex]);
 
+        // ============= Testing to see Data we can get =========
+        console.log(randomIndex)
+        console.log(response.data.data[0]);
+        console.log(response.data.data);
       })
       .catch(error => {
         console.log(error);
@@ -38,10 +38,10 @@ const Card = props => {
     "Sorry! This location hasn't set their price range yet, but stay tuned!";
   const cuisineError =
     "Sorry! We don't know exactly what type of cuisine they serve, it might be a mix or a total mystery. Try it out anyway!";
-  const websiteError = "Looks like they haven't set a website yet?";
-  const addressError = "What address????"
-  const phoneError = "Looks like something's wron with their phone number";
-  const nameError = "We don't know the name of this restaurant either lol."
+  // const websiteError = "Looks like they haven't set a website yet?";
+  const addressError = "What address????";
+  // const phoneError = "Looks like something's wron with their phone number";
+  const nameError = "We don't know the name of this restaurant either lol.";
   return (
     <div>
       <h1>Restaurant Generator</h1>
