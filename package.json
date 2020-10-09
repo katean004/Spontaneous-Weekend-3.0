@@ -1,7 +1,7 @@
 {
   "name": "spontaneous-weekend-v3",
   "version": "1.0.0",
-  "description": "<<<<<<< HEAD This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.31",
@@ -24,7 +24,15 @@
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.3"
+    "react-scripts": "^3.4.3",
+    "@hapi/joi": "^16.1.8",
+    "connect-mongodb-session": "^2.3.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express-rate-limit": "^5.1.1",
+    "helmet": "^3.21.3",
+    "session-file-store": "^1.4.0",
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
