@@ -13,8 +13,8 @@ const Card = props => {
     //on button click, ask for user location, then do API call
     API.getRestaurant(lat, long)
       .then(response => {
-        console.log(response.data.data[0]);
-        getfeaturedRestaurant(response.data.data[0]);
+        console.log(response.data.data);
+        getfeaturedRestaurant(response.data.data);
       })
       .catch(error => {
         console.log(error);
