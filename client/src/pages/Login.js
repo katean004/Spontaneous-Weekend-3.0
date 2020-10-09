@@ -1,19 +1,44 @@
-import React from "react";
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function Login() {
-  return (
-    <div>
-      <h1>Login</h1>
-      <p>
-        Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
-        Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
-        mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
-        lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-        imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
-        in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
-      </p>
-    </div>
-  );
+export default class Login extends Component {
+  render() {
+    return (
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <h2 class="loginHead">Welcome Back!</h2>
+            <h3 class="loginHead">Log in to get some weekend ideas.</h3>
+            <form class="login">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email-input"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password-input"
+                  placeholder="Password"
+                />
+              </div>
+              <button type="submit" class="btn btn-default">
+                Login
+              </button>
+            </form>
+            <br />
+            <p>
+              Don't have an account? Sign up <a href="/signup">here</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
-
-export default Login;

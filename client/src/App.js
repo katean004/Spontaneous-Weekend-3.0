@@ -13,17 +13,16 @@ import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {
-
   return (
     <Router>
       <div className="container-fluid p-0">
         <Navbar />
         <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/favorites" component={Favorites} />
         <Route path="/restaurant" component={Restaurant} />
         <Route path="/movie" component={Movie} />
         <Route path="/signup" component={Signup} />
-        <Route path="/login" component={Login} />
         <Footer />
       </div>
     </Router>
