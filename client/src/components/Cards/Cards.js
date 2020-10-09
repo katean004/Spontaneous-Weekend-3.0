@@ -14,13 +14,8 @@ const Card = props => {
     event.preventDefault();
     API.getRestaurant(lat, long)
       .then(response => {
-<<<<<<< HEAD
-        console.log(response.data.data);
-        getfeaturedRestaurant(response.data.data);
-=======
         const randomIndex = Math.floor(Math.random() * response.data.data.length);
         getfeaturedRestaurant(response.data.data[randomIndex]);
->>>>>>> kate
       })
       .catch(error => {
         console.log(error);
