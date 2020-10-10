@@ -8,6 +8,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+
 // import Card from "./components/Cards/Cards";
 // import logo from "./logo.svg";
 import "./App.css";
