@@ -34,8 +34,6 @@ class Movie extends React.Component {
     super(props);
 
     this.state = {
-      featuredMovieData: null,
-      // movieData: this.discover()
       movieData: []
     };
   }
@@ -59,37 +57,9 @@ class Movie extends React.Component {
           </a>
         );
         movieList.push(movieBox);
-
-        fetch(
-          `${api_url}/3/${type}/${results[0].id}?api_key=${api_key}&append_to_response=credits,videos`
-        )
-          .then(response => response.json())
-          .then(data => {
-            this.setState({ featuredMovieData: data, movieData: movieList });
-          });
       });
   }
 
-  search(searchValue) {
-    fetch(
-      `${api_url}/3/search/movie?api_key=${api_key}&language=${language}&query=${searchValue}`
-    )
-      .then(response => response.json())
-      .then(data => {
-        const movieList = [];
-        const results = data.results;
-        results.forEach(movie => {
-          if (movie.poster_path === null) return;
-          if (movie.vote_average) {
-            const movieBox = <MovieBox movie={movie} key={movie.id} />;
-            movie.poster_link = `${image_url}${movie.poster_path}`;
-            movie.url = `${tmdb_url}${movie.id}`;
-            movieList.push(movieBox);
-          }
-        });
-        this.setState({ movieData: movieList });
-      });
-  }
 
   updateDiscover = (type, genre = "") => {
     this.discover(type, genre[1]);
@@ -127,10 +97,6 @@ class Movie extends React.Component {
 }
 
 const MovieBox = props => {
-  const moveToFeatured = hello => {
-    console.log(hello);
-  };
-
   return (
     <div className="movie_box fade-in2">
       <p className="movie_title fade-in2">
@@ -142,7 +108,6 @@ const MovieBox = props => {
             className="movie_poster"
             src={props.movie.poster_link}
             alt="movie poster"
-            onClick={() => moveToFeatured(props)}
           />
         </div>
       </Fade>
