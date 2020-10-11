@@ -135,6 +135,7 @@ const MovieBox = props => {
   );
 };
 
+
 const MovieBoxContainer = props => (
   <div className="movie_box_container">{props.movies}</div>
 );
