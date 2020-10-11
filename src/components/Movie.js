@@ -68,7 +68,6 @@ class Movie extends Component {
       });
   }
 
-
   updateDiscover = (type, genre = "") => {
     this.discover(type, genre[1]);
   };
@@ -122,9 +121,7 @@ const MovieBox = props => {
       <Fade>
         <div className="movieInfo">
           {/* Take the movie and save it into the back end. consider Redux or context  */}
-          <button onClick={() => console.log("Favorite", props.movie)}>
-            Favorite
-          </button>
+          <button onClick={() => handleFavoriteMovie(props)}>Favorite</button>
           <h6>Rating</h6>
           <p className="movie_vote_average">
             <i className="star_icon fas fa-star"></i>
@@ -143,6 +140,13 @@ const MovieBox = props => {
   );
 };
 
+const handleFavoriteMovie = props => {
+  console.log(props.movie);
+
+  fetch("/movie")
+    .then(response => response.json())
+    .then(data => console.log("hello"));
+};
 
 const MovieBoxContainer = props => (
   <div className="movie_box_container">{props.movies}</div>
