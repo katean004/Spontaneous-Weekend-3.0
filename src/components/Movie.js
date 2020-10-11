@@ -46,7 +46,7 @@ class Movie extends Component {
       .then(data => {
         const movieList = [];
         const results = data.results;
-        console.log(results);
+        // console.log(results);
         const random = Math.floor(Math.random() * results.length);
         const movie = results[random];
         const movieBox = <MovieBox movie={movie} key={movie.id} />;
@@ -57,6 +57,14 @@ class Movie extends Component {
           </a>
         );
         movieList.push(movieBox);
+
+        fetch(
+          `${api_url}/3/${type}/${results[0].id}?api_key=${api_key}&append_to_response=credits,videos`
+        )
+          .then(response => response.json())
+          .then(data => {
+            this.setState({ featuredMovieData: data, movieData: movieList });
+          });
       });
   }
 
