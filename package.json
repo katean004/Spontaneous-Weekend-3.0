@@ -1,62 +1,45 @@
 {
-  "name": "spontaneous-weekend-v3",
-  "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
+  "name": "mern-passport",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.31",
     "@fortawesome/free-solid-svg-icons": "^5.15.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "axios": "^0.20.0",
-    "bcrypt": "^5.0.0",
-    "body-parser": "^1.19.0",
+    "axios": "^0.17.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
     "bootstrap": "^4.5.2",
     "concurrently": "^5.3.0",
-    "connect-mongo": "^3.2.0",
-    "express": "^4.16.3",
-    "express-session": "^1.17.1",
+    "connect-mongo": "^2.0.1",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "if-env": "^1.0.4",
     "jquery": "^3.5.1",
-    "mongoose": "^5.10.8",
-    "morgan": "^1.10.0",
-    "passport": "^0.4.1",
+    "mongoose": "^5.0.2",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "popper": "^1.0.1",
     "popper.js": "^1.16.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.3",
-    "@hapi/joi": "^16.1.8",
-    "connect-mongodb-session": "^2.3.1",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express-rate-limit": "^5.1.1",
-    "helmet": "^3.21.3",
-    "session-file-store": "^1.4.0",
-    "react-router-dom": "^5.1.2"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0",
+    "react-transition-group": "^4.3.0",
+    "spectre.css": "^0.5.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "api": "nodemon ./server/server.js",
+    "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\""
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^1.17.5"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/katean004/spontaneous-weekend-v3.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/katean004/spontaneous-weekend-v3/issues"
-  },
-  "homepage": "https://github.com/katean004/spontaneous-weekend-v3#readme"
+  "proxy": "http://localhost:8080"
 }
