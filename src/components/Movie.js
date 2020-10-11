@@ -34,8 +34,6 @@ class Movie extends Component {
     super(props);
 
     this.state = {
-      featuredMovieData: null,
-      // movieData: this.discover()
       movieData: []
     };
   }
@@ -48,7 +46,7 @@ class Movie extends Component {
       .then(data => {
         const movieList = [];
         const results = data.results;
-        console.log(results);
+        // console.log(results);
         const random = Math.floor(Math.random() * results.length);
         const movie = results[random];
         const movieBox = <MovieBox movie={movie} key={movie.id} />;
@@ -67,27 +65,6 @@ class Movie extends Component {
           .then(data => {
             this.setState({ featuredMovieData: data, movieData: movieList });
           });
-      });
-  }
-
-  search(searchValue) {
-    fetch(
-      `${api_url}/3/search/movie?api_key=${api_key}&language=${language}&query=${searchValue}`
-    )
-      .then(response => response.json())
-      .then(data => {
-        const movieList = [];
-        const results = data.results;
-        results.forEach(movie => {
-          if (movie.poster_path === null) return;
-          if (movie.vote_average) {
-            const movieBox = <MovieBox movie={movie} key={movie.id} />;
-            movie.poster_link = `${image_url}${movie.poster_path}`;
-            movie.url = `${tmdb_url}${movie.id}`;
-            movieList.push(movieBox);
-          }
-        });
-        this.setState({ movieData: movieList });
       });
   }
 
@@ -127,10 +104,6 @@ class Movie extends Component {
 }
 
 const MovieBox = props => {
-  const moveToFeatured = hello => {
-    console.log(hello);
-  };
-
   return (
     <div className="movie_box fade-in2">
       <p className="movie_title fade-in2">
@@ -142,16 +115,13 @@ const MovieBox = props => {
             className="movie_poster"
             src={props.movie.poster_link}
             alt="movie poster"
-            onClick={() => moveToFeatured(props)}
           />
         </div>
       </Fade>
       <Fade>
         <div className="movieInfo">
           {/* Take the movie and save it into the back end. consider Redux or context  */}
-          <button onClick={() => console.log("Favorite", props.movie)}>
-            Favorite
-          </button>
+          <button onClick={() => handleFavoriteMovie(props)}>Favorite</button>
           <h6>Rating</h6>
           <p className="movie_vote_average">
             <i className="star_icon fas fa-star"></i>
@@ -168,6 +138,14 @@ const MovieBox = props => {
       </Fade>
     </div>
   );
+};
+
+const handleFavoriteMovie = props => {
+  console.log(props.movie);
+
+  fetch("/movie")
+    .then(response => response.json())
+    .then(data => console.log("hello"));
 };
 
 const MovieBoxContainer = props => (

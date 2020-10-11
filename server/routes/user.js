@@ -63,7 +63,6 @@ router.post("/logout", (req, res) => {
     res.send({ msg: "no user to log out" });
   }
 });
-
 // For favorites
 // router.post('/user/:userid', (req, res)) => {
 

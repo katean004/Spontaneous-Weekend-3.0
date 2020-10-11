@@ -12,6 +12,8 @@ const app = express();
 const PORT = 8080;
 // Route requires
 const user = require("./routes/user");
+const movieRouter = require("./routes/movie");
+const favoritesRouter = require("./routes/favorites");
 
 // MIDDLEWARE
 app.use(morgan("dev"));
@@ -22,6 +24,8 @@ app.use(
 );
 app.use(bodyParser.json());
 app.use(express.static("public"));
+
+app.use(express.json());
 // Sessions
 app.use(
   session({
@@ -38,8 +42,10 @@ app.use(passport.session()); // calls the deserializeUser
 
 // Routes
 app.use("/user", user);
+app.use("/movie", movieRouter);
+app.use("/favorites", favoritesRouter);
 
 // Starting Server
 app.listen(PORT, () => {
-  console.log(`App listening on PORT: ${PORT}`);
+  console.log(`App listening on PORT: http://localhost:${PORT}`);
 });
