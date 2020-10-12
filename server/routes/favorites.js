@@ -1,16 +1,35 @@
 const express = require("express");
 const router = express.Router();
+const FavoriteMovie = require("../database/models/movie");
 
-router.get("/", (req, res) => {
-  res.send("hellowlkshjaf;lkjsa;ldfj");
+/*
+============ Task ============
+
+Find a way to get movie from the component and post it into the favorites page
+*/
+router.get("/", async (req, res) => {
+  try {
+    const favorite__movie = await FavoriteMovie.find();
+    res.json(favorite__movie);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
-router.post("/", (req, res) => {
- /*
- ============== Task ==============
+router.post("/", async (req, res) => {
+  const favorite__movie = new FavoriteMovie({
+    title: req.body.title,
+    description: req.body.description
+  });
 
-    Figure out how to post to the favorites page.
- */
+  try {
+    // Persist the new favmovie in db
+    const newFavoriteMovie = await favorite__movie.save();
+    res.status(201).json(newFavoriteMovie);
+  } catch (err) {
+    // If something is wrong with the data that the user gave us.
+    res.status(400).json({ message: err.message });
+  }
 });
 
 module.exports = router;
