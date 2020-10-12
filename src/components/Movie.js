@@ -72,10 +72,6 @@ class Movie extends Component {
     this.discover(type, genre[1]);
   };
 
-  updateSearch = event => {
-    if (event.length === 0) return;
-    this.search(event);
-  };
 
   render() {
     return (

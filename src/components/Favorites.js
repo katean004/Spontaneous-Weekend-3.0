@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Favorites() {
+  const [faveMovie, setFaveMovie] = useState({});
   return (
     <div>
       <h1>Favorites</h1>
+      <button onClick={displayFavoriteMovie}>Click me!!!</button>
       <p>
-        Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
-        Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
-        mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
-        lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-        imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
-        in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
+        corrupti fugit nulla dolor eaque voluptatibus eius ad dolorum cumque
+        labore, voluptates ab laudantium ex porro praesentium id qui magni
+        beatae.
       </p>
     </div>
   );
 }
-
+const displayFavoriteMovie = () => {
+  fetch("/favorites")
+    .then(res => {
+      res.json();
+    })
+    .then(data => console.log(data));
+};
 export default Favorites;
