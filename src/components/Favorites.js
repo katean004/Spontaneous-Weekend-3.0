@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 // In the movies page find out how to pass props into this.
+// Review Context API this might help
 function Favorites(props) {
   console.log(props);
   // const [faveMovie, setFaveMovie] = useState({});
