@@ -143,9 +143,20 @@ const MovieBox = props => {
 const handleFavoriteMovie = props => {
   console.log(props.movie);
 
-  fetch("/movie")
-    .then(response => response.json())
-    .then(data => console.log("hello"));
+  fetch("/favorites", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      title: props.movie.title,
+      description: props.movie.overview
+    })
+  })
+    .then(res => {
+      return res.json();
+    })
+    .then(data => console.log(data));
 };
 
 const MovieBoxContainer = props => (
