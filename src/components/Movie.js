@@ -117,7 +117,9 @@ const MovieBox = props => {
       <Fade>
         <div className="movieInfo">
           {/* Take the movie and save it into the back end. consider Redux or context  */}
-          <button onClick={() => handleFavoriteMovie(props)}>Favorite</button>
+          <button onClick={() => {
+            handleFavoriteMovie(props);
+            }}>Favorite</button>
           <h6>Rating</h6>
           <p className="movie_vote_average">
             <i className="star_icon fas fa-star"></i>
@@ -136,9 +138,9 @@ const MovieBox = props => {
   );
 };
 
+
 const handleFavoriteMovie = props => {
   console.log(props.movie);
-
   fetch("/favorites", {
     method: "POST",
     headers: {
@@ -154,7 +156,11 @@ const handleFavoriteMovie = props => {
     .then(res => {
       return res.json();
     })
-    .then(data => console.log(data));
+    .then(data =>{
+      console.log(data)
+    });
+
+  
 };
 
 const MovieBoxContainer = props => (
