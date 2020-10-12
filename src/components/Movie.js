@@ -149,8 +149,10 @@ const handleFavoriteMovie = props => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
+      rating: props.movie.vote_average,
       title: props.movie.title,
-      description: props.movie.overview
+      description: props.movie.overview,
+      releaseDate: props.movie.release_date
     })
   })
     .then(res => {
