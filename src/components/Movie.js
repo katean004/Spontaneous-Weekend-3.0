@@ -175,6 +175,19 @@ const handleFavoriteMovie = props => {
       //   description={data.description}
       //   releaseDate={data.releaseDate}
       // />;
+
+      // ===== Getting the information to the back back end =====
+      fetch("/favorites")
+        .then(res => {
+          return res.json();
+        })
+        .then(data => {
+          console.log(
+            "====================================================================="
+          );
+          // This returns an array of objects containing all of the movies when the button is clicked
+          console.log(data);
+        });
     });
 };
 

@@ -28,6 +28,7 @@ const displayFavoriteMovie = () => {
   ===================== Tasks =====================
   - Task 1: Find out how to fetch the information from the back end and console.log
   - Task 2: Find out how to display the information given by the database. 
+  - Task 3: Use a for/forEach() loop to run through the array of objects and display them one at a time.
   */
   fetch("/favorites")
     .then(res => {
