@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import API from "../utils/API";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Fade from "./Fade";
+import Favorites from "./Favorites";
 import "./Movie.css";
 const tmdb_url = "https://www.themoviedb.org/movie";
 const api_url = "https://api.themoviedb.org";
@@ -72,7 +73,6 @@ class Movie extends Component {
     this.discover(type, genre[1]);
   };
 
-
   render() {
     return (
       <div className="App">
@@ -117,9 +117,14 @@ const MovieBox = props => {
       <Fade>
         <div className="movieInfo">
           {/* Take the movie and save it into the back end. consider Redux or context  */}
-          <button onClick={() => {
-            handleFavoriteMovie(props);
-            }}>Favorite</button>
+          <button
+            onClick={() => {
+              handleFavoriteMovie(props);
+              <Favorites properties={props} />;
+            }}
+          >
+            Favorite
+          </button>
           <h6>Rating</h6>
           <p className="movie_vote_average">
             <i className="star_icon fas fa-star"></i>
@@ -138,9 +143,10 @@ const MovieBox = props => {
   );
 };
 
-
 const handleFavoriteMovie = props => {
   console.log(props.movie);
+
+  // ===== Posting the information to the back back end =====
   fetch("/favorites", {
     method: "POST",
     headers: {
@@ -156,11 +162,21 @@ const handleFavoriteMovie = props => {
     .then(res => {
       return res.json();
     })
-    .then(data =>{
-      console.log(data)
+    .then(data => {
+      // ======== Testing to see what info is passed into the back =======
+      console.log(data);
+      console.log(data.rating);
+      console.log(data.title);
+      console.log(data.description);
+      console.log(data.releaseDate);
+      // ========= Attempt to pass this information to the favorites page ====
+      <Favorites
+        rating={data.rating}
+        title={data.title}
+        description={data.description}
+        releaseDate={data.releaseDate}
+      />;
     });
-
-  
 };
 
 const MovieBoxContainer = props => (
