@@ -1,6 +1,9 @@
 // <-------- import useState when ready -------->
 import React from "react";
 
+// <-------- import when ready -------->
+// import { MyFavoriteMovieContext } from "./Movie";
+
 // In the movies page find out how to pass props into this.
 // Review Context API this might help
 function Favorites(props) {
@@ -23,19 +26,32 @@ function Favorites(props) {
 // ================== Working on this part =================
 
 const displayFavoriteMovie = () => {
-
   /*
   ===================== Tasks =====================
   - Task 1: Find out how to fetch the information from the back end and console.log
   - Task 2: Find out how to display the information given by the database. 
   - Task 3: Use a for/forEach() loop to run through the array of objects and display them one at a time.
   */
-  fetch("/favorites")
-    .then(res => {
-      res.json();
-    })
-    // Current this is displaying nothing because no data is being passed into i.
-    .then(data => console.log(data));
+
+  // ============ Attempt to use Context API ============
+  /*
+  <MyFavoriteMovieContext.Consumer>
+    {({ rating, title, description, releaseDate }) => {
+      fetch("/favorites")
+        .then(res => {
+          res.json();
+        })
+        // Current this is displaying nothing because no data is being passed into i.
+        .then(data => console.log(data));
+    }}
+  </MyFavoriteMovieContext.Consumer>;
+  */
+ fetch("/favorites")
+        .then(res => {
+          res.json();
+        })
+        // Current this is displaying nothing because no data is being passed into i.
+        .then(data => console.log(data));
 };
 
 // <-------- Function to split the favorite ( movie and food) -------->

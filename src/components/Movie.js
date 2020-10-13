@@ -168,6 +168,22 @@ const handleFavoriteMovie = props => {
       console.log(data.title);
       console.log(data.description);
       console.log(data.releaseDate);
+      /*
+      ======== Create Context and variables for data ========
+      export const MyFavoriteMovieContext = React.createContext([]);
+      const rating = data.rating;
+      const title = data.title;
+      const description = data.description;
+      const releaseDate = data.releaseDate;
+      // ======== Use Context API ========
+      <MyFavoriteMovieContext.Provider 
+      rating = {rating}
+      title ={title}
+      description ={description}
+      releaseDate ={releaseDate}
+      />
+      */
+
       // ========= Attempt to pass this information to the favorites page ====
       // <Favorites
       //   rating={data.rating}
