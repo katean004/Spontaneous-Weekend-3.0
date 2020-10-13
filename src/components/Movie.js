@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-// import API from "../utils/API";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Fade from "./Fade";
-import Favorites from "./Favorites";
+// <-------------- Use when needed -------------->
+// import Favorites from "./Favorites";
 import "./Movie.css";
 const tmdb_url = "https://www.themoviedb.org/movie";
 const api_url = "https://api.themoviedb.org";
@@ -120,7 +119,7 @@ const MovieBox = props => {
           <button
             onClick={() => {
               handleFavoriteMovie(props);
-              <Favorites properties={props} />;
+              // <Favorites properties={props} />;
             }}
           >
             Favorite
@@ -170,12 +169,12 @@ const handleFavoriteMovie = props => {
       console.log(data.description);
       console.log(data.releaseDate);
       // ========= Attempt to pass this information to the favorites page ====
-      <Favorites
-        rating={data.rating}
-        title={data.title}
-        description={data.description}
-        releaseDate={data.releaseDate}
-      />;
+      // <Favorites
+      //   rating={data.rating}
+      //   title={data.title}
+      //   description={data.description}
+      //   releaseDate={data.releaseDate}
+      // />;
     });
 };
 

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// <-------- import useState when ready -------->
+import React from "react";
 
 // In the movies page find out how to pass props into this.
 // Review Context API this might help
@@ -36,10 +37,12 @@ const displayFavoriteMovie = () => {
     .then(data => console.log(data));
 };
 
-const favoriteMoviesSection = props => {
-  return (
-    // This is where the HTML and CSS will be applied
-    null
-  );
-};
+// <-------- Function to split the favorite ( movie and food) -------->
+
+// const favoriteMoviesSection = props => {
+//   return (
+//     // This is where the HTML and CSS will be applied
+//     null
+//   );
+// };
 export default Favorites;

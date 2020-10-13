@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable jsx-a11y/href-no-hash */
 import React, { useState, useEffect } from "react";
 import "./cards.css";
 import API from "../utils/API";

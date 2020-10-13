@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 
 class Home extends Component {
-  constructor() {
-    super();
-  }
+  // <-------- Useless constructor. Not needed for now -------->
+  // constructor() {
+  //   super();
+  // }
 
   render() {
     return (
