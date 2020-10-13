@@ -38,6 +38,9 @@ class Movie extends Component {
     };
   }
 
+  /*
+  ============= Randomizing the movie depending on the genre clicked =============
+  */
   discover(type = "movie", genre = "") {
     fetch(
       `${api_url}/3/discover/${type}?api_key=${api_key}&language=${language}&with_genres=${genre}`
@@ -47,6 +50,7 @@ class Movie extends Component {
         const movieList = [];
         const results = data.results;
         // console.log(results);
+        // ============= Randomizer =============
         const random = Math.floor(Math.random() * results.length);
         const movie = results[random];
         const movieBox = <MovieBox movie={movie} key={movie.id} />;
@@ -68,6 +72,7 @@ class Movie extends Component {
       });
   }
 
+  // Update the genre
   updateDiscover = (type, genre = "") => {
     this.discover(type, genre[1]);
   };
@@ -97,6 +102,10 @@ class Movie extends Component {
     );
   }
 }
+
+/*
+============= Generate the Movie Box =============
+*/
 
 const MovieBox = props => {
   return (
@@ -142,10 +151,13 @@ const MovieBox = props => {
   );
 };
 
+/*
+============= Favorite Movie Button Functionality =============
+*/
 const handleFavoriteMovie = props => {
   console.log(props.movie);
 
-  // ===== Posting the information to the back back end =====
+  // ===== Posting the information to the back end =====
   fetch("/favorites", {
     method: "POST",
     headers: {
@@ -184,13 +196,19 @@ const handleFavoriteMovie = props => {
       />
       */
 
-      // ========= Attempt to pass this information to the favorites page ====
-      // <Favorites
-      //   rating={data.rating}
-      //   title={data.title}
-      //   description={data.description}
-      //   releaseDate={data.releaseDate}
-      // />;
+
+      /*
+      ========= Attempt to pass this information to the favorites page ====
+      ====== Refer to the onClick function as well to see the other attempt ======
+      <Favorites
+        rating={data.rating}
+        title={data.title}
+        description={data.description}
+        releaseDate={data.releaseDate}
+      />;
+      */
+       
+      
 
       // ===== Getting the information to the back back end =====
       fetch("/favorites")
@@ -207,16 +225,18 @@ const handleFavoriteMovie = props => {
     });
 };
 
+// =============== Generate a Movie Box Container ===============
 const MovieBoxContainer = props => (
   <div className="movie_box_container">{props.movies}</div>
 );
-
+// =============== Generate a Main Div for the movie box ===============
 const MovieMain = props => (
   <div className="movie_main">
     <MovieBoxContainer movies={props.movies} />
   </div>
 );
 
+// =============== Generate a Genre button ===============
 const GenreButton = props => (
   <div
     className="genre_button"
@@ -226,6 +246,7 @@ const GenreButton = props => (
   </div>
 );
 
+// =============== Generate the Genre Bar ===============
 const GenresBar = props => {
   const genresArr = [];
   for (var i = 0; i < Object.keys(props.genres).length; i++) {
