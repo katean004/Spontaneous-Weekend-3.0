@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Route, Link } from "react-router-dom";
+// ======== Use Link When ready to use ========
+import { Route } from "react-router-dom";
 // components
 import Signup from "./components/sign-up";
 import LoginForm from "./components/login-form";
@@ -16,7 +17,8 @@ class App extends Component {
     super();
     this.state = {
       loggedIn: false,
-      username: null
+      username: null,
+      favorite: []
     };
 
     this.getUser = this.getUser.bind(this);
@@ -26,6 +28,8 @@ class App extends Component {
 
   componentDidMount() {
     this.getUser();
+    if (!this.state.favortite){
+    this.getDB()};
   }
 
   updateUser(userObject) {
@@ -34,23 +38,39 @@ class App extends Component {
 
   getUser() {
     axios.get("/user/").then(response => {
-      console.log("Get user response: ");
-      console.log(response.data);
+      // =========== Used for testing code ===========
+      // console.log("Get user response: ");
+      // console.log(response.data);
       if (response.data.user) {
-        console.log("Get User: There is a user saved in the server session: ");
+        // =========== Used for testing code ===========
+        // console.log("Get User: There is a user saved in the server session: ");
 
         this.setState({
           loggedIn: true,
           username: response.data.user.username
         });
       } else {
-        console.log("Get user: no user");
+        // =========== Used for testing code ===========
+        // console.log("Get user: no user");
         this.setState({
           loggedIn: false,
           username: null
         });
       }
     });
+  }
+
+  /*
+    ============== Context API Here ==============
+  */
+
+   getDB() {
+   fetch("/favorites").then(res => res.json()).then(data=>{
+    // console.log(data);
+    this.setState({...this.state, favorite: data})
+  
+  })
+    
   }
 
   render() {
@@ -61,7 +81,9 @@ class App extends Component {
         {this.state.loggedIn && <p>Join the party, {this.state.username}!</p>}
         {/* Routes to different components */}
         <Route exact path="/" component={Home} />
-        <Route exact path="/favorites" component={Favorites} />
+        <Route exact path="/favorites" component={()=>{
+         return <Favorites databaseInfo={this.state.favorite}/>
+          }}/>
         <Route path="/restaurant" component={Restaurant} />
         <Route exact path="/movie" component={Movie} />
         <Route

@@ -18,8 +18,10 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const favorite__movie = new FavoriteMovie({
+    rating: req.body.rating,
     title: req.body.title,
-    description: req.body.description
+    description: req.body.description,
+    releaseDate: req.body.releaseDate
   });
 
   try {
@@ -31,5 +33,10 @@ router.post("/", async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+
+router.get("/id", async (res, req)=>{
+  // res.json("hello")
+  res.send("hekjwbek.sdfjba.fs")
+})
 
 module.exports = router;

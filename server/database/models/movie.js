@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const favoriteMovieSchema = new mongoose.Schema({
+  rating: {
+    type: Number,
+    required: true
+  },
   title: {
     type: String,
     required: true
@@ -8,6 +12,10 @@ const favoriteMovieSchema = new mongoose.Schema({
   description: {
     type: String,
     required: true
+  },
+  releaseDate: {
+    type: Date,
+    required: true,
   }
 });
 

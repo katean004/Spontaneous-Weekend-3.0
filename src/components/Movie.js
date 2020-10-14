@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-// import API from "../utils/API";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Fade from "./Fade";
+// <-------------- Use when needed -------------->
+// import Favorites from "./Favorites";
 import "./Movie.css";
 const tmdb_url = "https://www.themoviedb.org/movie";
 const api_url = "https://api.themoviedb.org";
@@ -38,6 +38,9 @@ class Movie extends Component {
     };
   }
 
+  /*
+  ============= Randomizing the movie depending on the genre clicked =============
+  */
   discover(type = "movie", genre = "") {
     fetch(
       `${api_url}/3/discover/${type}?api_key=${api_key}&language=${language}&with_genres=${genre}`
@@ -47,6 +50,7 @@ class Movie extends Component {
         const movieList = [];
         const results = data.results;
         // console.log(results);
+        // ============= Randomizer =============
         const random = Math.floor(Math.random() * results.length);
         const movie = results[random];
         const movieBox = <MovieBox movie={movie} key={movie.id} />;
@@ -63,18 +67,14 @@ class Movie extends Component {
         )
           .then(response => response.json())
           .then(data => {
-            this.setState({ featuredMovieData: data, movieData: movieList });
+            this.setState({ movieData: movieList });
           });
       });
   }
 
+  // Update the genre
   updateDiscover = (type, genre = "") => {
     this.discover(type, genre[1]);
-  };
-
-  updateSearch = event => {
-    if (event.length === 0) return;
-    this.search(event);
   };
 
   render() {
@@ -103,6 +103,10 @@ class Movie extends Component {
   }
 }
 
+/*
+============= Generate the Movie Box =============
+*/
+
 const MovieBox = props => {
   return (
     <div className="movie_box fade-in2">
@@ -121,7 +125,13 @@ const MovieBox = props => {
       <Fade>
         <div className="movieInfo">
           {/* Take the movie and save it into the back end. consider Redux or context  */}
-          <button onClick={() => handleFavoriteMovie(props)}>Favorite</button>
+          <button
+            onClick={() => {
+              handleFavoriteMovie(props);
+            }}
+          >
+            Favorite
+          </button>
           <h6>Rating</h6>
           <p className="movie_vote_average">
             <i className="star_icon fas fa-star"></i>
@@ -140,24 +150,105 @@ const MovieBox = props => {
   );
 };
 
+/*
+============= Favorite Movie Button Functionality =============
+*/
 const handleFavoriteMovie = props => {
+  // ========== Testing to see what the movie object contains ===========
   console.log(props.movie);
+  console.log(
+    "====================================================================="
+  );
 
-  fetch("/movie")
-    .then(response => response.json())
-    .then(data => console.log("hello"));
+  // ===== Posting the information to the back end =====
+  fetch("/favorites", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      rating: props.movie.vote_average,
+      title: props.movie.title,
+      description: props.movie.overview,
+      releaseDate: props.movie.release_date
+    })
+  })
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      // ======== Testing to see what info is passed into the back =======
+      console.log(data);
+      console.log(
+        "====================================================================="
+      );
+      console.log(data.rating);
+      console.log(
+        "====================================================================="
+      );
+      console.log(data.title);
+      console.log(
+        "====================================================================="
+      );
+      console.log(data.description);
+      console.log(
+        "====================================================================="
+      );
+      console.log(data.releaseDate);
+      /*
+      ======== Create Context and variables for data ========
+      export const MyFavoriteMovieContext = React.createContext([]);
+      const rating = data.rating;
+      const title = data.title;
+      const description = data.description;
+      const releaseDate = data.releaseDate;
+      // ======== Use Context API ========
+      <MyFavoriteMovieContext.Provider 
+      rating = {rating}
+      title ={title}
+      description ={description}
+      releaseDate ={releaseDate}
+      />
+      */
+     
+
+      /*
+      ========= Attempt to pass this information to the favorites page ====
+      ====== Refer to the onClick function as well to see the other attempt ======
+      <Favorites
+        rating={data.rating}
+        title={data.title}
+        description={data.description}
+        releaseDate={data.releaseDate}
+      />;
+      */
+      // ===== Getting the information to the back back end =====
+      fetch("/favorites")
+        .then(res => {
+          return res.json();
+        })
+        .then(data => {
+          console.log(
+            "====================================================================="
+          );
+          // This returns an array of objects containing all of the movies when the button is clicked
+          console.log(data);
+        });
+    });
 };
 
+// =============== Generate a Movie Box Container ===============
 const MovieBoxContainer = props => (
   <div className="movie_box_container">{props.movies}</div>
 );
-
+// =============== Generate a Main Div for the movie box ===============
 const MovieMain = props => (
   <div className="movie_main">
     <MovieBoxContainer movies={props.movies} />
   </div>
 );
 
+// =============== Generate a Genre button ===============
 const GenreButton = props => (
   <div
     className="genre_button"
@@ -167,6 +258,7 @@ const GenreButton = props => (
   </div>
 );
 
+// =============== Generate the Genre Bar ===============
 const GenresBar = props => {
   const genresArr = [];
   for (var i = 0; i < Object.keys(props.genres).length; i++) {
