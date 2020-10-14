@@ -9,7 +9,25 @@ import React from "react";
 function Favorites(props) {
   // ============= Test to see what as in here =============
   console.log(props);
+  const { rating, title, descripton, releaseDate } = props;
   // const [faveMovie, setFaveMovie] = useState({});
+  // Test to see how if the props are defined
+  console.log(
+    "====================================================================="
+  );
+  console.log(rating);
+  console.log(
+    "====================================================================="
+  );
+  console.log(title);
+  console.log(
+    "====================================================================="
+  );
+  console.log(descripton);
+  console.log(
+    "====================================================================="
+  );
+  console.log(releaseDate);
   return (
     <div>
       <h1>Favorites</h1>
