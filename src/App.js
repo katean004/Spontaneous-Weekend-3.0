@@ -28,7 +28,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getUser();
-    if (!this.state.favortite){
+    if (!this.state.favorite){
     this.getDB()};
   }
 
@@ -60,9 +60,7 @@ class App extends Component {
     });
   }
 
-  /*
-    ============== Context API Here ==============
-  */
+  
 
    getDB() {
    fetch("/favorites").then(res => res.json()).then(data=>{
