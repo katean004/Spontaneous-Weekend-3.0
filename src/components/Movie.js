@@ -210,6 +210,7 @@ const handleFavoriteMovie = props => {
       releaseDate ={releaseDate}
       />
       */
+     
 
       /*
       ========= Attempt to pass this information to the favorites page ====
@@ -221,21 +222,19 @@ const handleFavoriteMovie = props => {
         releaseDate={data.releaseDate}
       />;
       */
-     // ===== Getting the information to the back back end =====
-    fetch("/favorites")
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      console.log(
-        "====================================================================="
-      );
-      // This returns an array of objects containing all of the movies when the button is clicked
-      console.log(data);
+      // ===== Getting the information to the back back end =====
+      fetch("/favorites")
+        .then(res => {
+          return res.json();
+        })
+        .then(data => {
+          console.log(
+            "====================================================================="
+          );
+          // This returns an array of objects containing all of the movies when the button is clicked
+          console.log(data);
+        });
     });
-
-    });
-    
 };
 
 // =============== Generate a Movie Box Container ===============

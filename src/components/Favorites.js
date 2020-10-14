@@ -8,31 +8,32 @@ import React from "react";
 // Review Context API this might help
 function Favorites(props) {
   // ============= Test to see what as in here =============
-  console.log(props);
-  const { rating, title, descripton, releaseDate } = props;
-  // const [faveMovie, setFaveMovie] = useState({});
-  // Test to see how if the props are defined
-  console.log(
-    "====================================================================="
-  );
-  console.log(rating);
-  console.log(
-    "====================================================================="
-  );
-  console.log(title);
-  console.log(
-    "====================================================================="
-  );
-  console.log(descripton);
-  console.log(
-    "====================================================================="
-  );
-  console.log(releaseDate);
+  console.log(props.databaseInfo);
+  // const { rating, title, descripton, releaseDate } = props;
+  // // const [faveMovie, setFaveMovie] = useState({});
+  // // Test to see how if the props are defined
+  // console.log(
+  //   "====================================================================="
+  // );
+  // console.log(rating);
+  // console.log(
+  //   "====================================================================="
+  // );
+  // console.log(title);
+  // console.log(
+  //   "====================================================================="
+  // );
+  // console.log(descripton);
+  // console.log(
+  //   "====================================================================="
+  // );
+  // console.log(releaseDate);
   return (
     <div>
       <h1>Favorites</h1>
       <button onClick={() => displayFavoriteMovie(props)}>Click me!!!</button>
       <p>
+        {/* The for loop/ for each will be inside here. Use a component here.*/}
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
         corrupti fugit nulla dolor eaque voluptatibus eius ad dolorum cumque
         labore, voluptates ab laudantium ex porro praesentium id qui magni
@@ -68,7 +69,7 @@ const displayFavoriteMovie = () => {
     }}
   </MyFavoriteMovieContext.Consumer>;
   */
-  fetch("/favorites")
+  fetch("/favorites/:id")
     .then(res => {
       res.json();
     })

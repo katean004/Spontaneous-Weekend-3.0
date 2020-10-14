@@ -17,7 +17,8 @@ class App extends Component {
     super();
     this.state = {
       loggedIn: false,
-      username: null
+      username: null,
+      favorite: []
     };
 
     this.getUser = this.getUser.bind(this);
@@ -27,6 +28,8 @@ class App extends Component {
 
   componentDidMount() {
     this.getUser();
+    if (!this.state.favortite){
+    this.getDB()};
   }
 
   updateUser(userObject) {
@@ -57,6 +60,19 @@ class App extends Component {
     });
   }
 
+  /*
+    ============== Context API Here ==============
+  */
+
+   getDB() {
+   fetch("/favorites").then(res => res.json()).then(data=>{
+    // console.log(data);
+    this.setState({...this.state, favorite: data})
+  
+  })
+    
+  }
+
   render() {
     return (
       <div className="App">
@@ -65,7 +81,9 @@ class App extends Component {
         {this.state.loggedIn && <p>Join the party, {this.state.username}!</p>}
         {/* Routes to different components */}
         <Route exact path="/" component={Home} />
-        <Route exact path="/favorites" component={Favorites} />
+        <Route exact path="/favorites" component={()=>{
+         return <Favorites databaseInfo={this.state.favorite}/>
+          }}/>
         <Route path="/restaurant" component={Restaurant} />
         <Route exact path="/movie" component={Movie} />
         <Route
