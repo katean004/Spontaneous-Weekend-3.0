@@ -67,7 +67,7 @@ class Movie extends Component {
         )
           .then(response => response.json())
           .then(data => {
-            this.setState({ featuredMovieData: data, movieData: movieList });
+            this.setState({ movieData: movieList });
           });
       });
   }
