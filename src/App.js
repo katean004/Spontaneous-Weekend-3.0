@@ -28,8 +28,9 @@ class App extends Component {
 
   componentDidMount() {
     this.getUser();
-    if (!this.state.favorite){
-    this.getDB()};
+    if (!this.state.favorite.length) {
+      this.getDB();
+    }
   }
 
   updateUser(userObject) {
@@ -60,14 +61,15 @@ class App extends Component {
     });
   }
 
-  
-
-   getDB() {
-   fetch("/favorites").then(res => res.json()).then(data=>{
-    // console.log(data);
-    this.setState({...this.state, favorite: data})
-  
-  })
+  getDB() {
+    console.log("ldkfhlsafjsado;fl");
+    // We use set timeout to mimic a time delay that it would take to gather the data
+    
+      fetch("/favorites/")
+        .then(res => res.json())
+        .then(data => {
+          this.setState({ ...this.state, favorite: data });
+        });
     
   }
 
@@ -79,9 +81,13 @@ class App extends Component {
         {this.state.loggedIn && <p>Join the party, {this.state.username}!</p>}
         {/* Routes to different components */}
         <Route exact path="/" component={Home} />
-        <Route exact path="/favorites" component={()=>{
-         return <Favorites databaseInfo={this.state.favorite}/>
-          }}/>
+        <Route
+          exact
+          path="/favorites"
+          component={() => {
+            return <Favorites databaseInfo={this.state.favorite} />;
+          }}
+        />
         <Route path="/restaurant" component={Restaurant} />
         <Route exact path="/movie" component={Movie} />
         <Route

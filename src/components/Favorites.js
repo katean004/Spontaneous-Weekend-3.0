@@ -1,4 +1,5 @@
 // <-------- import useState when ready -------->
+import { map } from "jquery";
 import React from "react";
 
 // <-------- import when ready -------->
@@ -31,14 +32,34 @@ function Favorites(props) {
   return (
     <div>
       <h1>Favorites</h1>
-      <button onClick={() => displayFavoriteMovie(props)}>Click me!!!</button>
-      <p>
-        {/* The for loop/ for each will be inside here. Use a component here.*/}
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
-        corrupti fugit nulla dolor eaque voluptatibus eius ad dolorum cumque
-        labore, voluptates ab laudantium ex porro praesentium id qui magni
-        beatae.
-      </p>
+      {props.databaseInfo.length ? (
+        <div style={{ dispay: "flex", justifyContent: "space-evenly" }}>
+          <div style={{ width: "50%" }}>
+            {props.databaseInfo.map(movie => (
+              // Needed for differentiation
+              <div className="movie__row" key={movie._id}>
+                <div className="1">{movie.rating}</div>
+                <div className="2">{movie.title}</div>
+                <div className="3">{movie.description}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{}}>
+            {props.databaseInfo.map(movie => (
+              // Needed for differentiation
+
+              <div className="movie__row" key={movie._id}>
+                <div className="1">{movie.rating}</div>
+                <div className="2">{movie.title}</div>
+                <div className="3">{movie.description}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div>Hello</div>
+      )}
+      {/* The for loop/ for each will be inside here. Use a component here.*/}
     </div>
   );
 }
@@ -69,7 +90,7 @@ const displayFavoriteMovie = () => {
     }}
   </MyFavoriteMovieContext.Consumer>;
   */
-  fetch("/favorites/:id")
+  fetch("/favorites")
     .then(res => {
       res.json();
     })
