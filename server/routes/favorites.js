@@ -34,9 +34,5 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/id", async (res, req)=>{
-  // res.json("hello")
-  res.send("hekjwbek.sdfjba.fs")
-})
 
 module.exports = router;

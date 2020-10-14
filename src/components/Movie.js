@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Fade from "./Fade";
-// <-------------- Use when needed -------------->
-// import Favorites from "./Favorites";
 import "./Movie.css";
 const tmdb_url = "https://www.themoviedb.org/movie";
 const api_url = "https://api.themoviedb.org";
