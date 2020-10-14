@@ -155,7 +155,11 @@ const MovieBox = props => {
 ============= Favorite Movie Button Functionality =============
 */
 const handleFavoriteMovie = props => {
+  // ========== Testing to see what the movie object contains ===========
   console.log(props.movie);
+  console.log(
+    "====================================================================="
+  );
 
   // ===== Posting the information to the back end =====
   fetch("/favorites", {
@@ -176,9 +180,21 @@ const handleFavoriteMovie = props => {
     .then(data => {
       // ======== Testing to see what info is passed into the back =======
       console.log(data);
+      console.log(
+        "====================================================================="
+      );
       console.log(data.rating);
+      console.log(
+        "====================================================================="
+      );
       console.log(data.title);
+      console.log(
+        "====================================================================="
+      );
       console.log(data.description);
+      console.log(
+        "====================================================================="
+      );
       console.log(data.releaseDate);
       /*
       ======== Create Context and variables for data ========
@@ -196,7 +212,6 @@ const handleFavoriteMovie = props => {
       />
       */
 
-
       /*
       ========= Attempt to pass this information to the favorites page ====
       ====== Refer to the onClick function as well to see the other attempt ======
@@ -207,8 +222,6 @@ const handleFavoriteMovie = props => {
         releaseDate={data.releaseDate}
       />;
       */
-       
-      
 
       // ===== Getting the information to the back back end =====
       fetch("/favorites")
