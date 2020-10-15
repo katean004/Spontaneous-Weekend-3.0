@@ -73,9 +73,9 @@ class Navbar extends Component {
               </ul>
             ) : (
               <ul className="navbar-nav ml-auto">
-                <Link to="/" className="nav-link">
+                {/* <Link to="/" className="nav-link">
                   <li className="nav-item list-unstyled">Home</li>
-                </Link>
+                </Link> */}
                 <Link to="/login" className="nav-link">
                   <li className="nav-item list-unstyled">Log In</li>
                 </Link>
