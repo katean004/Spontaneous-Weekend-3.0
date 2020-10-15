@@ -8,28 +8,39 @@
   width: 50%;
   float: left;
   padding: 40px;
-  border: 2px solid red;
   margin-bottom: 100px;
   justify-content: space-around;
 }
 
 .movie__SubRow,
 .restaurant__SubRow {
-  padding: 40px;
-  border: 2px solid red;
-  margin: 30px;
+  padding: 50px;
+  margin-bottom: 200px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 3px black
 }
 
 .favorite__header {
   text-transform: uppercase;
   text-decoration: underline;
+  margin-bottom: 50px;
 }
 
 .placeholder__paragraph {
-  margin: 200px;
-  padding: 40px;
+  margin: 300px;
+  /* padding: 40px; */
   font-size: xx-large;
   font-weight: bolder;
   border-radius: 50px;
   box-shadow: 0 0 40px 2px #eaeaea;
 }
+
+.movie__rating, .movie__title, .movie__description{
+  padding: 20px;
+}
+
+.movie__title{
+  font-size: xx-large;
+  font-weight: bolder;
+}
+

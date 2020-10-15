@@ -1,5 +1,6 @@
 import React from "react";
 import "./Favorite.css";
+import Fade from "../Fade/Fade"
 
 function Favorites(props) {
   // ============= Test to see what as in here =============
@@ -10,26 +11,30 @@ function Favorites(props) {
       <h1 className="favorite__header">Favorites</h1>
       {props.databaseInfo.length ? (
         <div className="container-fluid">
-          <div className="column movie__row">
+          <div className=" movie__row">
             <h1 className="favorite__header">Movies</h1>
             {props.databaseInfo.map(movie => (
               // Needed for differentiation
-              <div className="movie__SubRow" key={movie._id}>
-                <div className="movie__rating">{movie.rating}</div>
+              <Fade>
+              <div className="movie__SubRow fade-in2" key={movie._id}>
                 <div className="movie__title">{movie.title}</div>
+                <div className="movie__rating">Rating: {movie.rating}</div>
                 <div className="movie__description">{movie.description}</div>
               </div>
+              </Fade>
             ))}
           </div>
-          <div className="column restaurant__row">
+          <div className=" restaurant__row ">
             <h1 className="favorite__header">Restaurants</h1>
             {props.databaseInfo.map(movie => (
               // Needed for differentiation
-              <div className="restaurant__SubRow" key={movie._id}>
-                <div className="1">{movie.rating}</div>
-                <div className="2">{movie.title}</div>
-                <div className="3">{movie.description}</div>
+              <Fade>
+              <div className="restaurant__SubRow fade-in2" key={movie._id}>
+                <div className="movie__title">{movie.title}</div>
+                <div className="movie__rating">Rating: {movie.rating}</div>
+                <div className="movie__description">{movie.description}</div>
               </div>
+              </Fade>
             ))}
           </div>
         </div>
