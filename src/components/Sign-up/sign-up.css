@@ -1,22 +1,30 @@
-/* .container {
-  margin-top: 200px;
+.form-container {
   display: flex;
   justify-content: center;
-}
-.container,
-.signupHead {
-  color: white;
+  align-items: center;
 }
 
-.row {
-  padding: 10px;
-  width: 100%;
-  text-align: center;
-  background-color: #151c15;
-  border: 2px solid black;
-  border-radius: 40px;
-  box-shadow: 0 0 40px black;
+.formColumns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
-form.signup {
-  margin-top: 40px;
+
+.form-input {
+  margin: 10px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SignupForm {
+  background-color: #a7efe9;
+}
+
+/* .red {
+  background-color: darkred;
 } */
