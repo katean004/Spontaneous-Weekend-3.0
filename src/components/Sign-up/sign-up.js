@@ -62,8 +62,8 @@ class Signup extends Component {
       return (
         <div className="container grid-lg form-container">
           <div className="formColumns col-12 ">
-            <div className="SignupForm red col-12">
-              <h4>Sign up</h4>
+            <div className="SignupForm col-12">
+              <h1 className="form-heading">Join our community</h1>
               <form className="form-horizontal ">
                 <div className="columns">
                   <div className="form-group">
