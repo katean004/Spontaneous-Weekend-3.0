@@ -38,6 +38,56 @@ const Card = props => {
       });
   }
 
+  const handleFoodFavorite = props => {
+    console.log("==========Favorited=========");
+    console.log(props);
+
+    fetch("/favoriteFoods", {
+      method: "POST",
+      header: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        cuisine: props.cuisine,
+        address: props.address,
+        website: props.website
+      })
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        console.log(data);
+        console.log(
+          "====================================================================="
+        );
+        console.log(data.cuisine);
+        console.log(
+          "====================================================================="
+        );
+        console.log(data.address);
+        console.log(
+          "====================================================================="
+        );
+        console.log(data.website);
+
+        /*
+      ============== Testing "get" ===============
+      */
+        fetch("/favoriteFoods")
+          .then(res => {
+            return res.json();
+          })
+          .then(data => {
+            console.log(
+              "====================================================================="
+            );
+            // This returns an array of objects containing all of the movies when the button is clicked
+            console.log(data);
+          });
+      });
+  };
+
   const priceError =
     "Sorry! This location hasn't set their price range yet, but stay tuned!";
   const cuisineError =
@@ -73,6 +123,9 @@ const Card = props => {
             {featuredRestaurant.name ? featuredRestaurant.name : nameError}
           </h4>
 
+          <button onClick={() => handleFoodFavorite(featuredRestaurant)}>
+            Favorite
+          </button>
           <ul className="list-group list-group-flush">
             <li className="card-text text-secondary list-group-item cuisine">
               {featuredRestaurant.cuisine && featuredRestaurant.cuisine[0]

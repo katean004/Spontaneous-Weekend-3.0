@@ -43,7 +43,7 @@ app.use(passport.session()); // calls the deserializeUser
 // Routes
 app.use("/user", user);
 app.use("/favoriteMovies", favoriteMoviesRouter);
-app.use("/favoriteFood", favoriteFoodsRouter);
+app.use("/favoriteFoods", favoriteFoodsRouter);
 
 // Starting Server
 app.listen(PORT, () => {
