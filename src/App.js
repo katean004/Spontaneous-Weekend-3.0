@@ -3,14 +3,14 @@ import axios from "axios";
 // ======== Use Link When ready to use ========
 import { Route } from "react-router-dom";
 // components
-import Signup from "./components/sign-up";
-import LoginForm from "./components/login-form";
-import Navbar from "./components/navbar";
-import Home from "./components/home";
-import Movie from "./components/Movie";
-import Restaurant from "./components/Restaurant";
-import Favorites from "./components/Favorites";
-import Footer from "./components/Footer";
+import Signup from "../src/components/Sign-up/sign-up";
+import LoginForm from "./components/Login-Form/login-form";
+import Navbar from "./components/Navbar/navbar";
+import Home from "./components/Home/home";
+import Movie from "./components/Movie/Movie";
+import Restaurant from "./components/Restaurant/Restaurant";
+import Favorites from "./components/Favorites/Favorites";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
   constructor() {
@@ -28,8 +28,9 @@ class App extends Component {
 
   componentDidMount() {
     this.getUser();
-    if (!this.state.favortite){
-    this.getDB()};
+    if (!this.state.favorite) {
+      this.getDB();
+    }
   }
 
   updateUser(userObject) {
@@ -64,13 +65,13 @@ class App extends Component {
     ============== Context API Here ==============
   */
 
-   getDB() {
-   fetch("/favorites").then(res => res.json()).then(data=>{
-    // console.log(data);
-    this.setState({...this.state, favorite: data})
-  
-  })
-    
+  getDB() {
+    fetch("/favorites")
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data);
+        this.setState({ ...this.state, favorite: data });
+      });
   }
 
   render() {
@@ -81,9 +82,13 @@ class App extends Component {
         {this.state.loggedIn && <p>Join the party, {this.state.username}!</p>}
         {/* Routes to different components */}
         <Route exact path="/" component={Home} />
-        <Route exact path="/favorites" component={()=>{
-         return <Favorites databaseInfo={this.state.favorite}/>
-          }}/>
+        <Route
+          exact
+          path="/favorites"
+          component={() => {
+            return <Favorites databaseInfo={this.state.favorite} />;
+          }}
+        />
         <Route path="/restaurant" component={Restaurant} />
         <Route exact path="/movie" component={Movie} />
         <Route
