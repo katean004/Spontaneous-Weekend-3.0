@@ -13,25 +13,25 @@
 
 .form-input {
   margin: 10px;
-  border: 1px solid white;
+  border: 1px solid black;
   text-align: center;
   border-radius: 5px;
 }
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #fbe1b6;
+  color: gray;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #fbe1b6;
+  color: gray;
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #fbe1b6;
+  color: gray;
 }
 
 input[type="text"],
@@ -39,7 +39,7 @@ textarea,
 select {
   font-size: 16px;
   font-style: bold;
-  color: #fbac91;
+  color: black;
 }
 
 input[type="password"],
@@ -47,11 +47,11 @@ textarea,
 select {
   font-size: 16px;
   font-style: bold;
-  color: #fbac91;
+  color: black;
 }
 
 input[type="text"]:focus {
-  border: 1px solid #fbac91;
+  border: 1px solid black;
 }
 
 .center {
@@ -65,16 +65,16 @@ input[type="text"]:focus {
   padding: 50px;
   margin-bottom: 200px;
   border-radius: 20px;
-  box-shadow: 0 0 20px 3px #a7efe9;
+  box-shadow: 0 0 20px 3px gray;
 }
 
 .form-heading {
   font-size: xx-large;
   padding-bottom: 20px;
-  color: #32b643;
+  color: black;
 }
 
 .form-label {
-  color: white;
+  color: black;
   font-size: large;
 }

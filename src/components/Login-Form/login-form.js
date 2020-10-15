@@ -100,7 +100,7 @@ class LoginForm extends Component {
                 <div className="columns">
                   <div className="form-group ">
                     <button
-                      className="btn btn-lg text-light btn-success"
+                      className="btn btn-lg text-light btn-dark"
                       onClick={this.handleSubmit}
                       type="submit"
                     >
