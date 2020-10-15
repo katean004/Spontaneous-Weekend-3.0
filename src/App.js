@@ -28,7 +28,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getUser();
-    if (!this.state.favorite) {
+    if (!this.state.favorite.length) {
       this.getDB();
     }
   }
@@ -69,7 +69,6 @@ class App extends Component {
     fetch("/favorites")
       .then(res => res.json())
       .then(data => {
-        // console.log(data);
         this.setState({ ...this.state, favorite: data });
       });
   }
@@ -86,7 +85,7 @@ class App extends Component {
           exact
           path="/favorites"
           component={() => {
-            return <Favorites databaseInfo={this.state.favorite} />;
+            return <Favorites databaseInfo={this.state.favorite}  />;
           }}
         />
         <Route path="/restaurant" component={Restaurant} />

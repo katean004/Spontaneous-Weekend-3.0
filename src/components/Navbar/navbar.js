@@ -67,7 +67,7 @@ class Navbar extends Component {
                 <Link to="/restaurant" className="nav-link">
                   <li className="nav-item list-unstyled">Restaurants</li>
                 </Link>
-                <Link to="/favorites" className="nav-link">
+                <Link to="/favorites" className="nav-link" onLoad={()=>window.location.reload(false)}>
                   <li className="nav-item list-unstyled">Favorites</li>
                 </Link>
               </ul>
