@@ -4,7 +4,7 @@
 /* eslint-disable jsx-a11y/href-no-hash */
 import React, { useState, useEffect } from "react";
 import "./cards.css";
-import API from "../utils/API";
+import API from "../../utils/API";
 
 const Card = props => {
   let lat = "";

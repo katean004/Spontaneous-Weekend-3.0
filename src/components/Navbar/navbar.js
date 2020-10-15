@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // import { Redirect } from "react-router-dom";
 // ======= use Route when ready to use =======
 import { Link } from "react-router-dom";
-import "../App.css";
+import "../../App.css";
 import axios from "axios";
 import "./navbar.css";
 

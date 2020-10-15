@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Fade from "./Fade";
+import Fade from "../Fade/Fade";
 // <-------------- Use when needed -------------->
 // import Favorites from "./Favorites";
 import "./Movie.css";
@@ -210,7 +210,6 @@ const handleFavoriteMovie = props => {
       releaseDate ={releaseDate}
       />
       */
-     
 
       /*
       ========= Attempt to pass this information to the favorites page ====
