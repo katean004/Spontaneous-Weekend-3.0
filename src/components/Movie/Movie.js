@@ -161,7 +161,7 @@ const handleFavoriteMovie = props => {
   );
 
   // ===== Posting the information to the back end =====
-  fetch("/favorites", {
+  fetch("/favoriteMovies", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -222,7 +222,7 @@ const handleFavoriteMovie = props => {
       />;
       */
       // ===== Getting the information to the back back end =====
-      fetch("/favorites")
+      fetch("/favoriteMovies")
         .then(res => {
           return res.json();
         })

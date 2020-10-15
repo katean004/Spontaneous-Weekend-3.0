@@ -18,7 +18,7 @@ class App extends Component {
     this.state = {
       loggedIn: false,
       username: null,
-      favorite: []
+      favoriteMovies: []
     };
 
     this.getUser = this.getUser.bind(this);
@@ -28,8 +28,8 @@ class App extends Component {
 
   componentDidMount() {
     this.getUser();
-    if (!this.state.favorite.length) {
-      this.getDB();
+    if (!this.state.favoriteMovies.length) {
+      this.getMovieDB();
     }
   }
 
@@ -65,11 +65,11 @@ class App extends Component {
     ============== Context API Here ==============
   */
 
-  getDB() {
-    fetch("/favorites")
+  getMovieDB() {
+    fetch("/favoriteMovies")
       .then(res => res.json())
       .then(data => {
-        this.setState({ ...this.state, favorite: data });
+        this.setState({ ...this.state, favoriteMovies: data });
       });
   }
 
@@ -85,7 +85,7 @@ class App extends Component {
           exact
           path="/favorites"
           component={() => {
-            return <Favorites databaseInfo={this.state.favorite}  />;
+            return <Favorites databaseInfo={this.state.favoriteMovies}  />;
           }}
         />
         <Route path="/restaurant" component={Restaurant} />
