@@ -68,7 +68,7 @@ class Signup extends Component {
                 <div className="columns">
                   <div className="form-group">
                     <label className="form-label" htmlFor="username">
-                      Pick you username:
+                      Pick your username:
                     </label>
 
                     <input
