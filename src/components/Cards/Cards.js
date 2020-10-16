@@ -84,13 +84,13 @@ const Card = () => {
   };
 
   const priceError =
-    "Sorry! This location hasn't set their price range yet, but stay tuned!";
+    "Price range not available";
   const cuisineError =
-    "Sorry! We don't know exactly what type of cuisine they serve, it might be a mix or a total mystery. Try it out anyway!";
+    "Cusine not available";
   // const websiteError = "Looks like they haven't set a website yet?";
-  const addressError = "What address????";
+  const addressError = "Address not available";
   // const phoneError = "Looks like something's wrong with their phone number";
-  const nameError = "We don't know the name of this restaurant either lol.";
+  const nameError = "Name not available";
 
   return (
     <div>
