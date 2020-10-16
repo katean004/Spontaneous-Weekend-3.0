@@ -1,6 +1,7 @@
 import React from "react";
 import "./Favorite.css";
 import Fade from "../Fade/Fade"
+import {v4 as uuidv4} from "uuid"
 
 function Favorites(props) {
   // ============= Test to see what as in here =============
@@ -9,13 +10,14 @@ function Favorites(props) {
   return (
     <div>
       <h1 className="favorite__header">Favorites</h1>
+      <button className = "favorites__refresh"onClick={()=> window.location.reload(true)}>Refresh Favorites</button>
       {props.databaseInfo.length ? (
         <div className="container-fluid">
           <div className=" movie__row">
             <h1 className="favorite__header">Movies</h1>
             {props.databaseInfo.map(movie => (
               // Needed for differentiation
-              <Fade>
+              <Fade key = {uuidv4()}>
               <div className="movie__SubRow fade-in2" key={movie._id}>
                 <div className="movie__title">{movie.title}</div>
                 <div className="movie__rating">Rating: {movie.rating}</div>
@@ -28,7 +30,7 @@ function Favorites(props) {
             <h1 className="favorite__header">Restaurants</h1>
             {props.databaseInfo.map(movie => (
               // Needed for differentiation
-              <Fade>
+              <Fade key = {uuidv4()}>
               <div className="restaurant__SubRow fade-in2" key={movie._id}>
                 <div className="movie__title">{movie.title}</div>
                 <div className="movie__rating">Rating: {movie.rating}</div>
