@@ -6,12 +6,29 @@ import { Link } from "react-router-dom";
 import "../../App.css";
 import axios from "axios";
 import "./navbar.css";
+// import Landing from "../LandingPage/Landing";
 
 class Navbar extends Component {
   constructor() {
     super();
     this.logout = this.logout.bind(this);
   }
+
+  state = {
+    redirect: false
+  }
+
+  setRedirect = () =>{
+    this.setState({
+      redirect: true
+    })
+  }
+
+  // renderRedirect = () => {
+  //   if(this.state.redirect){
+  //     return <Landing
+  //   }
+  // }
 
   logout(event) {
     event.preventDefault();
@@ -53,6 +70,7 @@ class Navbar extends Component {
             <li className="navbar-toggler-icon"></li>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
+            {/* If we log out in any page we should be redireced to the landing page how do we do that?? */}
             {loggedIn ? (
               <ul className="navbar-nav ml-auto">
                 <Link to="/" className="nav-link" onClick={this.logout}>
@@ -67,15 +85,15 @@ class Navbar extends Component {
                 <Link to="/restaurant" className="nav-link">
                   <li className="nav-item list-unstyled">Restaurants</li>
                 </Link>
-                <Link to="/favorites" className="nav-link" onLoad={()=>window.location.reload(false)}>
+                <Link to="/favorites" className="nav-link" >
                   <li className="nav-item list-unstyled">Favorites</li>
                 </Link>
               </ul>
             ) : (
               <ul className="navbar-nav ml-auto">
-                <Link to="/" className="nav-link">
+                {/* <Link to="/" className="nav-link">
                   <li className="nav-item list-unstyled">Home</li>
-                </Link>
+                </Link> */}
                 <Link to="/login" className="nav-link">
                   <li className="nav-item list-unstyled">Log In</li>
                 </Link>

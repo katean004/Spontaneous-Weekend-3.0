@@ -11,6 +11,7 @@ import Movie from "./components/Movie/Movie";
 import Restaurant from "./components/Restaurant/Restaurant";
 import Favorites from "./components/Favorites/Favorites";
 import Footer from "./components/Footer/Footer";
+import LandingPage from "./components/LandingPage/Landing"
 
 class App extends Component {
   constructor() {
@@ -93,16 +94,24 @@ class App extends Component {
         {/* greet user if logged in: */}
         {this.state.loggedIn && <p>Join the party, {this.state.username}!</p>}
         {/* Routes to different components */}
-        <Route exact path="/" component={Home} />
+        <Route
+          exact
+          path="/home"
+          component={() => {
+            
+            return <Home username={this.state.username} />;
+          }}
+        />
         <Route
           exact
           path="/favorites"
           component={() => {
-            return <Favorites databaseInfo={this.state.favoriteMovies}  />;
+            return <Favorites databaseInfo={this.state.favoriteMovies} />;
           }}
         />
         <Route path="/restaurant" component={Restaurant} />
         <Route exact path="/movie" component={Movie} />
+        <Route exact path="/" component={LandingPage} />
         <Route
           path="/login"
           render={() => <LoginForm updateUser={this.updateUser} />}
