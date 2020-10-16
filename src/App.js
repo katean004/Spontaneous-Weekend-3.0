@@ -106,7 +106,7 @@ class App extends Component {
           exact
           path="/favorites"
           component={() => {
-            return <Favorites databaseInfo={this.state.favoriteMovies} />;
+            return <Favorites databaseInfo={this.state.favoriteMovies} foodDatabase={this.state.favoriteFoods} />;
           }}
         />
         <Route path="/restaurant" component={Restaurant} />

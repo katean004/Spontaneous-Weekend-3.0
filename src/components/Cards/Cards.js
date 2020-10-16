@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./cards.css";
 import API from "../../utils/API";
 
-const Card = props => {
+const Card = () => {
   let lat = "";
   let long = "";
 
+  const [favoriteRestaurant, getfavoriteRestaurant] = useState([]);
   const [featuredRestaurant, getfeaturedRestaurant] = useState({});
 
   useEffect(() => {
@@ -52,18 +53,13 @@ const Card = props => {
       })
     })
       .then(res => {
+        console.log(res);
+        // console.log(res.name);
+        // console.log(res.address);
+
+
         return res.json();
-      })
-      .then(data => {
-        console.log(data);
-        console.log(
-          "====================================================================="
-        );
-        console.log(data.name);
-        console.log(
-          "====================================================================="
-        );
-        console.log(data.address);
+      });
 
         /*
       ============== Testing "get" ===============
@@ -79,7 +75,7 @@ const Card = props => {
             // This returns an array of objects containing all of the movies when the button is clicked
             console.log(data);
           });
-      });
+       //add parenthesis later
   };
 
   const priceError =
