@@ -61,6 +61,18 @@ class Navbar extends Component {
       return (
         <div>
           <Redirect to={{ pathname: this.state.redirectTo }} />
+          <nav className="navbar navbar-expand-lg navbar-light">
+            <button
+              className="navbar-toggler collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <li className="navbar-toggler-icon"></li>
+            </button>
           <ul className="navbar-nav ml-auto">
             {/* <Link to="/" className="nav-link">
                   <li className="nav-item list-unstyled">Home</li>
@@ -72,6 +84,7 @@ class Navbar extends Component {
               <li className="nav-item list-unstyled">Sign Up</li>
             </Link>
           </ul>
+          </nav>
         </div>
       );
     } else {
