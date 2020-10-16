@@ -43,7 +43,7 @@ const Card = props => {
 
     fetch("/favoriteFoods", {
       method: "POST",
-      header: {
+      headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -70,7 +70,7 @@ const Card = props => {
       */
         fetch("/favoriteFoods")
           .then(res => {
-            return res.json();
+             res.json();
           })
           .then(data => {
             console.log(
