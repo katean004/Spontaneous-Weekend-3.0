@@ -1,13 +1,24 @@
 .genre_button {
   border: 1px solid black;
-  margin: 5px;
+  /* margin: 2px; */
   padding: 10px;
+  width: 90px;
+  height: 20%;
   cursor: pointer;
-  border-radius: 40px;
+  text-align: center;
+  background-color: #7fdfd4;
+}
+.genre_button:hover{
+background-color: #a7efe9;
+height: 70px;
+/* width: 100px; */
+transition: height 0.75s;
+transition-timing-function: ease;
 }
 
 .genres_bar {
   display: flex;
+  height: 200px;
 }
 
 .movie_main {
