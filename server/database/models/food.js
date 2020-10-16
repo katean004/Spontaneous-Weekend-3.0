@@ -1,15 +1,11 @@
 const mongoose = require("mongoose");
 
 const favoriteFoodSchema = new mongoose.Schema({
-  cuisine: {
+  name: {
     type: String,
     required: true
   },
   address: {
-    type: String,
-    required: true
-  },
-  website: {
     type: String,
     required: true
   }

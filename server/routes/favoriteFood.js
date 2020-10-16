@@ -18,9 +18,8 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const favorite__food = new FavoriteFood({
-    cuisine: req.body.cuisine,
-    address: req.body.address,
-    website: req.body.website
+    name: req.body.resName,
+    address: req.body.resAddress
   });
 
   try {
