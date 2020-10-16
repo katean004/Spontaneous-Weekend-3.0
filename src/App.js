@@ -18,7 +18,8 @@ class App extends Component {
     this.state = {
       loggedIn: false,
       username: null,
-      favoriteMovies: []
+      favoriteMovies: [],
+      favoriteFoods: []
     };
 
     this.getUser = this.getUser.bind(this);
@@ -30,8 +31,12 @@ class App extends Component {
     this.getUser();
     if (!this.state.favoriteMovies.length) {
       this.getMovieDB();
+
+    if (!this.state.favoriteFoods.length) {
+      this.getFoodDB();
     }
   }
+}
 
   updateUser(userObject) {
     this.setState(userObject);
@@ -71,6 +76,14 @@ class App extends Component {
       .then(data => {
         this.setState({ ...this.state, favoriteMovies: data });
       });
+  }
+
+  getFoodDB() {
+    fetch("/favoriteFoods")
+    .then(res => res.json())
+    .then(data => {
+      this.setState({ ...this.state, favoriteFoods: data });
+    });
   }
 
   render() {

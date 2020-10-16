@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/href-no-hash */
 import React, { useState, useEffect } from "react";
 import "./cards.css";
 import API from "../../utils/API";
@@ -41,6 +37,9 @@ const Card = props => {
   const handleFoodFavorite = props => {
     console.log("==========Favorited=========");
     console.log(props);
+    console.log(props.name);
+    console.log(props.address);
+
 
     fetch("/favoriteFoods", {
       method: "POST",
@@ -48,9 +47,8 @@ const Card = props => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        cuisine: props.cuisine,
-        address: props.address,
-        website: props.website
+        name: props.name,
+        address: props.address
       })
     })
       .then(res => {
@@ -61,15 +59,11 @@ const Card = props => {
         console.log(
           "====================================================================="
         );
-        console.log(data.cuisine);
+        console.log(data.name);
         console.log(
           "====================================================================="
         );
         console.log(data.address);
-        console.log(
-          "====================================================================="
-        );
-        console.log(data.website);
 
         /*
       ============== Testing "get" ===============
