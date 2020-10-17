@@ -14,8 +14,8 @@ class Home extends Component {
       <div className="homePage__Main">
         <div className="movieSection">
           <Fade>
-            <Link to="/movie" className="section__link">
               <div className="section__card fade-in2">
+            <Link to="/movie" className="section__link">
                 <div className="section__content fade-in2">
                   <h1>Movie Randomizer</h1>
                   <p>
@@ -25,14 +25,14 @@ class Home extends Component {
                     Click on this card to head over to the movie page!
                   </p>
                 </div>
-              </div>
             </Link>
+              </div>
           </Fade>
         </div>
         <div className="restaurantSection">
           <Fade>
-            <Link to="/restaurant" className="section__link">
             <div className="section__card">
+            <Link to="/restaurant" className="section__link">
               <div className="section__content">
                 <h1>Restaurant Randomizer</h1>
                 <p>We often ask "What do you wanna eat?"
@@ -42,8 +42,25 @@ class Home extends Component {
                   Click on this card to head over to the restaurants page!
                 </p>
               </div>
-            </div>
             </Link>
+            </div>
+          </Fade>
+        </div>
+        <div className="favoriteSection">
+          <Fade>
+            <div className="section__card">
+            <Link to="/favorites" className="section__link">
+              <div className="section__content">
+                <h1>Crowd Favorites</h1>
+                <p>Sometimes we make decisions based on other people's preference.
+                  <br/>
+                  See what other people have favorited!
+                  <br/>
+                  Click on this card to head over to the favorites page!
+                </p>
+              </div>
+            </Link>
+            </div>
           </Fade>
         </div>
       </div>
