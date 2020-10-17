@@ -32,15 +32,15 @@
   border-radius: 30px;
   background-color: hsl(173, 100%, 69%);
 }
-.genre_button:hover, .menu__button:hover {
+.genre_button:hover, .menu__button:hover, .movie__favorite:hover {
   outline: none;
   background-color: hsl(173, 60%, 69%);
   box-shadow: 0 0 10px 2px black;
 }
-.genre_button:active, .menu__button:active {
+.genre_button:active, .menu__button:active, .movie__favorite:active {
   outline: none;
   background-color: #fbe1b6;
-  box-shadow: 0 0 50px 2px black;
+  /* box-shadow: 0 0 50px 2px black; */
 }
 
 
@@ -55,10 +55,6 @@
   padding: 5px 20px;
   cursor: pointer;
   background-color: hsl(173, 100%, 69%);
-}
-.movie__favorite:hover {
-  background-color: hsl(173, 60%, 69%);
-  box-shadow: 0 0 10px 2px black;
 }
 
 .genres_bar {
