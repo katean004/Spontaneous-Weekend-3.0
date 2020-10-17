@@ -12,7 +12,8 @@ const app = express();
 const PORT = 8080;
 // Route requires
 const user = require("./routes/user");
-const favoritesRouter = require("./routes/favorites");
+const favoriteMoviesRouter = require("./routes/favoriteMovies");
+const favoriteFoodsRouter = require("./routes/favoriteFood")
 
 // MIDDLEWARE
 app.use(morgan("dev"));
@@ -41,7 +42,8 @@ app.use(passport.session()); // calls the deserializeUser
 
 // Routes
 app.use("/user", user);
-app.use("/favorites", favoritesRouter);
+app.use("/favoriteMovies", favoriteMoviesRouter);
+app.use("/favoriteFoods", favoriteFoodsRouter);
 
 // Starting Server
 app.listen(PORT, () => {

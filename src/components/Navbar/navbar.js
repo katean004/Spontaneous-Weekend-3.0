@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 // ======= uncomment when ready to use =======
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 // ======= use Route when ready to use =======
 import { Link } from "react-router-dom";
-import "../App.css";
+
+import "../../App.css";
 import axios from "axios";
 import "./navbar.css";
 
@@ -12,7 +13,6 @@ class Navbar extends Component {
     super();
     this.logout = this.logout.bind(this);
   }
-
   logout(event) {
     event.preventDefault();
     console.log("logging out");
@@ -25,19 +25,20 @@ class Navbar extends Component {
             loggedIn: false,
             username: null
           });
+          this.props.updateStatus({
+            loginStatus: false
+          });
         }
       })
       .catch(error => {
         console.log("Logout error");
       });
   }
-
   render() {
     const loggedIn = this.props.loggedIn;
     // console.log("navbar render, props: ");
     // ==== Check to see if the user is still logged in when switching tabs ====
     // console.log(this.props);
-
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -54,8 +55,12 @@ class Navbar extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             {loggedIn ? (
-              <ul className="navbar-nav ml-auto">
-                <Link to="/" className="nav-link" onClick={this.logout}>
+              <ul className="navbar-nav ">
+                <h3 className="navbar-brand">
+                  Have a great weekend, {this.props.username}!
+                </h3>
+
+                <Link to="/" className="nav-link " onClick={this.logout}>
                   <li className="nav-item list-unstyled">Log Out</li>
                 </Link>
                 <Link to="/home" className="nav-link">
@@ -90,5 +95,4 @@ class Navbar extends Component {
     );
   }
 }
-
 export default Navbar;

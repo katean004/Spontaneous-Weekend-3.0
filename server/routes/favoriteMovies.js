@@ -34,5 +34,9 @@ router.post("/", async (req, res) => {
   }
 });
 
+<<<<<<< HEAD:server/routes/favorites.js
+=======
+// Use the filter here
+>>>>>>> master:server/routes/favoriteMovies.js
 
 module.exports = router;

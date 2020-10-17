@@ -1,5 +1,11 @@
 import React, { Component } from "react";
+<<<<<<< HEAD:src/components/Movie.js
 import Fade from "./Fade";
+=======
+import Fade from "../Fade/Fade";
+// <-------------- Use when needed -------------->
+// import Favorites from "./Favorites";
+>>>>>>> master:src/components/Movie/Movie.js
 import "./Movie.css";
 const tmdb_url = "https://www.themoviedb.org/movie";
 const api_url = "https://api.themoviedb.org";
@@ -78,24 +84,24 @@ class Movie extends Component {
   render() {
     return (
       <div className="App">
-        <div className="genres">
-          <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
+        <div className="movie__main">
+          <div className="genres">
+            <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
+          </div>
+          {this.state.movieData.length ? (
+            <div className="movieDataInfo">
+              <MovieMain movies={this.state.movieData} />
+            </div>
+          ) : (
+            // ==========Make this into a card.==========
+            <div className="movieName__placeholder">
+              <p className="placeholder">
+                Select a random movie by genre! If it's not your style pick
+                another!
+              </p>
+            </div>
+          )}
         </div>
-        {this.state.movieData.length ? (
-          <div className="movieDataInfo">
-            <MovieMain movies={this.state.movieData} />
-          </div>
-        ) : (
-          // ==========Make this into a card.==========
-          <div className="movieName__placeholder">
-            <p className="placeholder">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-              doloremque ad mollitia, et consectetur cum ratione tenetur
-              dignissimos. Hic nihil dicta minima quisquam! Harum soluta
-              quibusdam obcaecati, amet tempore error.
-            </p>
-          </div>
-        )}
       </div>
     );
   }
@@ -124,6 +130,7 @@ const MovieBox = props => {
         <div className="movieInfo">
           {/* Take the movie and save it into the back end. consider Redux or context  */}
           <button
+            className="movie__favorite"
             onClick={() => {
               handleFavoriteMovie(props);
             }}
@@ -159,7 +166,7 @@ const handleFavoriteMovie = props => {
   );
 
   // ===== Posting the information to the back end =====
-  fetch("/favorites", {
+  fetch("/favoriteMovies", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -170,69 +177,9 @@ const handleFavoriteMovie = props => {
       description: props.movie.overview,
       releaseDate: props.movie.release_date
     })
-  })
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      // ======== Testing to see what info is passed into the back =======
-      console.log(data);
-      console.log(
-        "====================================================================="
-      );
-      console.log(data.rating);
-      console.log(
-        "====================================================================="
-      );
-      console.log(data.title);
-      console.log(
-        "====================================================================="
-      );
-      console.log(data.description);
-      console.log(
-        "====================================================================="
-      );
-      console.log(data.releaseDate);
-      /*
-      ======== Create Context and variables for data ========
-      export const MyFavoriteMovieContext = React.createContext([]);
-      const rating = data.rating;
-      const title = data.title;
-      const description = data.description;
-      const releaseDate = data.releaseDate;
-      // ======== Use Context API ========
-      <MyFavoriteMovieContext.Provider 
-      rating = {rating}
-      title ={title}
-      description ={description}
-      releaseDate ={releaseDate}
-      />
-      */
-     
-
-      /*
-      ========= Attempt to pass this information to the favorites page ====
-      ====== Refer to the onClick function as well to see the other attempt ======
-      <Favorites
-        rating={data.rating}
-        title={data.title}
-        description={data.description}
-        releaseDate={data.releaseDate}
-      />;
-      */
-      // ===== Getting the information to the back back end =====
-      fetch("/favorites")
-        .then(res => {
-          return res.json();
-        })
-        .then(data => {
-          console.log(
-            "====================================================================="
-          );
-          // This returns an array of objects containing all of the movies when the button is clicked
-          console.log(data);
-        });
-    });
+  }).then(res => {
+    return res.json();
+  });
 };
 
 // =============== Generate a Movie Box Container ===============
@@ -249,7 +196,7 @@ const MovieMain = props => (
 // =============== Generate a Genre button ===============
 const GenreButton = props => (
   <div
-    className="genre_button"
+    className={`genre_button genre${props.number}`}
     onClick={() => props.updateDiscover("movie", props.genre)}
   >
     {props.genre[0]}
@@ -262,6 +209,7 @@ const GenresBar = props => {
   for (var i = 0; i < Object.keys(props.genres).length; i++) {
     genresArr.push(
       <GenreButton
+        number={i}
         genre={Object.entries(props.genres)[i]}
         key={`Button+${i}`}
         updateDiscover={props.updateDiscover}

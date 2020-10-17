@@ -1,0 +1,34 @@
+.landing__container{
+    background-image: url("../../images/landingPagePhoto.JPG");
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+}
+
+.maincard{
+    justify-content: center;
+}
+.mainheader{
+    padding-top: 400px;
+    
+}
+.landingHeader{
+    border-radius: 40px;
+    box-shadow: 0 0 20px 5px black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    background-color:#7fdfd4;
+    padding: 20px;
+}
+
+
+
+@media screen and (max-width: 600px){
+    .landing__container{
+        background-image: url("../../images/landingPagePhoto.JPG");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
