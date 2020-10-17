@@ -36,13 +36,19 @@
   cursor: pointer;
   background-color: hsl(173, 100%, 69%);
 }
-.movie__favorite:hover{
+.movie__favorite:hover {
   background-color: hsl(173, 60%, 69%);
-
 }
 .genres_bar {
   display: flex;
-  height: 100px;
+  height: 10vh;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.genre-container {
+  width: 100%;
 }
 
 .movie_main {

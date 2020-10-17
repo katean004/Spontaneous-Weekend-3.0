@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import Fade from "../Fade/Fade";
+// import "reactstrap";
+// import {
+//   Dropdown,
+//   DropdownToggle,
+//   DropdownMenu,
+//   DropdownItem
+// } from "reactstrap";
 // <-------------- Use when needed -------------->
 // import Favorites from "./Favorites";
 import "./Movie.css";
+import Dropdown from "../Dropdown/Dropdown";
 const tmdb_url = "https://www.themoviedb.org/movie";
 const api_url = "https://api.themoviedb.org";
 const image_url = "https://image.tmdb.org/t/p/w500";
@@ -91,7 +99,8 @@ class Movie extends Component {
           // ==========Make this into a card.==========
           <div className="movieName__placeholder">
             <p className="placeholder">
-              Select a random movie by genre! If it's not your style pick another!
+              Select a random movie by genre! If it's not your style pick
+              another!
             </p>
           </div>
         )}
@@ -123,7 +132,7 @@ const MovieBox = props => {
         <div className="movieInfo">
           {/* Take the movie and save it into the back end. consider Redux or context  */}
           <button
-          className="movie__favorite"
+            className="movie__favorite"
             onClick={() => {
               handleFavoriteMovie(props);
             }}
@@ -170,11 +179,9 @@ const handleFavoriteMovie = props => {
       description: props.movie.overview,
       releaseDate: props.movie.release_date
     })
-  })
-    .then(res => {
-      return res.json();
-    })
-    
+  }).then(res => {
+    return res.json();
+  });
 };
 
 // =============== Generate a Movie Box Container ===============
@@ -201,10 +208,11 @@ const GenreButton = props => (
 // =============== Generate the Genre Bar ===============
 const GenresBar = props => {
   const genresArr = [];
+
   for (var i = 0; i < Object.keys(props.genres).length; i++) {
     genresArr.push(
       <GenreButton
-      number = {i}
+        number={i}
         genre={Object.entries(props.genres)[i]}
         key={`Button+${i}`}
         updateDiscover={props.updateDiscover}
@@ -212,7 +220,33 @@ const GenresBar = props => {
     );
   }
 
-  return <div className="genres_bar">{genresArr}</div>;
+  return (
+    <div className="genres_bar">{genresArr}</div>
+
+    // <Dropdown genresArr={genresArr} />;
+  );
 };
 
 export default Movie;
+
+// <Dropdown GenresBar={genresArr} />
+// <div className="container genre-container">
+// <div col-sm-12>
+//   <div className="genres_bar">{genresArr}</div>
+//
+// </div>
+// </div>
+
+{
+  /* <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+  <div className="genres_bar">{genresArr}</div>
+  <DropdownToggle caret id="genre-dropdown">
+    Pick a genre!
+  </DropdownToggle>
+  <DropdownMenu>
+    {genresArr.map(GenreButton => (
+      <DropdownItem>{GenreButton}</DropdownItem>
+    ))}
+  </DropdownMenu>
+</Dropdown>; */
+}
