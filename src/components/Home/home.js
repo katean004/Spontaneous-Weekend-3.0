@@ -31,7 +31,7 @@ class Home extends Component {
         </div>
         <div className="restaurantSection">
           <Fade>
-            <Link to="/restaurant" className="section__link"></Link>
+            <Link to="/restaurant" className="section__link">
             <div className="section__card">
               <div className="section__content">
                 <h1>Restaurant Randomizer</h1>
@@ -43,6 +43,7 @@ class Home extends Component {
                 </p>
               </div>
             </div>
+            </Link>
           </Fade>
         </div>
       </div>
