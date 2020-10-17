@@ -66,12 +66,7 @@ const Card = () => {
       */
         fetch("/favoriteFoods")
           .then(res => {
-
-          getfavoriteRestaurant((favoriteRestaurant) => {
-            [...favoriteRestaurant, res]
-            // favoriteRestaurant.push(res)
-          });     //move in app js later   
-          return res.json();
+             res.json();
           })
           .then(data => {
             console.log(
