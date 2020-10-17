@@ -12,8 +12,10 @@ class Home extends Component {
       <div className="homePage__Main">
         <div className="movieSection">
           <div className="section__card">
+            <div className="section__content">
             <h1>Movie Randomizer</h1>
             <p>hello there</p>
+            </div>
           </div>
         </div>
         <div className="restaurantSection">
