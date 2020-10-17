@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./home.css"
 
 class Home extends Component {
   // <-------- Useless constructor. Not needed for now -------->
@@ -7,7 +8,22 @@ class Home extends Component {
   // }
 
   render() {
-    return <div></div>;
+    return(
+      <div className="homePage__Main">
+        <div className="movieSection">
+          <div className="section__card">
+            <h1>Movie Randomizer</h1>
+            <p>hello there</p>
+          </div>
+        </div>
+        <div className="restaurantSection">
+          <div className="section__card">
+            <h1>Restaurant Randomizer</h1>
+            <p>hello there</p>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
