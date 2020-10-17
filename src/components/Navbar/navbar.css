@@ -2,3 +2,7 @@
   background-color: #fbe1b6;
   text-align: center;
 }
+
+.navbar-brand {
+  justify-content: left;
+}
