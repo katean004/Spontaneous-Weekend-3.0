@@ -6,7 +6,6 @@ const Card = () => {
   let lat = "";
   let long = "";
 
-  const [favoriteRestaurant, getfavoriteRestaurant] = useState([]);
   const [featuredRestaurant, getfeaturedRestaurant] = useState({});
 
   useEffect(() => {
@@ -86,11 +85,11 @@ const Card = () => {
     <div className="container-fluid restaurant__main">
       <div className="mainHeader">
         <h1>Restaurant Generator</h1>
-        <button onClick={handleClick} className="random-btn">
+        <button onClick={event =>handleClick(event)} className="random-btn">
           Randomize
         </button>
       </div>
-      <div className="results">
+      {featuredRestaurant.size ? (<div className="results">
         <div className="overflow">
           <img
             src={
@@ -145,7 +144,15 @@ const Card = () => {
             </a>
           </button>
         </div>
+      </div>): (
+        <div className="restaurant__placeholder">
+        <p className="placeholder">
+          Click the randomize button to get started!
+        </p>
       </div>
+      )
+      }
+      
     </div>
   );
 };
