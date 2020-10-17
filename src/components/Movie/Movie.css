@@ -6,22 +6,45 @@
   background-size: cover;
 }
 .genre_button {
-  border: 1px solid black;
-  /* margin: 2px; */
+  border: none;
+  outline: none;
   padding: 10px;
-  width: 90px;
-  height: 50%;
+  margin: 10px;
+  width: 100px;
+  height: 100%;
   cursor: pointer;
   text-align: center;
+  border-radius: 10px;
   background-color: hsl(173, 100%, 69%);
 }
-.genre_button:hover {
+
+.menu__button {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 40px;
+  width: 200px;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  background-color: hsl(173, 100%, 69%);
+}
+.genre_button:hover,
+.menu__button:hover,
+.movie__favorite:hover {
+  outline: none;
   background-color: hsl(173, 60%, 69%);
-  height: 70px;
-  /* width: 100px; */
-  transition: height 0.75s;
-  transition-timing-function: ease-out;
-  border-radius: 0 0 15px 15px;
+  box-shadow: 0 0 10px 2px black;
+}
+.genre_button:active,
+.menu__button:active,
+.movie__favorite:active {
+  outline: none;
+  background-color: #fbe1b6;
+  box-shadow: 0 0 5px 1px black inset;
 }
 
 .movie__favorite {
@@ -36,12 +59,17 @@
   cursor: pointer;
   background-color: hsl(173, 100%, 69%);
 }
-.movie__favorite:hover {
-  background-color: hsl(173, 60%, 69%);
-}
+
 .genres_bar {
   display: flex;
-  height: 100px;
+  height: 10vh;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.genre-container {
+  width: 100%;
 }
 
 .movie_main {
@@ -65,20 +93,20 @@
 }
 
 .movieInfo {
-  border: 0px solid black;
   border-radius: 45px;
-  box-shadow: 0 0 45px 10px black;
+  box-shadow: 0 0 20px 1px black;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 200px;
+  margin-top: 50px;
   width: 50%;
   padding: 20px;
+  background-color: #fbe1b6;
 }
 
 .movie_poster {
   border-radius: 50px;
-  box-shadow: 0 0 30px 10px black;
+  box-shadow: 0 -10px 30px 10px black;
 }
 
 .movie_title {

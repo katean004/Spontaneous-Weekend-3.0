@@ -3,10 +3,18 @@ import React, { Component } from "react";
 import Fade from "./Fade";
 =======
 import Fade from "../Fade/Fade";
+// import "reactstrap";
+// import {
+//   Dropdown,
+//   DropdownToggle,
+//   DropdownMenu,
+//   DropdownItem
+// } from "reactstrap";
 // <-------------- Use when needed -------------->
 // import Favorites from "./Favorites";
 >>>>>>> master:src/components/Movie/Movie.js
 import "./Movie.css";
+import Dropdown from "../Dropdown/Dropdown";
 const tmdb_url = "https://www.themoviedb.org/movie";
 const api_url = "https://api.themoviedb.org";
 const image_url = "https://image.tmdb.org/t/p/w500";
@@ -196,7 +204,6 @@ const MovieMain = props => (
 // =============== Generate a Genre button ===============
 const GenreButton = props => (
   <div
-    className={`genre_button genre${props.number}`}
     onClick={() => props.updateDiscover("movie", props.genre)}
   >
     {props.genre[0]}
@@ -206,6 +213,7 @@ const GenreButton = props => (
 // =============== Generate the Genre Bar ===============
 const GenresBar = props => {
   const genresArr = [];
+
   for (var i = 0; i < Object.keys(props.genres).length; i++) {
     genresArr.push(
       <GenreButton
@@ -217,7 +225,37 @@ const GenresBar = props => {
     );
   }
 
-  return <div className="genres_bar">{genresArr}</div>;
+  return (
+    <div>
+      <Dropdown genresArr={genresArr} />
+    </div>
+  );
 };
 
 export default Movie;
+//  <Dropdown />
+
+// <Dropdown GenresBar={genresArr} />
+// <div className="container genre-container">
+// <div col-sm-12>
+//   <div className="genres_bar">{genresArr}</div>
+//
+// </div>
+// </div>
+{
+  /* <div className="genres_bar">{genresArr}</div> */
+}
+
+{
+  /* <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+  <div className="genres_bar">{genresArr}</div>
+  <DropdownToggle caret id="genre-dropdown">
+    Pick a genre!
+  </DropdownToggle>
+  <DropdownMenu>
+    {genresArr.map(GenreButton => (
+      <DropdownItem>{GenreButton}</DropdownItem>
+    ))}
+  </DropdownMenu>
+</Dropdown>; */
+}
