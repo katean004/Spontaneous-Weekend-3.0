@@ -1,4 +1,4 @@
-.App {
+.movie__main {
   background-image: url("../../images/movieMain.JPG");
   height: 2000px;
   background-position: center;
@@ -162,3 +162,20 @@
     opacity: 1;
   }
 }
+
+/* @media screen and (max-width: 600px) {
+  .movie__main {
+    background-image: url("../../images/movieMain.JPG");
+    height: 2500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .genres_bar {
+    display: inline;
+    float: left;
+    padding: 40px;
+    margin-bottom: 100px;
+    justify-content: space-around;
+  }
+} */

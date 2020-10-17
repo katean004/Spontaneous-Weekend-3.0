@@ -88,22 +88,24 @@ class Movie extends Component {
   render() {
     return (
       <div className="App">
-        <div className="genres">
-          <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
+        <div className="movie__main">
+          <div className="genres">
+            <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
+          </div>
+          {this.state.movieData.length ? (
+            <div className="movieDataInfo">
+              <MovieMain movies={this.state.movieData} />
+            </div>
+          ) : (
+            // ==========Make this into a card.==========
+            <div className="movieName__placeholder">
+              <p className="placeholder">
+                Select a random movie by genre! If it's not your style pick
+                another!
+              </p>
+            </div>
+          )}
         </div>
-        {this.state.movieData.length ? (
-          <div className="movieDataInfo">
-            <MovieMain movies={this.state.movieData} />
-          </div>
-        ) : (
-          // ==========Make this into a card.==========
-          <div className="movieName__placeholder">
-            <p className="placeholder">
-              Select a random movie by genre! If it's not your style pick
-              another!
-            </p>
-          </div>
-        )}
       </div>
     );
   }
