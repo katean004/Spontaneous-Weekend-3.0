@@ -26,7 +26,6 @@ function Favorites(props) {
               // Needed for differentiation
               <Fade key={uuidv4()}>
                 <div className="movie__SubRow fade-in2" key={movie._id}>
-                 
                   <div className="movie__title">{movie.title}</div>
                   <div className="movie__rating">Rating: {movie.rating}</div>
                   <div className="movie__description">{movie.description}</div>
