@@ -200,7 +200,6 @@ const MovieMain = props => (
 // =============== Generate a Genre button ===============
 const GenreButton = props => (
   <div
-    className={`genre_button genre${props.number}`}
     onClick={() => props.updateDiscover("movie", props.genre)}
   >
     {props.genre[0]}
