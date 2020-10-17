@@ -40,9 +40,26 @@ class Dropdown extends Component {
               this.dropdownMenu = element;
             }}
           >
-            {/* <button> Menu item 1 </button>
-            <button> Menu item 2 </button>
-            <button> Menu item 3 </button> */}
+            <div className="container">
+              <button> {this.props.genresArr[0]} </button>
+              <button> {this.props.genresArr[1]} </button>
+              <button> {this.props.genresArr[2]} </button>
+              <button> {this.props.genresArr[3]} </button>
+              <button> {this.props.genresArr[4]} </button>
+              <button> {this.props.genresArr[5]} </button>
+              <button> {this.props.genresArr[6]} </button>
+              <button> {this.props.genresArr[7]} </button>
+              <button> {this.props.genresArr[8]} </button>
+              <button> {this.props.genresArr[9]} </button>
+              <button> {this.props.genresArr[10]} </button>
+              <button> {this.props.genresArr[11]} </button>
+              <button> {this.props.genresArr[12]} </button>
+              <button> {this.props.genresArr[13]} </button>
+              <button> {this.props.genresArr[14]} </button>
+              <button> {this.props.genresArr[15]} </button>
+              <button> {this.props.genresArr[16]} </button>
+              <button> {this.props.genresArr[17]} </button>
+            </div>
           </div>
         ) : null}
       </div>
