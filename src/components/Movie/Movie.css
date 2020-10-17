@@ -36,9 +36,8 @@
   cursor: pointer;
   background-color: hsl(173, 100%, 69%);
 }
-.movie__favorite:hover{
+.movie__favorite:hover {
   background-color: hsl(173, 60%, 69%);
-
 }
 .genres_bar {
   display: flex;
@@ -156,3 +155,20 @@
     opacity: 1;
   }
 }
+
+/* @media screen and (max-width: 600px) {
+  .movie__main {
+    background-image: url("../../images/movieMain.JPG");
+    height: 2500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .genres_bar {
+    display: inline;
+    float: left;
+    padding: 40px;
+    margin-bottom: 100px;
+    justify-content: space-around;
+  }
+} */

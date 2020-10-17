@@ -57,7 +57,7 @@ class Navbar extends Component {
             {loggedIn ? (
               <div>
                 {" "}
-                {<p>Join the party, {this.props.username}!</p>}
+                {<p>Welcome {this.props.username}!</p>}
                 <ul className="navbar-nav ml-auto">
                   <Link to="/" className="nav-link" onClick={this.logout}>
                     <li className="nav-item list-unstyled">Log Out</li>
