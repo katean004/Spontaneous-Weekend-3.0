@@ -89,6 +89,7 @@ const Card = () => {
           Randomize
         </button>
       </div>
+      {/* What is the equivalent of .length for objects. */}
       {featuredRestaurant.size ? (<div className="results">
         <div className="overflow">
           <img
