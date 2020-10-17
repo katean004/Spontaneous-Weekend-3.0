@@ -80,21 +80,24 @@ class Movie extends Component {
   render() {
     return (
       <div className="App">
-        <div className="genres">
-          <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
+        <div className="movie__main">
+          <div className="genres">
+            <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
+          </div>
+          {this.state.movieData.length ? (
+            <div className="movieDataInfo">
+              <MovieMain movies={this.state.movieData} />
+            </div>
+          ) : (
+            // ==========Make this into a card.==========
+            <div className="movieName__placeholder">
+              <p className="placeholder">
+                Select a random movie by genre! If it's not your style pick
+                another!
+              </p>
+            </div>
+          )}
         </div>
-        {this.state.movieData.length ? (
-          <div className="movieDataInfo">
-            <MovieMain movies={this.state.movieData} />
-          </div>
-        ) : (
-          // ==========Make this into a card.==========
-          <div className="movieName__placeholder">
-            <p className="placeholder">
-              Select a random movie by genre! If it's not your style pick another!
-            </p>
-          </div>
-        )}
       </div>
     );
   }
@@ -123,7 +126,7 @@ const MovieBox = props => {
         <div className="movieInfo">
           {/* Take the movie and save it into the back end. consider Redux or context  */}
           <button
-          className="movie__favorite"
+            className="movie__favorite"
             onClick={() => {
               handleFavoriteMovie(props);
             }}
@@ -170,11 +173,9 @@ const handleFavoriteMovie = props => {
       description: props.movie.overview,
       releaseDate: props.movie.release_date
     })
-  })
-    .then(res => {
-      return res.json();
-    })
-    
+  }).then(res => {
+    return res.json();
+  });
 };
 
 // =============== Generate a Movie Box Container ===============
@@ -204,7 +205,7 @@ const GenresBar = props => {
   for (var i = 0; i < Object.keys(props.genres).length; i++) {
     genresArr.push(
       <GenreButton
-      number = {i}
+        number={i}
         genre={Object.entries(props.genres)[i]}
         key={`Button+${i}`}
         updateDiscover={props.updateDiscover}
