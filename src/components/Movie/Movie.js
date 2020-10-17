@@ -223,13 +223,14 @@ const GenresBar = props => {
   }
 
   return (
-    <div className="genres_bar">{genresArr}</div>
-
-    // <Dropdown genresArr={genresArr} />;
+    <div>
+      <Dropdown genresArr={genresArr} />
+    </div>
   );
 };
 
 export default Movie;
+//  <Dropdown />
 
 // <Dropdown GenresBar={genresArr} />
 // <div className="container genre-container">
@@ -238,6 +239,9 @@ export default Movie;
 //
 // </div>
 // </div>
+{
+  /* <div className="genres_bar">{genresArr}</div> */
+}
 
 {
   /* <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
