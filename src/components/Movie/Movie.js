@@ -123,6 +123,7 @@ const MovieBox = props => {
         <div className="movieInfo">
           {/* Take the movie and save it into the back end. consider Redux or context  */}
           <button
+          className="movie__favorite"
             onClick={() => {
               handleFavoriteMovie(props);
             }}
