@@ -31,7 +31,7 @@ class Dropdown extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.showMenu}>Pick a Genre</button>
+        <button className="menu__button"onClick={this.showMenu}>Pick a Genre</button>
 
         {this.state.showMenu ? (
           <div
