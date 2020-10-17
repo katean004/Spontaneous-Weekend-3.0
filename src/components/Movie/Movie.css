@@ -41,7 +41,14 @@
 }
 .genres_bar {
   display: flex;
-  height: 100px;
+  height: 10vh;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.genre-container {
+  width: 100%;
 }
 
 .movie_main {
