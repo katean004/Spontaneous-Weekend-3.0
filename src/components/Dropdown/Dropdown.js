@@ -9,7 +9,7 @@ class Dropdown extends Component {
     };
 
     this.showMenu = this.showMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
+    // this.closeMenu = this.closeMenu.bind(this);
   }
 
   showMenu(event) {
@@ -20,18 +20,18 @@ class Dropdown extends Component {
     });
   }
 
-  closeMenu(event) {
-    if (!this.dropdownMenu.contains(event.target)) {
-      this.setState({ showMenu: false }, () => {
-        document.removeEventListener("click", this.closeMenu);
-      });
-    }
-  }
+  // closeMenu(event) {
+  //   if (!this.dropdownMenu.contains(event.target)) {
+  //     this.setState({ showMenu: false }, () => {
+  //       document.removeEventListener("click", this.closeMenu);
+  //     });
+  //   }
+  // }
 
   render() {
     return (
       <div>
-        <button onClick={this.showMenu}>Show menu</button>
+        <button onClick={this.showMenu}>Pick a Genre</button>
 
         {this.state.showMenu ? (
           <div
