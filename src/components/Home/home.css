@@ -1,0 +1,57 @@
+.homePage_Main {
+  margin: 0;
+}
+.restaurantSection,
+.section__card {
+  border: 1px solid black;
+  /* margin: 100px; */
+}
+
+.movieSection {
+  background-image: url("../../images//movieSection.JPG");
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+  height: 1000px;
+  padding-top: 12%;
+}
+.restaurantSection {
+  background-image: url("../../images//foodSection.JPG");
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+  height: 1000px;
+  padding-top: 12%;
+}
+
+.section__card {
+  border-radius: 30px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-right: auto;
+  background-color: #fbe1b6;
+  box-shadow: 0 0 20px 10px black;
+  cursor: pointer;
+}
+
+.section__link:link {
+  text-decoration: none;
+  color: black;
+}
+.section__link:visited {
+  text-decoration: none;
+  color: black;
+}
+.section__link:hover {
+  text-decoration: none;
+  color: black;
+}
+.section__link:active {
+  text-decoration: none;
+  color: black;
+}
+
+.section__content {
+  padding: 50px;
+}
