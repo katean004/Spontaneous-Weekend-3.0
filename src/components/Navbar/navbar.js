@@ -3,32 +3,16 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 // ======= use Route when ready to use =======
 import { Link } from "react-router-dom";
+
 import "../../App.css";
 import axios from "axios";
 import "./navbar.css";
-// import Landing from "../LandingPage/Landing";
 
 class Navbar extends Component {
   constructor() {
     super();
     this.logout = this.logout.bind(this);
-    this.state = {
-      redirectTo: null
-    };
   }
-
-  setRedirect = () => {
-    this.setState({
-      redirect: true
-    });
-  };
-
-  // renderRedirect = () => {
-  //   if(this.state.redirect){
-  //     return <Landing
-  //   }
-  // }
-
   logout(event) {
     event.preventDefault();
     console.log("logging out");
@@ -41,70 +25,39 @@ class Navbar extends Component {
             loggedIn: false,
             username: null
           });
-          this.setState({ redirectTo: "/" });
+          this.props.updateStatus({
+            loginStatus: false
+          });
         }
       })
       .catch(error => {
         console.log("Logout error");
       });
   }
-
   render() {
     const loggedIn = this.props.loggedIn;
     // console.log("navbar render, props: ");
     // ==== Check to see if the user is still logged in when switching tabs ====
     // console.log(this.props);
-    /*
-    ============ Redirect to the landing page if they logout =======
-    */
-    if (this.state.redirectTo) {
-      return (
-        <div>
-          <Redirect to={{ pathname: this.state.redirectTo }} />
-          <nav className="navbar navbar-expand-lg navbar-light">
-            <button
-              className="navbar-toggler collapsed"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <li className="navbar-toggler-icon"></li>
-            </button>
-          <ul className="navbar-nav ml-auto">
-            {/* <Link to="/" className="nav-link">
-                  <li className="nav-item list-unstyled">Home</li>
-                </Link> */}
-            <Link to="/login" className="nav-link">
-              <li className="nav-item list-unstyled">Log In</li>
-            </Link>
-            <Link to="/signup" className="nav-link">
-              <li className="nav-item list-unstyled">Sign Up</li>
-            </Link>
-          </ul>
-          </nav>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <nav className="navbar navbar-expand-lg navbar-light">
-            <button
-              className="navbar-toggler collapsed"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <li className="navbar-toggler-icon"></li>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              {/* If we log out in any page we should be redireced to the landing page how do we do that?? */}
-              {loggedIn ? (
+    return (
+      <div>
+        <nav className="navbar navbar-expand-lg navbar-light">
+          <button
+            className="navbar-toggler collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <li className="navbar-toggler-icon"></li>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            {loggedIn ? (
+              <div>
+                {" "}
+                {<p>Join the party, {this.props.username}!</p>}
                 <ul className="navbar-nav ml-auto">
                   <Link to="/" className="nav-link" onClick={this.logout}>
                     <li className="nav-item list-unstyled">Log Out</li>
@@ -122,25 +75,24 @@ class Navbar extends Component {
                     <li className="nav-item list-unstyled">Favorites</li>
                   </Link>
                 </ul>
-              ) : (
-                <ul className="navbar-nav ml-auto">
-                  {/* <Link to="/" className="nav-link">
+              </div>
+            ) : (
+              <ul className="navbar-nav ml-auto">
+                <Link to="/" className="nav-link">
                   <li className="nav-item list-unstyled">Home</li>
-                </Link> */}
-                  <Link to="/login" className="nav-link">
-                    <li className="nav-item list-unstyled">Log In</li>
-                  </Link>
-                  <Link to="/signup" className="nav-link">
-                    <li className="nav-item list-unstyled">Sign Up</li>
-                  </Link>
-                </ul>
-              )}
-            </div>
-          </nav>
-        </div>
-      );
-    }
+                </Link>
+                <Link to="/login" className="nav-link">
+                  <li className="nav-item list-unstyled">Log In</li>
+                </Link>
+                <Link to="/signup" className="nav-link">
+                  <li className="nav-item list-unstyled">Sign Up</li>
+                </Link>
+              </ul>
+            )}
+          </div>
+        </nav>
+      </div>
+    );
   }
 }
-
 export default Navbar;

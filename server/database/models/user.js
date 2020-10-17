@@ -7,6 +7,17 @@ mongoose.promise = Promise;
 const userSchema = new Schema({
   username: { type: String, unique: false, required: false },
   password: { type: String, unique: false, required: false },
+
+  // favoriteMovie: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "favoriteMovie"
+  // },
+
+  // favoriteFood: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "favoriteFood"
+  // }
+
   favorites: {
     movies: {
       type: Array,
