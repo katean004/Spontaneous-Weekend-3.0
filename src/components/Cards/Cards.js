@@ -41,7 +41,6 @@ const Card = () => {
     console.log(props.name);
     console.log(props.address);
 
-
     fetch("/favoriteFoods", {
       method: "POST",
       headers: {
@@ -51,52 +50,47 @@ const Card = () => {
         name: props.name,
         address: props.address
       })
-    })
-      .then(res => {
-        console.log(res);
-        // console.log(res.name);
-        // console.log(res.address);
+    }).then(res => {
+      console.log(res);
+      // console.log(res.name);
+      // console.log(res.address);
 
+      return res.json();
+    });
 
-        return res.json();
-      });
-
-        /*
+    /*
       ============== Testing "get" ===============
       */
-        fetch("/favoriteFoods")
-          .then(res => {
-             res.json();
-          })
-          .then(data => {
-            console.log(
-              "====================================================================="
-            );
-            // This returns an array of objects containing all of the movies when the button is clicked
-            console.log(data);
-          });
-       //add parenthesis later
+    fetch("/favoriteFoods")
+      .then(res => {
+        res.json();
+      })
+      .then(data => {
+        console.log(
+          "====================================================================="
+        );
+        // This returns an array of objects containing all of the movies when the button is clicked
+        console.log(data);
+      });
+    //add parenthesis later
   };
 
-  const priceError =
-    "Price range not available";
-  const cuisineError =
-    "Cusine not available";
+  const priceError = "Price range not available";
+  const cuisineError = "Cusine not available";
   // const websiteError = "Looks like they haven't set a website yet?";
   const addressError = "Address not available";
   // const phoneError = "Looks like something's wrong with their phone number";
   const nameError = "Name not available";
 
   return (
-    <div>
-      <h1>Restaurant Generator</h1>
-      <button
-        onClick={handleClick}
-        className="btn btn-outline-success random-btn"
-      >
-        Randomize
-      </button>
-      <div className="card text-center results">
+    <div className="container-fluid restaurant__main">
+      <div className="mainHeader">
+        <h1>Restaurant Generator</h1>
+        <button onClick={handleClick} className="random-btn">
+          Randomize
+        </button>
+      </div>
+      <div className="results">
         <div className="overflow">
           <img
             src={
@@ -113,37 +107,43 @@ const Card = () => {
             {featuredRestaurant.name ? featuredRestaurant.name : nameError}
           </h4>
 
-          <button onClick={() => handleFoodFavorite(featuredRestaurant)}>
+          <button
+            className="favorite__food"
+            onClick={() => handleFoodFavorite(featuredRestaurant)}
+          >
             Favorite
           </button>
           <ul className="list-group list-group-flush">
-            <li className="card-text text-secondary list-group-item cuisine">
+            <li className="   cuisine">
               {featuredRestaurant.cuisine && featuredRestaurant.cuisine[0]
                 ? `Cuisine: ${featuredRestaurant.cuisine[0].name}`
                 : cuisineError}
             </li>
-            <li className="card-text text-secondary list-group-item price">
+            <li className="  price">
               {featuredRestaurant.price_level
                 ? `Price Level: ${featuredRestaurant.price_level}`
                 : priceError}
             </li>
-            <li className="card-text text-secondary list-group-item address">
+            <li className="  address">
               {featuredRestaurant.address
                 ? `Address: ${featuredRestaurant.address}`
                 : addressError}
             </li>
           </ul>
-
-          <a
-            href={featuredRestaurant.website}
-            target="_blank"
-            className="btn btn-outline-success website"
-          >
-            Website
-          </a>
-          <a href="#" className="btn btn-outline-success call">
-            Call
-          </a>
+          <button className="website">
+            <a
+              href={featuredRestaurant.website}
+              target="_blank"
+        
+            >
+              Website
+            </a>
+          </button>
+          <button className="call">
+            <a href="#">
+              Call
+            </a>
+          </button>
         </div>
       </div>
     </div>
