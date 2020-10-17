@@ -1,7 +1,7 @@
 import React from "react";
 import "./Landing.css";
 
-export default function Landing() {
+export default function LandingPage() {
   return (
     <div className="container-fluid landing__container">
       <div className="maincard">
