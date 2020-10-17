@@ -105,6 +105,7 @@ class App extends Component {
           username={this.state.username}
         />
         {/* greet user if logged in: */}
+        {this.state.loggedIn}
         {/* Routes to different components */}
         <Switch>
           <Route
