@@ -7,22 +7,42 @@
 }
 .genre_button {
   border: 1px solid black;
-  /* margin: 2px; */
+  outline: none;
   padding: 10px;
-  width: 90px;
-  height: 50%;
+  margin: 10px;
+  width: 100px;
+  height: 100%;
   cursor: pointer;
   text-align: center;
+  border-radius: 30px;
   background-color: hsl(173, 100%, 69%);
 }
-.genre_button:hover {
-  background-color: hsl(173, 60%, 69%);
-  height: 70px;
-  /* width: 100px; */
-  transition: height 0.75s;
-  transition-timing-function: ease-out;
-  border-radius: 0 0 15px 15px;
+
+.menu__button{
+  border: none;
+  background: none;
+  outline: none;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 40px;
+  width: 200px;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 30px;
+  background-color: hsl(173, 100%, 69%);
 }
+.genre_button:hover, .menu__button:hover {
+  outline: none;
+  background-color: hsl(173, 60%, 69%);
+  box-shadow: 0 0 10px 2px black;
+}
+.genre_button:active, .menu__button:active {
+  outline: none;
+  background-color: #fbe1b6;
+  box-shadow: 0 0 50px 2px black;
+}
+
 
 .movie__favorite {
   background: none;
@@ -38,7 +58,9 @@
 }
 .movie__favorite:hover {
   background-color: hsl(173, 60%, 69%);
+  box-shadow: 0 0 10px 2px black;
 }
+
 .genres_bar {
   display: flex;
   height: 10vh;
