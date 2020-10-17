@@ -1,8 +1,8 @@
-html, .mainContainer{
-  height: 100%;
+html, .mainContainer, #root{
   background-color:#7fdfd4 ;  
-
 }
+
+
 .favorites__refresh{
   border: 1px solid black;
   outline: none;
@@ -39,8 +39,8 @@ html, .mainContainer{
 .movie__SubRow,
 .restaurant__SubRow {
   text-align: center;
-  padding: 100px;
-  height: 500px;
+  padding: 10px;
+  height: 300px;
   margin-bottom: 300px;
   border-radius: 20px;
   box-shadow: 0 0 20px 3px black

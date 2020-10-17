@@ -1,11 +1,4 @@
-.homePage_Main {
-  margin: 0;
-}
-.restaurantSection,
-.section__card {
-  border: 1px solid black;
-  /* margin: 100px; */
-}
+
 
 .movieSection {
   background-image: url("../../images/movieSection.JPG");
@@ -38,7 +31,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-right: auto;
-  background-color: #fbe1b6;
+  background-color: #7fdfd4;
+  opacity: 0.92;
   box-shadow: 0 0 20px 10px black;
   cursor: pointer;
 }
