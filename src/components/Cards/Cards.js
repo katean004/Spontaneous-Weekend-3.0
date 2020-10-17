@@ -90,7 +90,7 @@ const Card = () => {
         </button>
       </div>
       {/* What is the equivalent of .length for objects. */}
-      {featuredRestaurant.size ? (<div className="results">
+      {Object.keys(featuredRestaurant).length ? (<div className="results ">
         <div className="overflow">
           <img
             src={
