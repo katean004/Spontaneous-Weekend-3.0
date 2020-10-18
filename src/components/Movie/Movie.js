@@ -91,7 +91,7 @@ class Movie extends Component {
             // ==========Make this into a card.==========
             <div className="movieName__placeholder">
               <p className="placeholder">
-                Select a random movie by genre! If it's not your style pick
+                Select a random movie by genre. If it's not your style pick
                 another!
               </p>
             </div>
@@ -108,41 +108,47 @@ class Movie extends Component {
 
 const MovieBox = props => {
   return (
-    <div className="movie_box fade-in2">
-      <p className="movie_title fade-in2">
+    <div className="container-flex movie_box fade-in2">
+      <h1 className="col-sm-6 col-m-6 col-lg-6 movie_title fade-in2 ml-auto mr-auto">
         {props.movie.title ? props.movie.title : props.movie.name}
-      </p>
+      </h1>
+
       <Fade>
-        <div className="poster fade-in2">
+        <div className="col-sm-8 col-m-6 col-lg-6 ml-auto mr-auto poster fade-in2">
           <img
-            className="movie_poster"
+            className="movie_poster img-fluid"
             src={props.movie.poster_link}
             alt="movie poster"
           />
         </div>
       </Fade>
       <Fade>
-        <div className="movieInfo">
-          <button
-            className="movie__favorite"
-            onClick={() => {
-              handleFavoriteMovie(props);
-            }}
-          >
-            Favorite
-          </button>
-          <h6>Rating</h6>
-          <p className="movie_vote_average">
-            <i className="star_icon fas fa-star"></i>
-            {props.movie.vote_average}
-          </p>
-          <h6>Description</h6>
-          <p className="description">{props.movie.overview}</p>
-          <h6>Release Date</h6>
-          <p className="movie_releaseDate">{props.movie.release_date}</p>
-          <a target=" _blank" href={`${tmdb_url}/${props.movie.id}`}>
-            Movie Homepage
-          </a>
+        <div className="col-sm-8 col-m-6 col-lg-8 ml-auto mr-auto infoBox">
+          <div className="movieInfo">
+            <button
+              className="movie__favorite"
+              onClick={() => {
+                handleFavoriteMovie(props);
+              }}
+            >
+              Favorite
+            </button>
+            <div>
+              <h4 className="movie_vote_average">
+                {" "}
+                Critics' Score: {props.movie.vote_average}
+                <i className=" star_icon fas fa-star"></i>
+              </h4>
+            </div>
+            <br />
+            <h4>Synopsis</h4>
+            <p className="description">{props.movie.overview}</p>
+            <h4>Release Date</h4>
+            <p className="movie_releaseDate">{props.movie.release_date}</p>
+            <a target=" _blank" href={`${tmdb_url}/${props.movie.id}`}>
+              Movie Homepage
+            </a>
+          </div>
         </div>
       </Fade>
     </div>
@@ -210,8 +216,10 @@ const GenresBar = props => {
   }
 
   return (
-    <div>
-      <Dropdown genresArr={genresArr} />
+    <div className="container-flex">
+      <div>
+        <Dropdown genresArr={genresArr} />
+      </div>
     </div>
   );
 };

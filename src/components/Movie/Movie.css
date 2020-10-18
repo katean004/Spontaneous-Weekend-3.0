@@ -93,7 +93,7 @@
 }
 
 .movieInfo {
-  border-radius: 45px;
+  border-radius: 20px;
   box-shadow: 0 0 20px 1px black;
   display: block;
   margin-left: auto;
@@ -105,7 +105,7 @@
 }
 
 .movie_poster {
-  border-radius: 50px;
+  border-radius: 20px;
   box-shadow: 0 -10px 30px 10px black;
 }
 
@@ -122,12 +122,10 @@
 }
 
 .placeholder {
-  width: 60%;
-  /* border: 1px solid black; */
   padding: 40px;
   font-size: xx-large;
   font-weight: bolder;
-  border-radius: 50px;
+  border-radius: 30px;
   box-shadow: 0 0 45px 30px #686d76;
   background-color: #7fdfd4;
 }
@@ -184,19 +182,8 @@
   }
 }
 
-/* @media screen and (max-width: 600px) {
-  .movie__main {
-    background-image: url("../../images/movieMain.JPG");
-    height: 2500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+@media screen and (max-width: 600px) {
+  .movieInfo {
+    max-width: 80%;
   }
-  .genres_bar {
-    display: inline;
-    float: left;
-    padding: 40px;
-    margin-bottom: 100px;
-    justify-content: space-around;
-  }
-} */
+}
