@@ -1,9 +1,10 @@
-html, .mainContainer, #root{
-  background-color:#407088 ;  
+html,
+.mainContainer,
+#root {
+  background-color: #407088;
 }
 
-
-.favorites__refresh{
+.favorites__refresh {
   border: 1px solid black;
   outline: none;
   padding: 10px;
@@ -17,17 +18,16 @@ html, .mainContainer, #root{
   font-weight: bold;
   background-color: #343a40;
 }
-.favorites__refresh:hover{
+.favorites__refresh:hover {
   background-color: #373a40;
   color: black;
   box-shadow: 0 0 10px 2px black;
 }
-.favorites__refresh:active{
+.favorites__refresh:active {
   outline: none;
   background-color: #686d76;
   box-shadow: 0 0 5px 1px black inset;
 }
-
 
 .movie__row,
 .restaurant__row {
@@ -42,14 +42,16 @@ html, .mainContainer, #root{
 .restaurant__SubRow {
   text-align: center;
   height: 350px;
-padding: 30px;
+  padding: 30px;
   margin-bottom: 300px;
   border-radius: 20px;
   background-color: #70adb5;
-  box-shadow: 0 0 20px 3px black
+  box-shadow: 0 0 20px 3px black;
 }
 
-
+.collapse {
+  margin-top: 50px;
+}
 
 .favorite__header {
   text-transform: uppercase;
@@ -66,12 +68,44 @@ padding: 30px;
   box-shadow: 0 0 40px 2px black;
 }
 
-.movie__rating, .movie__title, .movie__description{
+.movie__rating,
+.movie__title,
+.movie__description {
   padding: 20px;
 }
 
-.movie__title{
+.movie__title {
   font-size: xx-large;
   font-weight: bolder;
 }
 
+@media screen and (max-width: 600px) {
+  .favorite__header,
+  .movie__title {
+    font-size: medium;
+    font-weight: bolder;
+  }
+
+  .movie__SubRow,
+  .restaurant__SubRow {
+    width: 300px;
+    /* display: flex; */
+    /* margin-top: 50px; */
+    height: max-content;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .restaurant__row,
+  .movie__row {
+    width: 300px;
+    /* margin-bottom: 50px; */
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 25px
+  }
+  .sub__fave {
+    margin-top: 0;
+    /* margin-bottom: 100px; */
+  }
+  
+}
