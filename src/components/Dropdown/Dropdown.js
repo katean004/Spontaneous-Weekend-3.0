@@ -20,13 +20,7 @@ class Dropdown extends Component {
     });
   }
 
-  // closeMenu(event) {
-  //   if (!this.dropdownMenu.contains(event.target)) {
-  //     this.setState({ showMenu: false }, () => {
-  //       document.removeEventListener("click", this.closeMenu);
-  //     });
-  //   }
-  // }
+  
 
   render() {
     return (
@@ -63,10 +57,7 @@ class Dropdown extends Component {
                 {" "}
                 {this.props.genresArr[4]}{" "}
               </button>
-              {/* <button className="genre_button">
-                {" "}
-                {this.props.genresArr[5]}{" "}
-              </button> */}
+             
               <button className="genre_button">
                 {" "}
                 {this.props.genresArr[6]}{" "}
@@ -87,10 +78,7 @@ class Dropdown extends Component {
                 {" "}
                 {this.props.genresArr[10]}{" "}
               </button>
-              {/* <button className="genre_button">
-                {" "}
-                {this.props.genresArr[11]}{" "}
-              </button> */}
+             
               <button className="genre_button">
                 {" "}
                 {this.props.genresArr[12]}{" "}
@@ -103,15 +91,11 @@ class Dropdown extends Component {
                 {" "}
                 {this.props.genresArr[14]}{" "}
               </button>
-              {/* <button className="genre_button"> {this.props.genresArr[15]} </button> */}
               <button className="genre_button">
                 {" "}
                 {this.props.genresArr[16]}{" "}
               </button>
-              {/* <button className="genre_button">
-                {" "}
-                {this.props.genresArr[17]}{" "}
-              </button> */}
+             
             </div>
           </div>
         ) : null}

@@ -66,9 +66,6 @@ class App extends Component {
     });
   }
 
-  /*
-    ============== Context API Here ==============
-  */
 
   getMovieDB() {
     fetch("/favoriteMovies")
