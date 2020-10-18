@@ -35,7 +35,7 @@ class Navbar extends Component {
     const loggedIn = this.props.loggedIn;
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light">
+        <nav className="navbar navbar-expand-lg navbar-dark">
           <button
             className="navbar-toggler collapsed"
             type="button"

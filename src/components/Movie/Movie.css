@@ -9,13 +9,15 @@
   border: none;
   outline: none;
   padding: 10px;
+  font-weight: bold;
+  color: white;
   margin: 10px;
-  width: 100px;
+  width: 150px;
   height: 100%;
   cursor: pointer;
   text-align: center;
   border-radius: 10px;
-  background-color: hsl(173, 100%, 69%);
+  background-color: #343a40;
 }
 
 .menu__button {
@@ -30,20 +32,22 @@
   cursor: pointer;
   text-align: center;
   border-radius: 10px;
-  background-color: hsl(173, 100%, 69%);
+  background-color: #343a40;
+  font-weight: bold;
+  color: white;
 }
 .genre_button:hover,
 .menu__button:hover,
 .movie__favorite:hover {
   outline: none;
-  background-color: hsl(173, 60%, 69%);
+  color: black;
   box-shadow: 0 0 10px 2px black;
 }
 .genre_button:active,
 .menu__button:active,
 .movie__favorite:active {
   outline: none;
-  background-color: #fbe1b6;
+  background-color: #686d76;
   box-shadow: 0 0 5px 1px black inset;
 }
 
@@ -57,7 +61,8 @@
   margin-bottom: 10px;
   padding: 5px 20px;
   cursor: pointer;
-  background-color: hsl(173, 100%, 69%);
+  background-color: #343a40;
+  color: white;
 }
 
 .genres_bar {
@@ -101,7 +106,7 @@
   margin-top: 50px;
   width: 50%;
   padding: 20px;
-  background-color: #fbe1b6;
+  background-color:#407088 ;  
 }
 
 .movie_poster {
@@ -121,13 +126,25 @@
   padding: 40px;
 }
 
+.movie__header{
+  padding-top: 25px;
+}
+
 .placeholder {
-  padding: 40px;
-  font-size: xx-large;
+  width: 50%;
+  padding: 20px;
+  font-size: x-large;
   font-weight: bolder;
-  border-radius: 30px;
-  box-shadow: 0 0 45px 30px #686d76;
-  background-color: #7fdfd4;
+  border-radius: 50px;
+  box-shadow: 0 0 20px 2px black;
+  background-color:#407088 ;  
+}
+
+.movie__url:link{
+  color: white;
+}
+.movie__url:visited{
+  color: purple;
 }
 
 .fade-in2 {
