@@ -8,18 +8,23 @@ function Favorites(props) {
   console.log(props.databaseInfo);
 
   return (
-    <div className="mainContainer">
-      <h1 className="favorite__header">Check out some crowd favorites</h1>
+    <div className="mainContainer container-fluid">
+      <div className="col-sm-12 col-m-6 col-lg-6 ml-auto mr-auto">
+        <h1 className="favorite__header">Check out some crowd favorites</h1>
+      </div>
       <button
         className="favorites__refresh"
         onClick={() => window.location.reload(false)}
       >
         Refresh Favorites
       </button>
+
       {props.databaseInfo.length || props.foodDatabase.length ? (
         <div className="container-fluid subContainer">
           <div className=" movie__row">
-            <h1 className="favorite__header">Favorite Movies</h1>
+            <h1 className="favorite__header">
+              Movies <i className="fas fa-film"></i>
+            </h1>
             <button
               className="favorites__refresh sub__fave"
               type="button"
@@ -35,8 +40,12 @@ function Favorites(props) {
                 // Needed for differentiation
                 <Fade key={uuidv4()}>
                   <div className="movie__SubRow fade-in2" key={movie._id}>
-                    <div className="movie__title">{movie.title}</div>
-                    <div className="movie__rating">Rating: {movie.rating}</div>
+                    <div className="movie__title">
+                      <i className="fas fa-film"></i> {movie.title}
+                    </div>
+                    <div className="movie__rating">
+                      {movie.rating} <i className=" star_icon fas fa-star"></i>
+                    </div>
                     <div className="movie__description">
                       {movie.description}
                     </div>
@@ -47,7 +56,9 @@ function Favorites(props) {
           </div>
 
           <div className=" restaurant__row ">
-            <h1 className="favorite__header">Favorite Restaurants</h1>
+            <h1 className="favorite__header">
+              Restaurants <i className="fas fa-utensils"></i>
+            </h1>
             <button
               className="favorites__refresh sub__fave"
               type="button"
@@ -56,14 +67,17 @@ function Favorites(props) {
               aria-expanded="false"
               aria-controls="collapseFood"
             >
-               See the list of favorite restaurants
+              See the list of favorite restaurants
             </button>
             <div className="collapse" id="collapseFood">
               {props.foodDatabase.map(food => (
                 // Needed for differentiation
+
                 <Fade key={uuidv4()}>
                   <div className="restaurant__SubRow fade-in2" key={food._id}>
-                    <div className="movie__title">{food.name}</div>
+                    <div className="movie__title">
+                      <i className="fas fa-utensils"></i> {food.name}
+                    </div>
                     <div className="movie__rating">Address: {food.address}</div>
                   </div>
                 </Fade>
@@ -72,10 +86,10 @@ function Favorites(props) {
           </div>
         </div>
       ) : (
-        <div className="favorites__placholder__container">
-          <div className="favorites__placeholder">
-            <p className="placeholder__paragraph">
-              Hello! It seems like you don't have any favorites yet!
+        <div className="favorites__placeholder__container container-flex">
+          <div className="container flex favorites__placeholder">
+            <p className="col-sm-6 col-m-6 col-lg-4 ml-auto mr-auto placeholder__paragraph">
+              Hello! It seems like you don't have any favorites yet.
             </p>
           </div>
         </div>

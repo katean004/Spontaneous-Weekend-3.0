@@ -41,7 +41,7 @@ html,
 .movie__SubRow,
 .restaurant__SubRow {
   text-align: center;
-  height: 350px;
+  height: max-content;
   padding: 30px;
   margin-bottom: 300px;
   border-radius: 20px;
@@ -71,11 +71,11 @@ html,
 .movie__rating,
 .movie__title,
 .movie__description {
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .movie__title {
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: bolder;
 }
 
@@ -103,10 +103,10 @@ html,
   .movie__row {
     width: 300px;
     display: inline-block;
-    margin-left: 25px
+    margin-bottom: 0;
+    margin-left: 25px;
   }
   .sub__fave {
     margin-top: 0;
   }
-  
 }
