@@ -22,7 +22,7 @@ const genres = {
   Animation: 16,
   Comedy: 35,
   Crime: 80,
-  Document: 99,
+  Documentary: 99,
   Drama: 18,
   Family: 10751,
   Fantasy: 14,
@@ -89,6 +89,7 @@ class Movie extends Component {
     return (
       <div className="App">
         <div className="movie__main">
+          <h1 className="movie__header">Find a random movie!</h1>
           <div className="genres">
             <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
           </div>
@@ -150,7 +151,7 @@ const MovieBox = props => {
           <p className="description">{props.movie.overview}</p>
           <h6>Release Date</h6>
           <p className="movie_releaseDate">{props.movie.release_date}</p>
-          <a target=" _blank" href={`${tmdb_url}/${props.movie.id}`}>
+          <a className="movie__url"target=" _blank" href={`${tmdb_url}/${props.movie.id}`}>
             Movie Homepage
           </a>
         </div>

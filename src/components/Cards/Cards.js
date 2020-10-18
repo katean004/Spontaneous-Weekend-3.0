@@ -84,76 +84,72 @@ const Card = () => {
   return (
     <div className="container-fluid restaurant__main">
       <div className="mainHeader">
-        <h1>Restaurant Generator</h1>
-        <button onClick={event =>handleClick(event)} className="random-btn">
+        <h1>Randomize Your Dining Experience</h1>
+        <button onClick={event => handleClick(event)} className="random-btn">
           Randomize
         </button>
       </div>
       {/* What is the equivalent of .length for objects. Can use "has property" .keys() will return an array*/}
-      {Object.keys(featuredRestaurant).length ? (<div className="results ">
-        <div className="overflow">
-          <img
-            src={
-              featuredRestaurant.photo
-                ? featuredRestaurant.photo.images.small.url
-                : "https://i.pinimg.com/originals/09/a7/85/09a785fd6f8f926d218c2ef0b18a889c.jpg"
-            }
-            className="img-fluid cardImg"
-            alt="randomized restaurant photo"
-          />
-        </div>
-        <div className="card-body text-dark">
-          <h4 className="card-title restaurant-name">
-            {featuredRestaurant.name ? featuredRestaurant.name : nameError}
-          </h4>
+      {Object.keys(featuredRestaurant) ? (
+        <div className="results ">
+          <div className="overflow">
+            <img
+              src={
+                featuredRestaurant.photo
+                  ? featuredRestaurant.photo.images.small.url
+                  : "https://i.pinimg.com/originals/09/a7/85/09a785fd6f8f926d218c2ef0b18a889c.jpg"
+              }
+              className="img-fluid cardImg"
+              alt="randomized restaurant photo"
+            />
+          </div>
+          <div className="card-body text-dark">
+            <h4 className="card-title restaurant-name">
+              {featuredRestaurant.name ? featuredRestaurant.name : nameError}
+            </h4>
 
-          <button
-            className="favorite__food"
-            onClick={() => handleFoodFavorite(featuredRestaurant)}
-          >
-            Favorite
-          </button>
-          <ul className="list-group list-group-flush">
-            <li className="   cuisine">
-              {featuredRestaurant.cuisine && featuredRestaurant.cuisine[0]
-                ? `Cuisine: ${featuredRestaurant.cuisine[0].name}`
-                : cuisineError}
-            </li>
-            <li className="  price">
-              {featuredRestaurant.price_level
-                ? `Price Level: ${featuredRestaurant.price_level}`
-                : priceError}
-            </li>
-            <li className="  address">
-              {featuredRestaurant.address
-                ? `Address: ${featuredRestaurant.address}`
-                : addressError}
-            </li>
-          </ul>
-          <button className="website">
-            <a
-              href={featuredRestaurant.website}
-              target="_blank"
-        
+            <button
+              className="favorite__food"
+              onClick={() => handleFoodFavorite(featuredRestaurant)}
             >
-              Website
-            </a>
-          </button>
-          <button className="call">
-            <a href="#">
-              Call
-            </a>
-          </button>
+              Favorite
+            </button>
+            <ul className="list-group list-group-flush">
+              <li className="   cuisine">
+                {featuredRestaurant.cuisine && featuredRestaurant.cuisine[0]
+                  ? `Cuisine: ${featuredRestaurant.cuisine[0].name}`
+                  : cuisineError}
+              </li>
+              <li className="  price">
+                {featuredRestaurant.price_level
+                  ? `Price Level: ${featuredRestaurant.price_level}`
+                  : priceError}
+              </li>
+              <li className="  address">
+                {featuredRestaurant.address
+                  ? `Address: ${featuredRestaurant.address}`
+                  : addressError}
+              </li>
+            </ul>
+            <button className="website">
+              <a className="websiteurl" href={featuredRestaurant.website} target="_blank" >
+                Website
+              </a>
+            </button>
+            <button className="call">
+              <a href="#" className="callnumber">
+                Call
+              </a>
+            </button>
+          </div>
         </div>
-      </div>): (
+      ) : (
         <div className="restaurant__placeholder">
-        <p className="placeholder">
-          Click the randomize button to get started!
-        </p>
-      </div>
-      )
-      }
-      
+          <p className="placeholder">
+            Click the randomize button to get started!
+          </p>
+        </div>
+      )}
     </div>
   );
 };
