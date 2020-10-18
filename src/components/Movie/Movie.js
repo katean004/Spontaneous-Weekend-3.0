@@ -141,11 +141,18 @@ const MovieBox = props => {
                 <i className=" star_icon fas fa-star"></i>
               </h4>
             </div>
-            <br />
-            <h4>Synopsis</h4>
-            <p className="description">{props.movie.overview}</p>
-            <h4>Release Date</h4>
-            <p className="movie_releaseDate">{props.movie.release_date}</p>
+
+            <h4 className="movie_releaseDate">
+              Release Date: {props.movie.release_date}
+            </h4>
+
+            <p className="description">
+              <span>
+                <h4>Synopsis: </h4>{" "}
+              </span>{" "}
+              {props.movie.overview}
+            </p>
+
             <a target=" _blank" href={`${tmdb_url}/${props.movie.id}`}>
               Movie Homepage
             </a>
