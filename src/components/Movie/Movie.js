@@ -1,14 +1,5 @@
 import React, { Component } from "react";
 import Fade from "../Fade/Fade";
-// import "reactstrap";
-// import {
-//   Dropdown,
-//   DropdownToggle,
-//   DropdownMenu,
-//   DropdownItem
-// } from "reactstrap";
-// <-------------- Use when needed -------------->
-// import Favorites from "./Favorites";
 import "./Movie.css";
 import Dropdown from "../Dropdown/Dropdown";
 const tmdb_url = "https://www.themoviedb.org/movie";
@@ -22,7 +13,7 @@ const genres = {
   Animation: 16,
   Comedy: 35,
   Crime: 80,
-  Document: 99,
+  Documentary: 99,
   Drama: 18,
   Family: 10751,
   Fantasy: 14,
@@ -89,6 +80,7 @@ class Movie extends Component {
     return (
       <div className="App">
         <div className="movie__main">
+          <h1 className="movie__header">Find a random movie!</h1>
           <div className="genres">
             <GenresBar genres={genres} updateDiscover={this.updateDiscover} />
           </div>
@@ -100,7 +92,7 @@ class Movie extends Component {
             // ==========Make this into a card.==========
             <div className="movieName__placeholder">
               <p className="placeholder">
-                Select a random movie by genre! If it's not your style pick
+                Select a random movie by genre. If it's not your style pick
                 another!
               </p>
             </div>
@@ -117,42 +109,54 @@ class Movie extends Component {
 
 const MovieBox = props => {
   return (
-    <div className="movie_box fade-in2">
-      <p className="movie_title fade-in2">
+    <div className="container-flex movie_box fade-in2">
+      <h1 className="col-sm-6 col-m-6 col-lg-6 movie_title fade-in2 ml-auto mr-auto">
         {props.movie.title ? props.movie.title : props.movie.name}
-      </p>
+      </h1>
+
       <Fade>
-        <div className="poster fade-in2">
+        <div className="col-sm-8 col-m-6 col-lg-6 ml-auto mr-auto poster fade-in2">
           <img
-            className="movie_poster"
+            className="movie_poster img-fluid"
             src={props.movie.poster_link}
             alt="movie poster"
           />
         </div>
       </Fade>
       <Fade>
-        <div className="movieInfo">
-          {/* Take the movie and save it into the back end. consider Redux or context  */}
-          <button
-            className="movie__favorite"
-            onClick={() => {
-              handleFavoriteMovie(props);
-            }}
-          >
-            Favorite
-          </button>
-          <h6>Rating</h6>
-          <p className="movie_vote_average">
-            <i className="star_icon fas fa-star"></i>
-            {props.movie.vote_average}
-          </p>
-          <h6>Description</h6>
-          <p className="description">{props.movie.overview}</p>
-          <h6>Release Date</h6>
-          <p className="movie_releaseDate">{props.movie.release_date}</p>
-          <a target=" _blank" href={`${tmdb_url}/${props.movie.id}`}>
-            Movie Homepage
-          </a>
+        <div className="col-sm-8 col-m-6 col-lg-8 ml-auto mr-auto infoBox">
+          <div className="movieInfo">
+            <button
+              className="movie__favorite"
+              onClick={() => {
+                handleFavoriteMovie(props);
+              }}
+            >
+              Favorite
+            </button>
+            <div>
+              <h4 className="movie_vote_average">
+                {" "}
+                Critics' Score: {props.movie.vote_average}
+                <i className=" star_icon fas fa-star"></i>
+              </h4>
+            </div>
+
+            <h4 className="movie_releaseDate">
+              Release Date: {props.movie.release_date}
+            </h4>
+
+            <p className="description">
+              <span>
+                <h4>Synopsis: </h4>{" "}
+              </span>{" "}
+              {props.movie.overview}
+            </p>
+
+            <a target=" _blank" href={`${tmdb_url}/${props.movie.id}`}>
+              Movie Homepage
+            </a>
+          </div>
         </div>
       </Fade>
     </div>
@@ -199,10 +203,7 @@ const MovieMain = props => (
 
 // =============== Generate a Genre button ===============
 const GenreButton = props => (
-  <div
-    className={`genre_button genre${props.number}`}
-    onClick={() => props.updateDiscover("movie", props.genre)}
-  >
+  <div onClick={() => props.updateDiscover("movie", props.genre)}>
     {props.genre[0]}
   </div>
 );
@@ -223,32 +224,12 @@ const GenresBar = props => {
   }
 
   return (
-    <div className="genres_bar">{genresArr}</div>
-
-    // <Dropdown genresArr={genresArr} />;
+    <div className="container-flex">
+      <div>
+        <Dropdown genresArr={genresArr} />
+      </div>
+    </div>
   );
 };
 
 export default Movie;
-
-// <Dropdown GenresBar={genresArr} />
-// <div className="container genre-container">
-// <div col-sm-12>
-//   <div className="genres_bar">{genresArr}</div>
-//
-// </div>
-// </div>
-
-{
-  /* <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-  <div className="genres_bar">{genresArr}</div>
-  <DropdownToggle caret id="genre-dropdown">
-    Pick a genre!
-  </DropdownToggle>
-  <DropdownMenu>
-    {genresArr.map(GenreButton => (
-      <DropdownItem>{GenreButton}</DropdownItem>
-    ))}
-  </DropdownMenu>
-</Dropdown>; */
-}

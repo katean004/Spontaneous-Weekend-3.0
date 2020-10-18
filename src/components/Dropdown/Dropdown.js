@@ -9,7 +9,7 @@ class Dropdown extends Component {
     };
 
     this.showMenu = this.showMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
+    // this.closeMenu = this.closeMenu.bind(this);
   }
 
   showMenu(event) {
@@ -20,18 +20,20 @@ class Dropdown extends Component {
     });
   }
 
-  closeMenu(event) {
-    if (!this.dropdownMenu.contains(event.target)) {
-      this.setState({ showMenu: false }, () => {
-        document.removeEventListener("click", this.closeMenu);
-      });
-    }
-  }
+  // closeMenu(event) {
+  //   if (!this.dropdownMenu.contains(event.target)) {
+  //     this.setState({ showMenu: false }, () => {
+  //       document.removeEventListener("click", this.closeMenu);
+  //     });
+  //   }
+  // }
 
   render() {
     return (
       <div>
-        <button onClick={this.showMenu}>Show menu</button>
+        <button className="menu__button" onClick={this.showMenu}>
+          Pick a Genre
+        </button>
 
         {this.state.showMenu ? (
           <div
@@ -40,9 +42,77 @@ class Dropdown extends Component {
               this.dropdownMenu = element;
             }}
           >
-            {/* <button> Menu item 1 </button>
-            <button> Menu item 2 </button>
-            <button> Menu item 3 </button> */}
+            <div className="container">
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[0]}{" "}
+              </button>
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[1]}{" "}
+              </button>
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[2]}{" "}
+              </button>
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[3]}{" "}
+              </button>
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[4]}{" "}
+              </button>
+              {/* <button className="genre_button">
+                {" "}
+                {this.props.genresArr[5]}{" "}
+              </button> */}
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[6]}{" "}
+              </button>
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[7]}{" "}
+              </button>
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[8]}{" "}
+              </button>
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[9]}{" "}
+              </button>
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[10]}{" "}
+              </button>
+              {/* <button className="genre_button">
+                {" "}
+                {this.props.genresArr[11]}{" "}
+              </button> */}
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[12]}{" "}
+              </button>
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[13]}{" "}
+              </button>
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[14]}{" "}
+              </button>
+              {/* <button className="genre_button"> {this.props.genresArr[15]} </button> */}
+              <button className="genre_button">
+                {" "}
+                {this.props.genresArr[16]}{" "}
+              </button>
+              {/* <button className="genre_button">
+                {" "}
+                {this.props.genresArr[17]}{" "}
+              </button> */}
+            </div>
           </div>
         ) : null}
       </div>

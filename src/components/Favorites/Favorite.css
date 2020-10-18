@@ -1,7 +1,33 @@
-.mainContainer {
-  border: 2px solid black;
-  padding: 50px;
+html, .mainContainer, #root{
+  background-color:#407088 ;  
 }
+
+
+.favorites__refresh{
+  border: 1px solid black;
+  outline: none;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: #343a40;
+}
+.favorites__refresh:hover{
+  background-color: #373a40;
+  color: black;
+  box-shadow: 0 0 10px 2px black;
+}
+.favorites__refresh:active{
+  outline: none;
+  background-color: #686d76;
+  box-shadow: 0 0 5px 1px black inset;
+}
+
 
 .movie__row,
 .restaurant__row {
@@ -14,15 +40,20 @@
 
 .movie__SubRow,
 .restaurant__SubRow {
-  padding: 50px;
-  margin-bottom: 200px;
+  text-align: center;
+  height: 350px;
+padding: 30px;
+  margin-bottom: 300px;
   border-radius: 20px;
+  background-color: #70adb5;
   box-shadow: 0 0 20px 3px black
 }
 
+
+
 .favorite__header {
   text-transform: uppercase;
-  text-decoration: underline;
+  padding-top: 20px;
   margin-bottom: 50px;
 }
 
@@ -31,8 +62,8 @@
   /* padding: 40px; */
   font-size: xx-large;
   font-weight: bolder;
-  border-radius: 50px;
-  box-shadow: 0 0 40px 2px #eaeaea;
+  border-radius: 20px;
+  box-shadow: 0 0 40px 2px black;
 }
 
 .movie__rating, .movie__title, .movie__description{

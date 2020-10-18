@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Favorite.css";
 import Fade from "../Fade/Fade";
 import { v4 as uuidv4 } from "uuid";
@@ -7,43 +7,23 @@ function Favorites(props) {
   // ============= Test to see what as in here =============
   console.log(props.databaseInfo);
 
-  const [favoriteMovie, setFavoriteMovie] = useState(props.databaseInfo);
-
-  function handleMovieDelete(evt, id) {
-    evt.preventDefault();
-    console.log("============ ID of movie clicked ============");
-    console.log(id);
-    // Fetch with the method delete
-    // Put this filter in the router.
-    setFavoriteMovie(
-      favoriteMovie.filter(movie => {
-        // console.log(movie);
-        // console.log(movie._id)
-        movie._id !== id;
-      })
-    );
-  }
-
   return (
-    <div>
-      <h1 className="favorite__header">Favorites</h1>
+    <div className="mainContainer">
+      <h1 className="favorite__header">Check out some crowd favorites</h1>
       <button
         className="favorites__refresh"
-        onClick={() => window.location.reload(true)}
+        onClick={() => window.location.reload(false)}
       >
         Refresh Favorites
       </button>
       {props.databaseInfo.length || props.foodDatabase.length ? (
-        <div className="container-fluid">
+        <div className="container-fluid subContainer">
           <div className=" movie__row">
-            <h1 className="favorite__header">Movies</h1>
+            <h1 className="favorite__header">Favorite Movies</h1>
             {props.databaseInfo.map(movie => (
               // Needed for differentiation
               <Fade key={uuidv4()}>
                 <div className="movie__SubRow fade-in2" key={movie._id}>
-                  <button onClick={(evt) => handleMovieDelete(evt, movie._id)}>
-                    Delete
-                  </button>
                   <div className="movie__title">{movie.title}</div>
                   <div className="movie__rating">Rating: {movie.rating}</div>
                   <div className="movie__description">{movie.description}</div>
@@ -53,12 +33,11 @@ function Favorites(props) {
           </div>
 
           <div className=" restaurant__row ">
-            <h1 className="favorite__header">Restaurants</h1>
+            <h1 className="favorite__header">Favorite Restaurants</h1>
             {props.foodDatabase.map(food => (
               // Needed for differentiation
               <Fade key={uuidv4()}>
                 <div className="restaurant__SubRow fade-in2" key={food._id}>
-                  <button>Delete</button>
                   <div className="movie__title">{food.name}</div>
                   <div className="movie__rating">Address: {food.address}</div>
                 </div>
