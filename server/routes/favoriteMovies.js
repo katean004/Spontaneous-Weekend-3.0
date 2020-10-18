@@ -2,11 +2,7 @@ const express = require("express");
 const router = express.Router();
 const FavoriteMovie = require("../database/models/movie");
 
-/*
-============ Task ============
 
-Find a way to get movie from the component and post it into the favorites page
-*/
 router.get("/", async (req, res) => {
   try {
     const favorite__movie = await FavoriteMovie.find();
@@ -34,6 +30,5 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Use the filter here
 
 module.exports = router;

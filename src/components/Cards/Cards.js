@@ -71,14 +71,11 @@ const Card = () => {
         // This returns an array of objects containing all of the movies when the button is clicked
         console.log(data);
       });
-    //add parenthesis later
   };
 
   const priceError = "Price range not available";
   const cuisineError = "Cusine not available";
-  // const websiteError = "Looks like they haven't set a website yet?";
   const addressError = "Address not available";
-  // const phoneError = "Looks like something's wrong with their phone number";
   const nameError = "Name not available";
 
   return (
@@ -90,7 +87,6 @@ const Card = () => {
           Randomize
         </button>
       </div>
-      {/* What is the equivalent of .length for objects. Can use "has property" .keys() will return an array*/}
       {Object.keys(featuredRestaurant).length ? (
         <div className="results ">
           <div className="overflow">
@@ -137,9 +133,6 @@ const Card = () => {
                 Website
               </a>
             </button>
-            {/* <button className="call">
-              <a href="#">Call</a>
-            </button> */}
           </div>
         </div>
       ) : (
