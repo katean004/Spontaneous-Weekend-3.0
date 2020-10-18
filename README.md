@@ -4,8 +4,6 @@
 
 ![](https://i.gyazo.com/25d4c0ed4b59059b6c310375fe515d2b.jpg)
 
-![](https://i.gyazo.com/25d4c0ed4b59059b6c310375fe515d2b.jpg)
-
 ![](https://i.gyazo.com/b069b6ea07271496106910c1b6540388.jpg)
 
 ![](https://i.gyazo.com/635c960f89718eca43d2ba81978b913e.jpg)
