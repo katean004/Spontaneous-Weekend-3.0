@@ -1,14 +1,5 @@
 import React, { Component } from "react";
 import Fade from "../Fade/Fade";
-// import "reactstrap";
-// import {
-//   Dropdown,
-//   DropdownToggle,
-//   DropdownMenu,
-//   DropdownItem
-// } from "reactstrap";
-// <-------------- Use when needed -------------->
-// import Favorites from "./Favorites";
 import "./Movie.css";
 import Dropdown from "../Dropdown/Dropdown";
 const tmdb_url = "https://www.themoviedb.org/movie";
@@ -132,7 +123,6 @@ const MovieBox = props => {
       </Fade>
       <Fade>
         <div className="movieInfo">
-          {/* Take the movie and save it into the back end. consider Redux or context  */}
           <button
             className="movie__favorite"
             onClick={() => {
@@ -199,9 +189,7 @@ const MovieMain = props => (
 
 // =============== Generate a Genre button ===============
 const GenreButton = props => (
-  <div
-    onClick={() => props.updateDiscover("movie", props.genre)}
-  >
+  <div onClick={() => props.updateDiscover("movie", props.genre)}>
     {props.genre[0]}
   </div>
 );
@@ -229,29 +217,3 @@ const GenresBar = props => {
 };
 
 export default Movie;
-//  <Dropdown />
-
-// <Dropdown GenresBar={genresArr} />
-// <div className="container genre-container">
-// <div col-sm-12>
-//   <div className="genres_bar">{genresArr}</div>
-//
-// </div>
-// </div>
-{
-  /* <div className="genres_bar">{genresArr}</div> */
-}
-
-{
-  /* <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-  <div className="genres_bar">{genresArr}</div>
-  <DropdownToggle caret id="genre-dropdown">
-    Pick a genre!
-  </DropdownToggle>
-  <DropdownMenu>
-    {genresArr.map(GenreButton => (
-      <DropdownItem>{GenreButton}</DropdownItem>
-    ))}
-  </DropdownMenu>
-</Dropdown>; */
-}

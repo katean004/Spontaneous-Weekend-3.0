@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-// ======= uncomment when ready to use =======
-import { Redirect } from "react-router-dom";
-// ======= use Route when ready to use =======
 import { Link } from "react-router-dom";
 
 import "../../App.css";
@@ -36,9 +33,6 @@ class Navbar extends Component {
   }
   render() {
     const loggedIn = this.props.loggedIn;
-    // console.log("navbar render, props: ");
-    // ==== Check to see if the user is still logged in when switching tabs ====
-    // console.log(this.props);
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light">
