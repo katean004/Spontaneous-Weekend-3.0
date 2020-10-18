@@ -90,7 +90,7 @@ const Card = () => {
         </button>
       </div>
       {/* What is the equivalent of .length for objects. Can use "has property" .keys() will return an array*/}
-      {Object.keys(featuredRestaurant) ? (
+      {Object.keys(featuredRestaurant).length ? (
         <div className="results ">
           <div className="overflow">
             <img
@@ -132,14 +132,12 @@ const Card = () => {
               </li>
             </ul>
             <button className="website">
-              <a className="websiteurl" href={featuredRestaurant.website} target="_blank" >
+              <a href={featuredRestaurant.website} target="_blank">
                 Website
               </a>
             </button>
             <button className="call">
-              <a href="#" className="callnumber">
-                Call
-              </a>
+              <a href="#">Call</a>
             </button>
           </div>
         </div>
