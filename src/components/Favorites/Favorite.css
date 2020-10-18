@@ -41,7 +41,7 @@ html,
 .movie__SubRow,
 .restaurant__SubRow {
   text-align: center;
-  height: 350px;
+  height: max-content;
   padding: 30px;
   margin-bottom: 300px;
   border-radius: 20px;
@@ -60,23 +60,22 @@ html,
 }
 
 .placeholder__paragraph {
-  margin: 100px;
-  padding: 40px;
+  margin: 200px;
+  /* padding: 40px; */
   font-size: xx-large;
   font-weight: bolder;
   border-radius: 20px;
   box-shadow: 0 0 40px 2px black;
-  background-color: white;
 }
 
 .movie__rating,
 .movie__title,
 .movie__description {
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .movie__title {
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: bolder;
 }
 
