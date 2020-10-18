@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Favorite.css";
 import Fade from "../Fade/Fade";
 import { v4 as uuidv4 } from "uuid";
@@ -6,8 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 function Favorites(props) {
   // ============= Test to see what as in here =============
   console.log(props.databaseInfo);
-
-  
 
   return (
     <div className="mainContainer">
