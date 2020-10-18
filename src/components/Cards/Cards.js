@@ -100,7 +100,7 @@ const Card = () => {
                   : "https://i.pinimg.com/originals/09/a7/85/09a785fd6f8f926d218c2ef0b18a889c.jpg"
               }
               className="img-fluid cardImg"
-              alt="randomized restaurant photo"
+              alt="randomized restaurant"
             />
           </div>
           <div className="card-body text-dark">
