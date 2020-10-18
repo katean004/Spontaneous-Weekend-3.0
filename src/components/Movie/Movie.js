@@ -162,12 +162,7 @@ const MovieBox = props => {
               Release Date: {props.movie.release_date}
             </h4>
 
-            <p className="description">
-              <span>
-                <h4>Synopsis: </h4>{" "}
-              </span>{" "}
-              {props.movie.overview}
-            </p>
+            <h6 className="description">Synopsis: {props.movie.overview}</h6>
 
             <a target=" _blank" href={`${tmdb_url}/${props.movie.id}`}>
               Movie Homepage
