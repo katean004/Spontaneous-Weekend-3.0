@@ -26,7 +26,7 @@ function Favorites(props) {
               Movies <i className="fas fa-film"></i>
             </h1>
             <button
-              className="favorites__refresh sub__fave"
+              className="favorites__refresh sub__faveMovie"
               type="button"
               data-toggle="collapse"
               data-target="#collapseMovie"
@@ -60,7 +60,7 @@ function Favorites(props) {
               Restaurants <i className="fas fa-utensils"></i>
             </h1>
             <button
-              className="favorites__refresh sub__fave"
+              className="favorites__refresh sub__faveRestaurant"
               type="button"
               data-toggle="collapse"
               data-target="#collapseFood"

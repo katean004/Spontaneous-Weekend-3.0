@@ -106,7 +106,8 @@ html,
     margin-bottom: 0;
     margin-left: 25px;
   }
-  .sub__fave {
+  .sub__faveRestaurant {
     margin-top: 0;
+    margin-bottom: 100px;
   }
 }
