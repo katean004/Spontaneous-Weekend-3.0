@@ -6,6 +6,7 @@
   background-size: cover;
 }
 
+
 .random-btn,
 .favorite__food,
 .call,
@@ -90,6 +91,5 @@
   padding: 40px;
 }
 
-.hide {
-  display: none;
-}
+
+
