@@ -85,12 +85,13 @@ const Card = () => {
     <div className="container-fluid restaurant__main">
       <div className="mainHeader">
         <h1>Randomize Your Dining Experience</h1>
+        <br/>
         <button onClick={event => handleClick(event)} className="random-btn">
           Randomize
         </button>
       </div>
       {/* What is the equivalent of .length for objects. Can use "has property" .keys() will return an array*/}
-      {Object.keys(featuredRestaurant).length ? (
+      {Object.keys(featuredRestaurant) ? (
         <div className="results ">
           <div className="overflow">
             <img

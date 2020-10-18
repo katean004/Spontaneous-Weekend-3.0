@@ -6,10 +6,23 @@
   height: 1000px;
 }
 
-.maincard {
-  justify-content: center;
-  padding-top: 150px;
+.maincard{
+    justify-content: center;
 }
+.mainheader{
+    padding-top: 200px;
+    
+}
+.landingHeader{
+    border-radius: 20px;
+    box-shadow: 0 0 20px 5px black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    background-color:#70adb5;
+    padding: 20px;
+}
+
 
 .landingHeader {
   border-radius: 20px;
@@ -29,5 +42,9 @@
   }
   .landingHeader {
     max-width: 80%;
+  }
+
+  .maincard{
+    padding-top: 60%;
   }
 }

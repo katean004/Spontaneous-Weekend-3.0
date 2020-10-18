@@ -48,14 +48,13 @@
   color: black;
 }
 
-
 .section__content {
   padding: 30px;
 }
 
 @media screen and (max-width: 600px) {
   .home_section {
-    max-width: 80%;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
