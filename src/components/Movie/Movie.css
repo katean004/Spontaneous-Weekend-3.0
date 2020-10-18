@@ -200,7 +200,23 @@
 }
 
 @media screen and (max-width: 600px) {
-  .movieInfo {
-    max-width: 80%;
+  .movieInfo, .placeholder {
+    /* max-width: 80%; */
+    font-size: medium;
+    width: 400px;
+  }
+  .movieInfo, .movie_poster{
+    margin-top: 100px;
+    width: 350px;
+  }
+  .movie_title{
+    display: none;
+  }
+  .movie__main {
+    background-image: url("../../images/movieMain.JPG");
+    height: 2200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
