@@ -9,17 +9,17 @@ function Favorites(props) {
 
   return (
     <div className="mainContainer">
-      <h1 className="favorite__header">Favorites</h1>
+      <h1 className="favorite__header">Check out some crowd favorites</h1>
       <button
         className="favorites__refresh"
-        onClick={() => window.location.reload(true)}
+        onClick={() => window.location.reload(false)}
       >
         Refresh Favorites
       </button>
       {props.databaseInfo.length || props.foodDatabase.length ? (
         <div className="container-fluid subContainer">
           <div className=" movie__row">
-            <h1 className="favorite__header">Movies</h1>
+            <h1 className="favorite__header">Favorite Movies</h1>
             {props.databaseInfo.map(movie => (
               // Needed for differentiation
               <Fade key={uuidv4()}>
@@ -33,7 +33,7 @@ function Favorites(props) {
           </div>
 
           <div className=" restaurant__row ">
-            <h1 className="favorite__header">Restaurants</h1>
+            <h1 className="favorite__header">Favorite Restaurants</h1>
             {props.foodDatabase.map(food => (
               // Needed for differentiation
               <Fade key={uuidv4()}>

@@ -84,7 +84,7 @@ const Card = () => {
   return (
     <div className="container-fluid restaurant__main">
       <div className="mainHeader">
-        <h1>Restaurant Generator</h1>
+        <h1>Randomize Your Dining Experience</h1>
         <button onClick={event => handleClick(event)} className="random-btn">
           Randomize
         </button>
@@ -100,7 +100,7 @@ const Card = () => {
                   : "https://i.pinimg.com/originals/09/a7/85/09a785fd6f8f926d218c2ef0b18a889c.jpg"
               }
               className="img-fluid cardImg"
-              alt="randomized restaurant"
+              alt="randomized restaurant photo"
             />
           </div>
           <div className="card-body text-dark">

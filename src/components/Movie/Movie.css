@@ -202,17 +202,18 @@
 @media screen and (max-width: 600px) {
   .movieInfo,
   .placeholder {
-    /* max-width: 80%; */
     font-size: medium;
     width: 400px;
   }
   .movieInfo,
   .movie_poster {
-    margin-top: 100px;
     width: 350px;
   }
   .movie_title {
-    display: none;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: xx-large;
+    font-weight: bold;
   }
   .movie__main {
     background-image: url("../../images/movieMain.JPG");
