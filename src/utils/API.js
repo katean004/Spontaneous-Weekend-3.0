@@ -1,5 +1,4 @@
 import axios from "axios";
-// API.getMovies(userGenreChoice)
 export default {
   //pass in 2 arguments: lat and long
   getRestaurant: function (lat, long) {
