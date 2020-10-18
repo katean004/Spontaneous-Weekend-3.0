@@ -1,6 +1,7 @@
-html .mainContainer {
+html,
+.mainContainer,
+#root {
   background-color: #407088;
-  padding-bottom: 300px;
 }
 
 .favorites__refresh {
@@ -40,12 +41,16 @@ html .mainContainer {
 .movie__SubRow,
 .restaurant__SubRow {
   text-align: center;
-  /* height: 350px; */
+  height: 350px;
   padding: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 300px;
   border-radius: 20px;
   background-color: #70adb5;
   box-shadow: 0 0 20px 3px black;
+}
+
+.collapse {
+  margin-top: 50px;
 }
 
 .favorite__header {
@@ -70,28 +75,37 @@ html .mainContainer {
   padding: 20px;
 }
 
-.movie__title .restaurant__title {
+.movie__title {
   font-size: xx-large;
   font-weight: bolder;
 }
 
-.favorite-body {
-  width: 20rem;
-  height: 350px;
-  padding: 30px;
-  border-radius: 20px;
-  margin: 50px;
-  margin-left: auto;
-  background-color: #70adb5;
-}
-
-.favorite-card-title {
-  font-size: large;
-  font-weight: bold;
-}
-
 @media screen and (max-width: 600px) {
-  .subContainer {
-    width: 95%;
+  .favorite__header,
+  .movie__title {
+    font-size: medium;
+    font-weight: bolder;
+  }
+
+  .movie__SubRow,
+  .restaurant__SubRow {
+    width: 300px;
+    /* display: flex; */
+    /* margin-top: 50px; */
+    height: max-content;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .restaurant__row,
+  .movie__row {
+    width: 300px;
+    /* margin-bottom: 50px; */
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 25px;
+  }
+  .sub__fave {
+    margin-top: 0;
+    /* margin-bottom: 100px; */
   }
 }

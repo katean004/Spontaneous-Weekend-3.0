@@ -92,4 +92,11 @@
 }
 
 
+@media screen and (max-width:600px){
+  .results{
+    width: 375px;
+    max-width: 90%;
+    margin-bottom: 100px;
+  }
+}
 

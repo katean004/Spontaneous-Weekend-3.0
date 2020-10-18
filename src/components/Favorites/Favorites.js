@@ -24,47 +24,57 @@ function Favorites(props) {
 
       {props.databaseInfo.length || props.foodDatabase.length ? (
         <div className="container-fluid subContainer">
-          <div className="row pt-5 ml-auto mr-auto ">
-            {/* <h1 className="favorite__header">
-              Movies <i class="fas fa-film"></i>
-            </h1> */}
-
-            {props.databaseInfo.map(movie => (
-              // Needed for differentiation
-              <Fade key={uuidv4()}>
-                <div className=" fade-in2" key={movie._id}>
-                  <div className="card-body favorite-body card-color">
-                    <div className="favorite-card-title">
-                      <i className="fas fa-film"></i> {movie.title}{" "}
-                      {movie.rating} <i className=" star_icon fas fa-star"></i>
-                    </div>
-                    <p className="card-text favorite-text">
+          <div className=" movie__row">
+            <h1 className="favorite__header">Favorite Movies</h1>
+            <button
+              className="favorites__refresh sub__fave"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseMovie"
+              aria-expanded="false"
+              aria-controls="collapseMovie"
+            >
+              See your list of favorite movies
+            </button>
+            <div className="collapse" id="collapseMovie">
+              {props.databaseInfo.map(movie => (
+                // Needed for differentiation
+                <Fade key={uuidv4()}>
+                  <div className="movie__SubRow fade-in2" key={movie._id}>
+                    <div className="movie__title">{movie.title}</div>
+                    <div className="movie__rating">Rating: {movie.rating}</div>
+                    <div className="movie__description">
                       {movie.description}
-                    </p>
+                    </div>
                   </div>
-                </div>
-              </Fade>
-            ))}
+                </Fade>
+              ))}
+            </div>
+          </div>
 
-            {/* <div className=" restaurant__row "> */}
-            {/* <h1 className="favorite__header">
-              Restaurants <i class="fas fa-utensils"></i>
-            </h1> */}
-            {props.foodDatabase.map(food => (
-              // Needed for differentiation
-              <Fade key={uuidv4()}>
-                <div className=" fade-in2" key={food._id}>
-                  <div className="card-body favorite-body card-color">
-                    <div className="favorite-card-title">
-                      <i className="fas fa-utensils"></i> {food.name}
-                    </div>
-                    <div className="card-text favorite-text">
-                      Address: {food.address}
-                    </div>
+          <div className=" restaurant__row ">
+            <h1 className="favorite__header">Favorite Restaurants</h1>
+            <button
+              className="favorites__refresh sub__fave"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseFood"
+              aria-expanded="false"
+              aria-controls="collapseFood"
+            >
+              See the list of favorite restaurants
+            </button>
+            <div class="collapse" id="collapseFood">
+              {props.foodDatabase.map(food => (
+                // Needed for differentiation
+                <Fade key={uuidv4()}>
+                  <div className="restaurant__SubRow fade-in2" key={food._id}>
+                    <div className="movie__title">{food.name}</div>
+                    <div className="movie__rating">Address: {food.address}</div>
                   </div>
-                </div>
-              </Fade>
-            ))}
+                </Fade>
+              ))}
+            </div>
           </div>
         </div>
       ) : (
