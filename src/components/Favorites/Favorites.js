@@ -69,7 +69,7 @@ function Favorites(props) {
             >
               See the list of favorite restaurants
             </button>
-            <div class="collapse" id="collapseFood">
+            <div className="collapse" id="collapseFood">
               {props.foodDatabase.map(food => (
                 // Needed for differentiation
 

@@ -88,23 +88,25 @@ html,
 
   .movie__SubRow,
   .restaurant__SubRow {
-    width: 300px;
-    /* display: flex; */
-    /* margin-top: 50px; */
+    width: 250px;
+    padding-bottom: 20px;
+    margin-bottom: 100px;
     height: max-content;
-    margin-right: auto;
-    margin-left: auto;
   }
+
+  .restaurant__row{
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+  }
+  
   .restaurant__row,
   .movie__row {
     width: 300px;
-    /* margin-bottom: 50px; */
     display: inline-block;
     margin-bottom: 0;
     margin-left: 25px;
   }
   .sub__fave {
     margin-top: 0;
-    /* margin-bottom: 100px; */
   }
 }
