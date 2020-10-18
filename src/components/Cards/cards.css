@@ -6,6 +6,7 @@
   background-size: cover;
 }
 
+
 .random-btn,
 .favorite__food,
 .call,
@@ -22,15 +23,15 @@
   margin-right: 15px;
   padding: 10px;
   cursor: pointer;
-  background-color: hsl(173, 100%, 69%);
-  color: black;
+  background-color: #343a40;
+  color: white;
 }
 
 .random-btn:hover,
 .favorite__food:hover,
 .call:hover,
 .website:hover {
-  background-color: hsl(173, 60%, 69%);
+  background-color: #373a40;
   color: black;
   box-shadow: 0 0 10px 2px black;
 }
@@ -39,9 +40,11 @@
 .call:active,
 .website:active {
   outline: none;
-  background-color: #fbe1b6;
+  background-color: #686d76;
   box-shadow: 0 0 5px 1px black inset;
 }
+
+
 
 .cuisine,
 .price,
@@ -49,7 +52,7 @@
 .list-group {
   list-style-type: none;
   margin: 10px;
-  background-color: hsl(15.3, 97%, 77.6%);
+  background-color: #70adb5;
 }
 .mainHeader {
   display: inline-block;
@@ -64,9 +67,9 @@
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  background-color: hsl(15.3, 97%, 77.6%);
+  background-color: #70adb5;
   border-radius: 20px;
-  box-shadow: 0 0 20px 3px black;
+  box-shadow: 0 0 10px 3px black;
 }
 
 .cardImg {
@@ -88,6 +91,12 @@
   padding: 40px;
 }
 
-.hide{
-  display: none;
+
+@media screen and (max-width:600px){
+  .results{
+    width: 375px;
+    max-width: 90%;
+    margin-bottom: 100px;
+  }
 }
+

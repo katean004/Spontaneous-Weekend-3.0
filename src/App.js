@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-// ======== Use Link When ready to use ========
-import { Route, Switch, Redirect, Router } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 // components
 import Signup from "../src/components/Sign-up/sign-up";
@@ -58,20 +57,12 @@ class App extends Component {
 
   getUser() {
     axios.get("/user/").then(response => {
-      // =========== Used for testing code ===========
-      // console.log("Get user response: ");
-      // console.log(response.data);
       if (response.data.user) {
-        // =========== Used for testing code ===========
-        // console.log("Get User: There is a user saved in the server session: ");
-
         this.setState({
           loggedIn: true,
           username: response.data.user.username
         });
       } else {
-        // =========== Used for testing code ===========
-        // console.log("Get user: no user");
         this.setState({
           loggedIn: false,
           username: null
@@ -122,7 +113,7 @@ class App extends Component {
           updateStatus={this.updateStatus}
           username={this.state.username}
         />
-        {/* greet user if logged in: */}
+
         {this.state.loggedIn}
         {/* Routes to different components */}
 <<<<<<< HEAD

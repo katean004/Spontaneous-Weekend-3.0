@@ -2,13 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 .formColumns {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .form-input {
@@ -58,14 +59,6 @@ input[type="text"]:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.SignupForm {
-  background-color: #7fdfd4;
-  padding: 50px;
-  margin-bottom: 200px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px 3px gray;
 }
 
 .form-heading {

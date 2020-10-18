@@ -1,6 +1,9 @@
 .navbar {
-  background-color: #fbe1b6;
+  background-color: #132743;
   text-align: center;
+}
+nav {
+  color: white;
 }
 
 .navbar-brand {
