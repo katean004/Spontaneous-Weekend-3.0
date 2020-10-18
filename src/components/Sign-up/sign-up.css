@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .form-input {
@@ -60,7 +60,6 @@ input[type="text"]:focus {
   justify-content: center;
   align-items: center;
 }
-
 
 .form-heading {
   font-size: xx-large;
