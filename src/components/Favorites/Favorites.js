@@ -33,7 +33,7 @@ function Favorites(props) {
               aria-expanded="false"
               aria-controls="collapseMovie"
             >
-              See your list of favorite movies
+              See the list of favorite movies
             </button>
             <div className="collapse" id="collapseMovie">
               {props.databaseInfo.map(movie => (
