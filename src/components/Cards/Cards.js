@@ -139,11 +139,11 @@ const Card = () => {
               Website
             </a>
           </button>
-          {/* <button className="call">
+          <button className="call">
             <a href="#">
               Call
             </a>
-          </button> */}
+          </button>
         </div>
       </div>): (
         <div className="restaurant__placeholder">
