@@ -1,6 +1,6 @@
 //Connect to Mongo database
 const mongoose = require("mongoose");
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
 mongoose.connect(
   process.env.MONGODB_URI || "http://localhost/spontaneous-weekend",
