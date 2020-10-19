@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost:27017/spontaneous-weekend",
+  process.env.MONGODB_URI || "mongodb://localhost/spontaneous-weekend",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
