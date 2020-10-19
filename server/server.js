@@ -20,12 +20,15 @@ const user = require("./routes/user");
 const favoriteMoviesRouter = require("./routes/favoriteMovies");
 const favoriteFoodsRouter = require("./routes/favoriteFood");
 
-
 // MIDDLEWARE
 app.use(morgan("dev"));
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("../public"));
+app.use(express.static(path.join(__dirname, "../build")));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'../build/index.html'));
+});
 
 app.use(express.json());
 // Sessions
