@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "axios": "^0.20.0",
     "bcryptjs": "^2.4.3",
