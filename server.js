@@ -3,9 +3,9 @@ if (process.env.NODE_ENV !== "production") {
 }
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
-  app.use(express.static(path.join(__dirname, "../build")));
+  app.use(express.static(path.join(__dirname, "client/build")));
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "../build/index.html"));
+    res.sendFile(path.join(__dirname + "client/build/index.html"));
   });}
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -27,7 +27,7 @@ const favoriteFoodsRouter = require("./server/routes/favoriteFood");
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("../../client/public"));
+app.use(express.static("client/public"));
 
 
 app.use(express.json());
