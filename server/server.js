@@ -7,6 +7,7 @@ if (process.env.NODE_ENV === "production") {
 }
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path");
 const morgan = require("morgan");
 const session = require("express-session");
 const dbConnection = require("./database");
@@ -26,8 +27,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("../public"));
 app.use(express.static(path.join(__dirname, "../build")));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'../build/index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "../build/index.html"));
 });
 
 app.use(express.json());
