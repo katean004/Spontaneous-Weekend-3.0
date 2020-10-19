@@ -3,7 +3,7 @@ import axios from "axios";
 import { Route, Switch } from "react-router-dom";
 
 // components
-import Signup from "../src/components/Sign-up/sign-up";
+import Signup from "./components/Sign-up/sign-up";
 import LoginForm from "./components/Login-Form/login-form";
 import Navbar from "./components/Navbar/navbar";
 import Home from "./components/Home/home";

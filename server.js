@@ -9,16 +9,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const session = require("express-session");
-const dbConnection = require("./database");
+const dbConnection = require("./client/server/database");
 const MongoStore = require("connect-mongo")(session);
 // const mongoose = require("mongoose");
-const passport = require("./passport");
+const passport = require("./client/server/passport");
 const app = express();
 const PORT = process.env.PORT || 8080;
 // Route requires
-const user = require("./routes/user");
-const favoriteMoviesRouter = require("./routes/favoriteMovies");
-const favoriteFoodsRouter = require("./routes/favoriteFood");
+const user = require("./client/server/routes/user");
+const favoriteMoviesRouter = require("./client/server/routes/favoriteMovies");
+const favoriteFoodsRouter = require("./client/server/routes/favoriteFood");
 
 // Mongo connection
 // mongoose.connect(
