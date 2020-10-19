@@ -2,11 +2,7 @@ const express = require("express");
 const router = express.Router();
 const FavoriteFood = require("../database/models/food");
 
-/*
-============ Task ============
 
-Find a way to get movie from the component and post it into the favorites page
-*/
 router.get("/", async (req, res) => {
   try {
     const favorite__food = await FavoriteFood.find();

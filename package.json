@@ -14,6 +14,7 @@
     "connect-mongo": "^2.0.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "http-proxy-middleware": "^1.0.6",
     "if-env": "^1.0.4",
     "jquery": "^3.5.1",
     "mongoose": "^5.0.2",
@@ -32,18 +33,22 @@
     "uuid": "^8.3.1"
   },
   "scripts": {
-    "start": "concurrently  \"react-scripts start\" \"node server/server.js\"",
+    "start": "node backend/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "api": "nodemon ./server/server.js",
     "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\""
   },
+  "proxy": "http://localhost:8080",
+  "engines": {
+    "node": "12.16.3"
+  },
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^1.17.5"
   },
-  "proxy": "http://localhost:8080",
   "browserslist": {
     "production": [
       ">0.2%",

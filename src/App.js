@@ -72,6 +72,7 @@ class App extends Component {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   getDB() {
     console.log("ldkfhlsafjsado;fl");
     // We use set timeout to mimic a time delay that it would take to gather the data
@@ -86,6 +87,8 @@ class App extends Component {
   /*
     ============== Context API Here ==============
   */
+=======
+>>>>>>> master
 
   getMovieDB() {
     fetch("/favoriteMovies")
