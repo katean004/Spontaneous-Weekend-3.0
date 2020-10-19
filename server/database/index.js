@@ -12,4 +12,4 @@ mongoose.connect(
   }
 );
 
-module.exports = mongoose.connect;
+module.exports = mongoose.connection;
