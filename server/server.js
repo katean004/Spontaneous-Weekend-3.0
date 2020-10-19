@@ -4,9 +4,6 @@ if (process.env.NODE_ENV !== "production") {
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
   app.use(express.static("../build"));
-
-  // Express will serve up the front-end index.html file if it doesn't recognize the route
-  app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
 }
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -14,6 +11,7 @@ const morgan = require("morgan");
 const session = require("express-session");
 const dbConnection = require("./database");
 const MongoStore = require("connect-mongo")(session);
+const mongoose = require("mongoose");
 const passport = require("./passport");
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -22,13 +20,19 @@ const user = require("./routes/user");
 const favoriteMoviesRouter = require("./routes/favoriteMovies");
 const favoriteFoodsRouter = require("./routes/favoriteFood");
 
+// Mongo connection
+mongoose.connect(
+  process.env.MONGODB_URI || `mongodb+srv://spontaneous-admin:${process.env.MONGODB_PASS}@cluster0.ifnbt.mongodb.net/Spontaneous-Weekend?retryWrites=true&w=majority`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 // MIDDLEWARE
 app.use(morgan("dev"));
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
+app.use(express.urlencoded({extended: true}))
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
