@@ -51,7 +51,7 @@ class App extends Component {
   }
 
   getUser() {
-    axios.get("/api/user").then(response => {
+    axios.get("/user").then(response => {
       if (response.data.user) {
         this.setState({
           loggedIn: true,
@@ -68,7 +68,7 @@ class App extends Component {
 
 
   getMovieDB() {
-    fetch("/api/favoriteMovies")
+    fetch("/favoriteMovies")
       .then(res => res.json())
       .then(data => {
         this.setState({ ...this.state, favoriteMovies: data });
@@ -76,7 +76,7 @@ class App extends Component {
   }
 
   getFoodDB() {
-    fetch("/api/favoriteFoods")
+    fetch("/favoriteFoods")
       .then(res => res.json())
       .then(data => {
         this.setState({ ...this.state, favoriteFoods: data });
