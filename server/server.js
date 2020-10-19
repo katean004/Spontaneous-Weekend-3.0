@@ -25,7 +25,7 @@ const favoriteFoodsRouter = require("./routes/favoriteFood");
 app.use(morgan("dev"));
 app.use(express.urlencoded({extended: true}))
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(express.static("../public"));
 
 app.use(express.json());
 // Sessions
