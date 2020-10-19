@@ -1,7 +1,7 @@
 {
   "name": "spontaneous-weekend",
   "version": "0.1.0",
-  "main": "./server/server.js",
+  "main": "server.js",
   "dependencies": {
     "axios": "^0.20.0",
     "bcryptjs": "^2.4.3",
