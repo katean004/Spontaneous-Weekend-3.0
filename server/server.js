@@ -1,6 +1,13 @@
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
+if (process.env.NODE_ENV === "production") {
+  // Express will serve up production assets
+  app.use(express.static("build"));
+
+  // Express will serve up the front-end index.html file if it doesn't recognize the route
+  app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
+}
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
@@ -13,7 +20,7 @@ const PORT = 8080;
 // Route requires
 const user = require("./routes/user");
 const favoriteMoviesRouter = require("./routes/favoriteMovies");
-const favoriteFoodsRouter = require("./routes/favoriteFood")
+const favoriteFoodsRouter = require("./routes/favoriteFood");
 
 // MIDDLEWARE
 app.use(morgan("dev"));
