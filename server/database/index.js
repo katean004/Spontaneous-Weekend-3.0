@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 mongoose.connect(
-  process.env.MONGODB_URI || `mongodb+srv://spontaneous-admin:${process.env.MONGODB_PASS}@cluster0.ifnbt.mongodb.net/Spontaneous-Weekend?retryWrites=true&w=majority`,
+  process.env.MONGODB_URI || "http://localhost/spontaneous-weekend",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
