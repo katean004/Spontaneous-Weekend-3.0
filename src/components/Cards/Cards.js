@@ -60,7 +60,7 @@ const Card = () => {
     /*
       ============== Testing "get" ===============
       */
-    fetch("/favoriteFoods")
+    fetch("/api/favoriteFoods")
       .then(res => {
         res.json();
       })
