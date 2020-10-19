@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
-  app.use(express.static("../build"));
+  app.use(express.static("client/build"));
 }
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -20,16 +20,7 @@ const user = require("./client/server/routes/user");
 const favoriteMoviesRouter = require("./client/server/routes/favoriteMovies");
 const favoriteFoodsRouter = require("./client/server/routes/favoriteFood");
 
-// Mongo connection
-// mongoose.connect(
-//   process.env.MONGODB_URI || `mongodb+srv://spontaneous-admin:${process.env.MONGODB_PASS}@cluster0.ifnbt.mongodb.net/Spontaneous-Weekend?retryWrites=true&w=majority`,
-//   {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false
-//   }
-// );
+
 // MIDDLEWARE
 app.use(morgan("dev"));
 app.use(express.urlencoded({extended: true}))
