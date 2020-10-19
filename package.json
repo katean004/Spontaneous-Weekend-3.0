@@ -2,7 +2,6 @@
   "name": "spontaneous-weekend",
   "version": "0.1.0",
   "main":"./server/server.js",
-  "private": false,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.31",
     "@fortawesome/free-solid-svg-icons": "^5.15.0",
