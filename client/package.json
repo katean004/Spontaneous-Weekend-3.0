@@ -2,7 +2,7 @@
   "name": "spontaneous-weekend",
   "version": "0.1.0",
   "main": "./server/server.js",
-  "proxy":"http://localhost:8080",
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "axios": "^0.20.0",
     "bcryptjs": "^2.4.3",
