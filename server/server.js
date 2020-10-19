@@ -11,7 +11,7 @@ const morgan = require("morgan");
 const session = require("express-session");
 const dbConnection = require("./database");
 const MongoStore = require("connect-mongo")(session);
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const passport = require("./passport");
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -21,15 +21,15 @@ const favoriteMoviesRouter = require("./routes/favoriteMovies");
 const favoriteFoodsRouter = require("./routes/favoriteFood");
 
 // Mongo connection
-mongoose.connect(
-  process.env.MONGODB_URI || `mongodb+srv://spontaneous-admin:${process.env.MONGODB_PASS}@cluster0.ifnbt.mongodb.net/Spontaneous-Weekend?retryWrites=true&w=majority`,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
-);
+// mongoose.connect(
+//   process.env.MONGODB_URI || `mongodb+srv://spontaneous-admin:${process.env.MONGODB_PASS}@cluster0.ifnbt.mongodb.net/Spontaneous-Weekend?retryWrites=true&w=majority`,
+//   {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false
+//   }
+// );
 // MIDDLEWARE
 app.use(morgan("dev"));
 app.use(express.urlencoded({extended: true}))
