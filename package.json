@@ -33,14 +33,13 @@
     "uuid": "^8.3.1"
   },
   "scripts": {
-    "start": "node backend/server.js",
+    "start":"concurrently \"react-scripts start\" \"node server/server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "api": "nodemon ./server/server.js",
     "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\""
   },
-  "proxy": "http://localhost:8080",
   "engines": {
     "node": "12.16.3"
   },
