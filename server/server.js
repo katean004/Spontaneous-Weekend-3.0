@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
-  app.use(express.static("client/build"));
+  app.use(express.static("../build"));
 }
 const express = require("express");
 const bodyParser = require("body-parser");
