@@ -115,9 +115,9 @@ class App extends Component {
               );
             }}
           />
-          <Route path="/restaurant" component={Restaurant} />
+          <Route exactpath="/restaurant" component={Restaurant} />
           <Route exact path="/movie" component={Movie} />
-          <Route exact path="/" component={LandingPage} />
+          <Route path="/" component={LandingPage} />
           <Route
             path="/login"
             render={() => <LoginForm updateUser={this.updateUser} />}
