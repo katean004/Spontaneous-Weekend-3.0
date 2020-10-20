@@ -12,7 +12,6 @@
 
 ![](https://i.gyazo.com/d1b147a794cccfdd4918e5bf53136beb.png)
 
-
 ## Description
 
 This is an app designed with today's overwhelmed consumer in mind. With so many choices, how do you ever make a decision?
@@ -20,6 +19,8 @@ This is an app designed with today's overwhelmed consumer in mind. With so many 
 How much time do you waste before settling on a decision about what to do with your weekend? Whether it’s mind numbing hours scrolling through Netflix or a hangry argument with friends over where to eat, deciding is never the fun part. That’s where our new app, Spontaneous Weekend, comes in. We’ll randomly pick a movie or restaurant for you, taking away the pain of indecision. This is an app for everyone, so give us a try this weekend and we’ll bring a little spontaneity into your life.
 
 ### Heroku Deployment
+
+<https://spontaneous-weekend.herokuapp.com/landing>
 
 ## Table of Contents
 
