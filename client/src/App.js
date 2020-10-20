@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   updateStatus() {
-    document.location.href = "/";
+    document.location.href = "/landing";
     console.log("Status updated");
   }
 
