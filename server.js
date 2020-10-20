@@ -1,12 +1,7 @@
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
-if (process.env.NODE_ENV === "production") {
-  // Express will serve up production assets
-  app.use(express.static(path.join(__dirname, "client/build")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "client/build/index.html"));
-  });}
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -45,11 +40,19 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session()); // calls the deserializeUser
 
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 // Routes
 app.use("/user", user);
 app.use("/favoriteMovies", favoriteMoviesRouter);
 app.use("/favoriteFoods", favoriteFoodsRouter);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 // Starting Server
 app.listen(PORT, () => {
   console.log(`App listening on PORT: http://localhost:${PORT}`);
