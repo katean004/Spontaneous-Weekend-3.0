@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import "./cards.css";
 import API from "../../utils/API";
 
 const Card = () => {
-  let lat = "";
-  let long = "";
+  let lat = '';
+  let long = '';
+ 
 
   const [featuredRestaurant, getfeaturedRestaurant] = useState({});
 
