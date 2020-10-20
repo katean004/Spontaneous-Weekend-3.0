@@ -115,7 +115,7 @@ class App extends Component {
               );
             }}
           />
-          <Route exactpath="/restaurant" component={Restaurant} />
+          <Route exact path="/restaurant" component={Restaurant} />
           <Route exact path="/movie" component={Movie} />
           <Route path="/" component={LandingPage} />
           <Route
