@@ -1,13 +1,29 @@
 {
-  "main.css": "static/css/main.7f17c096.css",
-  "main.css.map": "static/css/main.7f17c096.css.map",
-  "main.js": "static/js/main.6debe8c7.js",
-  "main.js.map": "static/js/main.6debe8c7.js.map",
-  "static/media/favoritesPage.JPG": "static/media/favoritesPage.653293a5.JPG",
-  "static/media/foodSection.JPG": "static/media/foodSection.33b5916e.JPG",
-  "static/media/landingPage.JPG": "static/media/landingPage.961a3053.JPG",
-  "static/media/movieMain.JPG": "static/media/movieMain.b9d63e76.JPG",
-  "static/media/movieSection.JPG": "static/media/movieSection.e7035142.JPG",
-  "static/media/pexels-pok-rie-1726310.jpg": "static/media/pexels-pok-rie-1726310.f2f6a8b5.jpg",
-  "static/media/restaurantBackground.JPG": "static/media/restaurantBackground.a39d8f2f.JPG"
+  "files": {
+    "main.css": "/static/css/main.5d0e2fe6.chunk.css",
+    "main.js": "/static/js/main.a862a34a.chunk.js",
+    "main.js.map": "/static/js/main.a862a34a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/css/2.e6a0ba1c.chunk.css": "/static/css/2.e6a0ba1c.chunk.css",
+    "static/js/2.22129710.chunk.js": "/static/js/2.22129710.chunk.js",
+    "static/js/2.22129710.chunk.js.map": "/static/js/2.22129710.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b9dd10ef2d0a93e9709b959cf19563d5.js": "/precache-manifest.b9dd10ef2d0a93e9709b959cf19563d5.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.e6a0ba1c.chunk.css.map": "/static/css/2.e6a0ba1c.chunk.css.map",
+    "static/css/main.5d0e2fe6.chunk.css.map": "/static/css/main.5d0e2fe6.chunk.css.map",
+    "static/js/2.22129710.chunk.js.LICENSE.txt": "/static/js/2.22129710.chunk.js.LICENSE.txt",
+    "static/media/home.css": "/static/media/movieSection.e7035142.JPG",
+    "static/media/Landing.css": "/static/media/pexels-pok-rie-1726310.f2f6a8b5.jpg",
+    "static/media/Movie.css": "/static/media/movieMain.b9d63e76.JPG",
+    "static/media/cards.css": "/static/media/restaurantBackground.a39d8f2f.JPG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/css/2.e6a0ba1c.chunk.css",
+    "static/js/2.22129710.chunk.js",
+    "static/css/main.5d0e2fe6.chunk.css",
+    "static/js/main.a862a34a.chunk.js"
+  ]
 }
