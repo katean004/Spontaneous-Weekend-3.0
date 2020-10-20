@@ -54,7 +54,7 @@ class Navbar extends Component {
                   Have a great weekend, {this.props.username}!
                 </h3>
 
-                <Link to="/" className="nav-link " onClick={this.logout}>
+                <Link to="/landing" className="nav-link " onClick={this.logout}>
                   <li className="nav-item list-unstyled">Log Out</li>
                 </Link>
                 <Link to="/home" className="nav-link">
@@ -72,7 +72,7 @@ class Navbar extends Component {
               </ul>
             ) : (
               <ul className="navbar-nav ml-auto">
-                <Link to="/" className="nav-link">
+                <Link to="/landing" className="nav-link">
                   <li className="nav-item list-unstyled">Home</li>
                 </Link>
                 <Link to="/login" className="nav-link">
