@@ -52,8 +52,6 @@ const Card = () => {
       })
     }).then(res => {
       console.log(res);
-      // console.log(res.name);
-      // console.log(res.address);
 
       return res.json();
     });

@@ -9,7 +9,6 @@ class Dropdown extends Component {
     };
 
     this.showMenu = this.showMenu.bind(this);
-    // this.closeMenu = this.closeMenu.bind(this);
   }
 
   showMenu(event) {
